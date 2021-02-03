@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
-  get 'homes/top'
-  get 'homes/address'
+  root 'homes#top'
+  get '/access' => 'homes#access'
   # 管理者側
   devise_for :admins
   namespace :admin do
@@ -16,7 +16,7 @@ Rails.application.routes.draw do
     end
   end
   resources :rooms, only:[:index]
-  resources :guest, onlu:[:new]
+  resources :guest, only:[:new]
   resources :contacts, only:[:new, :create] do
     collection do
       get :success
