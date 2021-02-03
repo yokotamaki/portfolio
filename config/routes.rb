@@ -1,20 +1,25 @@
 Rails.application.routes.draw do
-  namespace :admin do
-    get 'reservations/index'
-    get 'reservations/show'
-  end
-  namespace :admin do
-    get 'contacts/index'
-    get 'contacts/show'
-  end
-  get 'contacts/new'
-  get 'contacts/success'
-  get 'reservations/search'
-  get 'reservations/confirm'
-  get 'reservations/success'
-  get 'rooms/index'
   get 'homes/top'
   get 'homes/address'
+  # 管理者側
   devise_for :admins
-  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
+  namespace :admin do
+    resources :reservations, only:[:index, :show]
+    resources :contacts, only:[:index, :show, :update]
+  end
+  # HP側
+  resources :reservations, only:[:create] do
+    collection do
+      get :search
+      post :confirm
+      get :success
+    end
+  end
+  resources :rooms, only:[:index]
+  resources :guest, onlu:[:new]
+  resources :contacts, only:[:new, :create] do
+    collection do
+      get :success
+    end
+  end
 end
