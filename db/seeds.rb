@@ -8,17 +8,37 @@
 
 Admin.create!(
   email: 'admin@admin',
-  encrypted_password: 'aaaaaa'
+  password: 'aaaaaa'
 )
-
-room = Room.find(:id)
-room.image.attach(io: File.open('app/assets/images/room.jpg'), filename: 'room.jpg')
 
 Room.create!(
   name: "type1",
   body: "type1",
-  price: "13000",
+  price: "11000",
   people: "2",
   capacity: "10",
   reserved_flag: true
 )
+Room.create!(
+  name: "type2",
+  body: "type2",
+  price: "12000",
+  people: "2",
+  capacity: "5",
+  reserved_flag: true
+)
+Room.create!(
+  name: "type3",
+  body: "type3",
+  price: "13000",
+  people: "4",
+  capacity: "3",
+  reserved_flag: true
+)
+
+room = Room.find(1)
+room.image.attach(io: File.open('app/assets/images/room1.jpg'), filename: 'room1.jpg')
+room2 = Room.find(2)
+room2.image.attach(io: File.open('app/assets/images/room2.jpg'), filename: 'room2.jpg')
+room3 = Room.find(3)
+room3.image.attach(io: File.open('app/assets/images/room3.jpg'), filename: 'room3.jpg')
