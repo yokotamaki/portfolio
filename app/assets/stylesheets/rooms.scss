@@ -1,3 +1,18 @@
 // Place all the styles related to the rooms controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+/**客室一覧**/
+.rooms {
+  display: flex;
+  padding: 1rem;
+}
+.room-image {
+  width: 50%;
+}
+.room-content {
+  width: 50%;
+}
+.rooms:nth-child(even) {
+  flex-direction: row-reverse;
+}

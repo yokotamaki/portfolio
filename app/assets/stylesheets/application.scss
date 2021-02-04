@@ -14,3 +14,38 @@
  *= require_self
  */
 @import "bootstrap";
+
+/**全体**/
+body {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  background-color: #4c4449;
+  color: #e7e7e7;
+}
+/**ヘッダー**/
+header {
+  opacity: 0;
+  animation-name: fadein;
+  animation-duration: 1s;
+  animation-timing-function: ease-out;
+  animation-fill-mode: forwards;
+}
+@keyframes fadein {
+   0% {
+      opacity: 0;
+      transform: translateY(-20px);
+      width: 70%;
+      position: fixed;
+      top: 1%;
+      z-index: 1;
+   }
+   100% {
+      opacity: 0.8;
+      transform: translateY(0);
+      width: 70%;
+      position: fixed;
+      top: 1%;
+      z-index: 1;
+   }
+}

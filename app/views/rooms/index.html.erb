@@ -1,2 +1,15 @@
-<h1>Rooms#index</h1>
-<p>Find me in app/views/rooms/index.html.erb</p>
+<h5>客室一覧</h5>
+<% @rooms.each do |room| %>
+  <div class="rooms">
+    <div class="room-image">
+      <%= image_tag room.image, width: '95%' %>
+    </div>
+    <div class="room-content">
+      <p><%= room.name %></p>
+      <p><%= room.body %></p>
+      <p><%= room.price %>円</p>
+      <p>定員<%= room.people %>名</p>
+      <p>全<%= room.capacity %>室</p>
+    </div>
+  </div>
+<% end %>
