@@ -11,12 +11,13 @@ Rails.application.routes.draw do
   resources :reservations, only:[:create] do
     collection do
       get :search
+      post :room
+      post :guest
       post :confirm
       get :success
     end
   end
   resources :rooms, only:[:index]
-  resources :guest, only:[:new]
   resources :contacts, only:[:new, :create] do
     collection do
       get :success

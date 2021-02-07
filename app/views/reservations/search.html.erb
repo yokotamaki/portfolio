@@ -1,2 +1,9 @@
-<h1>Reservations#search</h1>
-<p>Find me in app/views/reservations/search.html.erb</p>
+<h4>空室確認</h4>
+<p>宿泊する日付と人数を選択してください。</p>
+<%= form_with model: @reservation, url: room_reservations_path, local:true do |f| %>
+  <p>チェックイン日<%= f.date_field :start_date, required: true %></p>
+  <p>チェックアウト日<%= f.date_field :end_date, required: true %></p>
+  <p>宿泊人数<%= f.select :people, [1,2,3,4] %>名</p>
+  <%= f.submit "検索" %>
+<% end %>
+

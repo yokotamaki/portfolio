@@ -17,7 +17,7 @@ Room.create!(
   price: "11000",
   people: "2",
   capacity: "10",
-  reserved_flag: true
+  reserved_flag: false
 )
 Room.create!(
   name: "type2",
@@ -25,7 +25,7 @@ Room.create!(
   price: "12000",
   people: "2",
   capacity: "5",
-  reserved_flag: true
+  reserved_flag: false
 )
 Room.create!(
   name: "type3",
@@ -33,7 +33,7 @@ Room.create!(
   price: "13000",
   people: "4",
   capacity: "3",
-  reserved_flag: true
+  reserved_flag: false
 )
 
 room = Room.find(1)

@@ -1,2 +1,32 @@
-<h1>Reservations#confirm</h1>
-<p>Find me in app/views/reservations/confirm.html.erb</p>
+<h4>予約確認</h4>
+
+  <p>チェックイン日<%= @start_date %></p>
+  <p>チェックアウト日<%= @end_date %></p>
+  <p>宿泊人数<%= @people %>名</p>
+  <p>部屋タイプ<%= @room_name %></p>
+  <p>名前<%= @name %></p>
+  <p>フリガナ<%= @name_kana %></p>
+  <p>生年月日<%= @birthday %></p>
+  <p>性別<%= @sex %></p>
+  <p>郵便番号<%= @zipcode %></p>
+  <p>住所<%= @address %></p>
+  <p>電話番号<%= @phone_number %></p>
+  <p>メールアドレス<%= @email %></p>
+
+<%= form_with model: @guest_confirm, url: reservations_path, local: true do |f| %>
+  <%= f.hidden_field :start_date, value: @start_date %>
+  <%= f.hidden_field :end_date, value: @end_date %>
+  <%= f.hidden_field :people, value: @people %>
+  <%= f.hidden_field :room, value: @room %>
+  <%= f.hidden_field :name, value: @name %>
+  <%= f.hidden_field :name_kana, value: @name_kana %>
+  <%= f.hidden_field :birthday, value: @birthday %>
+  <%= f.hidden_field :sex, value: @sex %>
+  <%= f.hidden_field :zipcode, value: @zipcode %>
+  <%= f.hidden_field :address, value: @address %>
+  <%= f.hidden_field :phone_number, value: @phone_number %>
+  <%= f.hidden_field :email, value: @email %>
+  <%= f.submit "確定" %>
+  <%= f.submit "戻る", name: :back %>
+<% end %>
+

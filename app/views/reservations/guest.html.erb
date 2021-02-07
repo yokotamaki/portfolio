@@ -1,0 +1,33 @@
+<h4>情報入力</h4>
+<%= form_with model: @guest, url: confirm_reservations_path, local: true do |f| %>
+  <%= f.label :name, "名前" %>
+  <%= f.text_field :name, required: true, size: 50 %><br>
+
+  <%= f.label :name_kana, "フリガナ" %>
+  <%= f.text_field :name_kana, required: true, size: 50 %><br>
+
+  <%= f.label :birthday, "生年月日" %>
+  <%= f.date_select :birthday, use_month_numbers: true, start_year: Date.today.year-100, end_year: Date.today.year-20, selected: 2000, required: true %><br>
+
+  <%= f.label :sex, "性別" %>
+  <%= f.radio_button :sex, true, required: true %><%= f.label :sex_true, "男" %>
+  <%= f.radio_button :sex, false, required: true %><%= f.label :sex_false, "女" %><br>
+
+  <%= f.label :zipcode, "郵便番号" %>
+  <%= f.text_field :zipcode, required: true, size: 50 %><br>
+
+  <%= f.label :address, "住所" %>
+  <%= f.text_field :address, required: true, size: 50 %><br>
+
+  <%= f.label :phone_number, "電話番号" %>
+  <%= f.text_field :phone_number, required: true, size: 50 %><br>
+
+  <%= f.label :email, "メールアドレス" %>
+  <%= f.email_field :email, required: true, size: 50 %><br>
+
+  <%= f.hidden_field :start_date, value: @start_date %>
+  <%= f.hidden_field :end_date, value: @end_date %>
+  <%= f.hidden_field :people, value: @people %>
+  <%= f.hidden_field :room, value: @room %>
+  <%= f.submit "確認" %>
+<% end %>
