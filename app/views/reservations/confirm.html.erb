@@ -26,7 +26,7 @@
   <%= f.hidden_field :address, value: @address %>
   <%= f.hidden_field :phone_number, value: @phone_number %>
   <%= f.hidden_field :email, value: @email %>
-  <%= f.submit "確定" %>
-  <%= f.submit "戻る", name: :back %>
+  <%= f.submit "戻る", name: :back, class: "button" %>
+  <%= f.submit "確定", class: "button" %>
 <% end %>
 

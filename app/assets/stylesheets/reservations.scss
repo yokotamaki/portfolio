@@ -1,3 +1,24 @@
 // Place all the styles related to the reservations controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+/**客室選択**/
+.room {
+  display: flex;
+}
+.room input[type=radio] {
+  display: none;
+}
+.room label {
+  opacity: 0.5;
+  transition: 0.3s;
+}
+.room input[type=radio]:hover + label {
+  opacity: 0.7;
+  transform : scale(1.02);
+  transition: 0.3s;
+}
+.room input[type=radio]:checked + label {
+  opacity: 1;
+}
+

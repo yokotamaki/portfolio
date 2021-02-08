@@ -1,0 +1,22 @@
+<h4>客室選択</h4>
+<%= form_with model: @reservation, url: guest_reservations_path, local: true do |f| %>
+  <div class="room">
+    <% @rooms.each do |room| %>
+      <div>
+        <% if room.reserved_flag == false %>
+        <%= f.radio_button :room, room.id, required: true %>
+        <label for="reservation_room_<%= room.id %>">
+          <%= image_tag room.image, width: "85%" %>
+          <p><%= room.name %></p>
+          <p><%= room.price %>円</p>
+          <p>定員<%= room.people %>名</p>
+        </label>
+      <% end %>
+      </div>
+    <% end %>
+  </div>
+  <%= f.hidden_field :start_date, value: @start_date %>
+  <%= f.hidden_field :end_date, value: @end_date %>
+  <%= f.hidden_field :people, value: @people %>
+  <%= f.submit "情報入力へ", class: "button" %>
+<% end %>
