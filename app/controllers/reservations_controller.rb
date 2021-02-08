@@ -6,21 +6,28 @@ class ReservationsController < ApplicationController
   def room
     @start_date = Date.parse(reservation_params[:start_date])
     @end_date = Date.parse(reservation_params[:end_date])
+    # 同じroom_idが複数あっても1つにまとめる（room_idごとに）
     @reservation = Reservation.where(start_date: @start_date...@end_date).group(:room_id)
+
+    not_available_room_ids = []
     @reservation.each do |reservation|
+      # @reservationには1つのroom_idしかないため、room_idをもとにレコードを抽出
       room_reservation = Reservation.where(start_date: @start_date...@end_date)
                                     .where(room_id: reservation.room.id)
       # 予約されてる部屋の件数 == 実際にある部屋数
       if room_reservation.count == reservation.room.capacity
-        reservation.room.reserved.flag = true
+        # 予約不可の部屋のID　<< 予約できない部屋のIDを配列に追加
+        not_available_room_ids << reservation.room.id
       end
     end
-    @rooms = Room.all
+
+    # .notで予約不可の部屋のID以外を＠roomsに代入
+    @rooms = Room.where.not(id: not_available_room_ids)
     @people = (reservation_params[:people]).to_i
     @rooms.each do |room|
       # 選択された人数 > 部屋の定員数
       if @people > room.people
-        # room.reserved_flag = true
+        room.reserved_flag = true
       end
     end
   end
@@ -35,8 +42,9 @@ class ReservationsController < ApplicationController
   end
 
   def confirm
+    # @guestだと戻ったときに空になってしまうため別のインスタンスを用意
     @guest_confirm = Guest.new
-    # # 日付・人数・部屋
+    # 日付・人数・部屋
     @start_date = guest_params[:start_date]
     @end_date = guest_params[:end_date]
     @people = guest_params[:people]
@@ -66,7 +74,7 @@ class ReservationsController < ApplicationController
   end
 
   def create
-    # 戻る際に値を渡す　guest_confirm_paramsだと値がうまく渡らなかった
+    # 戻るときに値を渡すため
     @guest = Guest.new(params.require(:guest).permit(:name, :name_kana, :birthday, :sex,:zipcode, :address, :phone_number, :email))
     @start_date = params[:guest][:start_date]
     @end_date = params[:guest][:end_date]
@@ -115,8 +123,3 @@ class ReservationsController < ApplicationController
                                   :start_date, :end_date, :people, :room, :back)
   end
 end
-
-
-# people: guest_params[:people]
-# people: params[:guest][:people]
-
