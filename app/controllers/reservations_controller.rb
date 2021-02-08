@@ -21,15 +21,18 @@ class ReservationsController < ApplicationController
       end
     end
 
-    # .notで予約不可の部屋のID以外を＠roomsに代入
-    @rooms = Room.where.not(id: not_available_room_ids)
     @people = (reservation_params[:people]).to_i
-    @rooms.each do |room|
+    room_all = Room.all
+    room_all.each do |room|
       # 選択された人数 > 部屋の定員数
       if @people > room.people
-        room.reserved_flag = true
+        not_available_room_ids << room.id
+        # room.reserved_flag = true
       end
     end
+
+    # .notで予約不可の部屋のID以外を＠roomsに代入
+    @rooms = Room.where.not(id: not_available_room_ids)
   end
 
   def guest
