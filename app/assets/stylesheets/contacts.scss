@@ -1,3 +1,21 @@
 // Place all the styles related to the contacts controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+/**お問い合わせ入力画面**/
+.contact {
+  display: inline-block;
+  margin: 0 auto;
+}
+td label{
+  width: 7rem;
+  text-align: right;
+  margin: 0.5rem 1rem;
+}
+td input[type=text],
+td input[type=email],
+td textarea {
+  width: 30rem;
+  margin: 0.5rem;
+  padding: 0.3rem;
+}

@@ -2,6 +2,22 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+/**空室確認**/
+.search label {
+  width: 10rem;
+  // margin-bottom: 1rem;
+}
+.search input[type=date],
+.search select{
+  width: 20rem;
+  padding: 0.3rem;
+  margin: 0.5rem;
+  font-size: 20x;
+}
+.search select {
+  width: 10rem;
+}
+
 /**客室選択**/
 .room {
   display: flex;
@@ -22,3 +38,35 @@
   opacity: 1;
 }
 
+/**情報入力画面**/
+.reservation {
+  display: inline-block;
+  margin: 0 auto;
+}
+.reservation label {
+  width: 7rem;
+  text-align: right;
+  margin: 0.5rem 1rem;
+}
+.reservation input[type=text],
+.reservation input[type=email] {
+  width: 30rem;
+  margin: 0.5rem;
+  padding: 0.3rem;
+}
+.reservation input[type=radio] {
+  transform: scale(1.5);
+}
+.reservation input[type=radio] + label {
+  width: 1rem;
+}
+
+/**予約確認**/
+.confirm {
+  display: inline-block;
+  margin: 0 auto;
+}
+.confirm td {
+  width: 10rem;
+  padding: 0.5rem;
+}

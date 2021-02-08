@@ -1,25 +1,24 @@
-  <h4>お問い合わせ</h4>
+<h4>お問い合わせ</h4>
+<div class="contact">
   <%= form_with model: @contact, local: true do |f| %>
     <table>
       <tr>
         <td><%= f.label :title, "タイトル" %></td>
-        <td><%= f.text_field :title, size: 50 %></td>
+        <td><%= f.text_field :title %></td>
       </tr>
         <tr>
         <td><%= f.label :body, "内容" %></td>
-        <td><%= f.text_area :body, size: "49x5" %></td>
+        <td><%= f.text_area :body, size: "57x7" %></td>
       </tr>
       <tr>
         <td><%= f.label :name, "名前" %></td>
-        <td><%= f.text_field :name, size: 50 %></td>
+        <td><%= f.text_field :name %></td>
       </tr>
       <tr>
         <td><%= f.label :email, "メールアドレス" %></td>
-        <td><%= f.email_field :email, size: 50 %></td>
+        <td><%= f.email_field :email %></td>
       </tr>
     </table>
-    <%= f.submit "送信" %>
+    <%= f.submit "送信", class: "button" %>
   <% end %>
-
-
-
+</div>
