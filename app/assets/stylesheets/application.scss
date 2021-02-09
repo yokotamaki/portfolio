@@ -76,3 +76,14 @@ header {
       z-index: 1;
    }
 }
+
+/**管理者ログインページ **/
+.admin-login label {
+  width: 8rem;
+}
+.admin-login input[type=email],
+.admin-login input[type=password] {
+  width: 20rem;
+  margin: 0.5rem;
+  padding: 0.3rem;
+}
