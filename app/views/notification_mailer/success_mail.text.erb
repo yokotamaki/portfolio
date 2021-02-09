@@ -1,0 +1,33 @@
+<%= @guest.name %> 様
+
+この度は、ご予約いただきありがとうございます。
+下記内容にて予約を完了しました。
+
+_____________________________________
+hotel
+
+到着日：<%= @guest.reservation.start_date %>
+出発日：<%= @guest.reservation.end_date %>
+宿泊人数：<%= @guest.reservation.people %>名
+客室：<%= @guest.reservation.room.name %>
+料金：<%= @guest.reservation.room.price %>円
+
+名前：<%= @guest.name %>
+性別：<% if @guest.sex == true %>男
+      <% elsif @guest.sex == false %>女
+      <% end %>
+生年月日：<%= @guest.birthday %>
+郵便番号：<%= @guest.zipcode %>
+住所：<%= @guest.address%>
+電話番号：<%= @guest.phone_number%>
+メールアドレス：<%= @guest.email%>
+_____________________________________
+
+ご不明な点やご質問がございましたら、
+お気軽にお問い合わせくださいませ。
+
+予約内容を変更する場合は、お早めにご連絡ください。
+
+TEL 000-0000-0000
+〒111-1111
+東京都△△△△×××××××

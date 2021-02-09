@@ -104,8 +104,11 @@ class ReservationsController < ApplicationController
       room_id: guest_params[:room],
       guest_id: guest.id
     })
-    reservation.save
-    redirect_to success_reservations_path
+    # guest.saveしないとguest.idが決まらないため先に保存する
+    if reservation.save
+      NotificationMailer.success_mail(guest).deliver_now
+      redirect_to success_reservations_path
+    end
   end
 
   def success

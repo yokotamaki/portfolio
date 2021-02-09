@@ -5,8 +5,10 @@ class ContactsController < ApplicationController
 
   def create
     contact = Contact.new(contact_params)
-    contact.save
-    redirect_to success_contacts_path
+    if contact.save
+      NotificationMailer.contact_success_mail(contact).deliver_now
+      redirect_to success_contacts_path
+    end
   end
 
   def success
