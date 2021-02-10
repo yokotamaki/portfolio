@@ -21,7 +21,7 @@
 }
 .error {
     font-size: 17px;
-    background-color: #9f9f9d;
+    background-color: #45403F;
     color: white;
     padding: 0.3rem;
     border-radius: 1rem;
@@ -30,6 +30,9 @@
 /**客室選択**/
 .room {
   display: flex;
+}
+.room img {
+  margin: 1rem;
 }
 .room input[type=radio] {
   display: none;
@@ -78,4 +81,36 @@
 .confirm td {
   width: 10rem;
   padding: 0.5rem;
+}
+
+/******************************************************************/
+/**管理者側 予約一覧**/
+.admin-reservations h5 {
+  padding-bottom: 0.5rem;
+}
+.admin-reservations a {
+  color: #e7e7e7;
+}
+.admin-reservations a:hover p {
+  opacity: 0.6;
+  color: #e7e7e7;
+}
+.admin-reservations a:hover {
+  text-decoration: none;
+}
+
+/**管理者側 予約詳細**/
+.admin-reservation {
+  display: flex;
+  margin-bottom: 2rem;
+}
+.reservation-box {
+  margin: 1rem;
+}
+.admin-reservation td {
+  border: solid #e7e7e7 1px ;
+}
+.admin-reservation p {
+  padding: 1rem 1.5rem;
+  margin: 0;
 }

@@ -3,10 +3,6 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 /**お問い合わせ入力画面**/
-.contact {
-  display: inline-block;
-  margin: 0 auto;
-}
 td label{
   width: 7rem;
   text-align: right;
@@ -18,4 +14,48 @@ td textarea {
   width: 30rem;
   margin: 0.5rem;
   padding: 0.3rem;
+}
+
+/**管理者側 お問い合わせ一覧**/
+.admin-contacts h5 {
+  padding-bottom: 0.5rem;
+}
+.admin-contacts a {
+  color: #e7e7e7;
+}
+.admin-contacts a:hover p {
+  opacity: 0.6;
+  color: #e7e7e7;
+}
+.admin-contacts a:hover {
+  text-decoration: none;
+}
+.contacts-body {
+  overflow: hidden;
+}
+
+/**管理者側 お問い合わせ詳細**/
+.admin-contact td {
+  border: solid #e7e7e7 1px;
+  padding: 0.5rem;
+}
+.admin-contact td:nth-child(odd) {
+  width: 10rem;
+}
+.admin-contact td:nth-child(even) {
+  width: 50rem;
+  word-wrap: normal;
+}
+.contact-status select {
+  font-size: 20px;
+  margin: 2rem 0.5rem ;
+  padding: 0.5rem;
+}
+.button-update {
+  color: #393c41;
+  border-radius: 1.5rem;
+  background-color: #e7e7e7;
+  opacity: 1;
+  border: none;
+  padding: 0.3rem 1rem;
 }

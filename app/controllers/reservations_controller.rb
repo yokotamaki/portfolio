@@ -6,11 +6,19 @@ class ReservationsController < ApplicationController
   def room
     @start_date = Date.parse(reservation_params[:start_date])
     @end_date = Date.parse(reservation_params[:end_date])
+
+    # 日付の選択バリデーション
+    @reservation = Reservation.new(start_date: @start_date, end_date: @end_date)
+    @reservation.valid?
+    if @reservation.errors.key?(:start_date) || @reservation.errors.key?(:end_date)
+      render 'search' and return
+    end
+
     # 同じroom_idが複数あっても1つにまとめる（room_idごとに）
-    @reservation = Reservation.where(start_date: @start_date...@end_date).group(:room_id)
+    reservations = Reservation.where(start_date: @start_date...@end_date).group(:room_id)
 
     not_available_room_ids = []
-    @reservation.each do |reservation|
+    reservations.each do |reservation|
       # @reservationには1つのroom_idしかないため、room_idをもとにレコードを抽出
       room_reservation = Reservation.where(start_date: @start_date...@end_date)
                                     .where(room_id: reservation.room.id)
@@ -105,7 +113,7 @@ class ReservationsController < ApplicationController
       guest_id: guest.id
     })
     # guest.saveしないとguest.idが決まらないため先に保存する
-    if reservation.save
+    if reservation.save!
       NotificationMailer.success_mail(guest).deliver_now
       redirect_to success_reservations_path
     end
