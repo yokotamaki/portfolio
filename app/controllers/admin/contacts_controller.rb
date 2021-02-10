@@ -1,6 +1,6 @@
 class Admin::ContactsController < ApplicationController
   def index
-    @contacts = Contact.all
+    @contacts = Contact.page(params[:page]).all.per(15)
   end
 
   def show

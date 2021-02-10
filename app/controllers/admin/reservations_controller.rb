@@ -1,6 +1,6 @@
 class Admin::ReservationsController < ApplicationController
   def index
-    @reservations = Reservation.all
+    @reservations = Reservation.page(params[:page]).all.per(15)
   end
 
   def show
@@ -8,3 +8,4 @@ class Admin::ReservationsController < ApplicationController
     @guest = @reservation.guest
   end
 end
+
