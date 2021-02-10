@@ -5,18 +5,27 @@
 /**空室確認**/
 .search label {
   width: 10rem;
-  // margin-bottom: 1rem;
 }
 .search input[type=date],
-.search select{
+.search select {
   width: 20rem;
   padding: 0.3rem;
   margin: 0.5rem;
-  font-size: 20x;
+  font-size: 20px;
 }
 .search select {
   width: 10rem;
 }
+.date {
+  display: flex;
+}
+.error {
+    font-size: 17px;
+    background-color: #9f9f9d;
+    color: white;
+    padding: 0.3rem;
+    border-radius: 1rem;
+    opacity: 0.8;}
 
 /**客室選択**/
 .room {

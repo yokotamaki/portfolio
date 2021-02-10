@@ -1,11 +1,28 @@
 <h4>空室確認</h4>
-<p>宿泊する日付と人数を選択してください。</p>
-<%= form_with model: @reservation, url: room_reservations_path, local: true do |f| %>
-  <div class="search">
-    <label>チェックイン日</label><%= f.date_field :start_date, required: true %><br>
-    <label>チェックアウト日</label><%= f.date_field :end_date, required: true %><br>
-    <label>宿泊人数</label><%= f.select :people, [1,2,3,4] %>
-  </div>
-  <%= f.submit "検索", class: "button" %>
-<% end %>
+<div class="wrapper">
+  <p>宿泊する日付と人数を選択してください。</p>
+  <p>※１泊の予約しかできません。</p>
 
+  <div>
+    <% if @reservation.errors.key?(:start_date) %>
+      <p class="error"><%= @reservation.errors.messages[:start_date].first %></p>
+    <% elsif @reservation.errors.key?(:end_date) %>
+      <p class="error"><%= @reservation.errors.messages[:end_date].first %></p>
+    <% end %>
+  </div>
+
+  <%= form_with model: @reservation, url: room_reservations_path, local: true do |f| %>
+    <div class="search">
+      <div class="date">
+        <label>チェックイン日</label><%= f.date_field :start_date, required: true %>
+      </div>
+      <div class="date">
+        <label>チェックアウト日</label><%= f.date_field :end_date, required: true %>
+      </div>
+      <div class="date">
+        <label>宿泊人数</label><%= f.select :people, [1,2,3,4] %>
+      </div>
+    </div>
+    <%= f.submit "検索", class: "button" %>
+  <% end %>
+</div>
