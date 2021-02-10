@@ -14,21 +14,35 @@
  *= require_self
  */
 @import "bootstrap";
+@import "slick-theme";
+@import "slick";
 
 /**全体**/
 body {
   box-sizing: border-box;
   padding: 0;
   margin: 0 auto;
-  background-color: #4c4449;
+  background-color: #756D6B;
   color: #e7e7e7;
   text-align: center;
+}
+.wrapper {
+  display: inline-block;
+  margin: 0 auto;
 }
 main {
   margin-top: 7rem;
 }
 h4 {
   padding-bottom: 2rem;
+}
+a {
+  color: #e7e7e7;
+  text-decoration: none;
+}
+a:hover {
+  color: #e7e7e7;
+  text-decoration: none;
 }
 
 /**ボタン**/
@@ -45,14 +59,41 @@ h4 {
 .button:hover {
   opacity: 1;
   border: none;
+  text-decoration: none;
+  color: #393c41;
 }
 .button:focus {
   outline: none;
 }
 
-/**ヘッダー**/
+/**背景**/
+.back-top {
+  background-color: #56534C;
+}
+.back-bottom {
+  width: 100vw;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 0;
+  z-index-: 2;
+  background-color: #928C89;
+}
+.back-top::before {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 0 0 200px 100vw ;
+  border-color: transparent transparent #928C89 transparent;
+}
+/**ヘッダー アニメーション**/
 header {
-  opacity: 0;
+  background-color: #5C5554;
   animation-name: fadein;
   animation-duration: 1s;
   animation-timing-function: ease-out;
@@ -62,19 +103,41 @@ header {
    0% {
       opacity: 0;
       transform: translateY(-20px);
-      width: 70%;
+      // width: 70%;
       position: fixed;
-      top: 1%;
+      top: 0%;
       z-index: 1;
    }
    100% {
-      opacity: 0.8;
+      opacity: 0.9;
       transform: translateY(0);
-      width: 70%;
+      // width: 70%;
       position: fixed;
-      top: 1%;
+      top: 0%;
       z-index: 1;
    }
+}
+
+/**ヘッダーレイアウト**/
+.header-wrapper {
+  width: 100vw;
+}
+.logo {
+  font-size: 50px;
+  color: #e7e7e7;
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  z-index: 1;
+  padding: 2rem;
+  background-color: #45403F;
+}
+.header {
+  text-align: right;
+  padding: 0.7rem 2rem;
+}
+.link {
+  padding: 0 2rem;
 }
 
 /**管理者ログインページ **/
@@ -86,4 +149,13 @@ header {
   width: 20rem;
   margin: 0.5rem;
   padding: 0.3rem;
+}
+
+/**ページング機能**/
+.pagination {
+  justify-content: center;
+  margin: 2rem;
+}
+.page-link {
+  color: #4c4449;
 }

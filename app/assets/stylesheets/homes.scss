@@ -4,6 +4,10 @@
 
 /**トップページ**/
 .top-images {
+  width: 100vw;
   position: absolute;
-  top: 3%;
+  top: 0px;
+}
+.top-image {
+  width: 60%;
 }

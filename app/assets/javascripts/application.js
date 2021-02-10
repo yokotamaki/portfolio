@@ -18,6 +18,8 @@
 //= require turbolinks
 //= require_tree .
 
+/*global $*/
+
 const images = ["/assets/room1.jpg","/assets/towel.jpg","/assets/room3.jpg"];
 let num = -1;
 
@@ -32,3 +34,31 @@ function change_image(){
 }
 
 setInterval(change_image, 3000);
+
+
+/**ヘッダー**/
+$(function(){
+  $(".header-room").hover(function(){
+    $(this).text("客室");
+  },function(){
+    $(this).text("room");
+  });
+
+  $(".header-reservation").hover(function(){
+    $(this).text("予約");
+  },function(){
+    $(this).text("reservation");
+  });
+
+  $(".header-access").hover(function(){
+    $(this).text("アクセス");
+  },function(){
+    $(this).text("access");
+  });
+
+  $(".header-contact").hover(function(){
+    $(this).text("お問い合わせ");
+  },function(){
+    $(this).text("contact");
+  });
+});
