@@ -1,25 +1,32 @@
 <h4>お問い合わせ詳細</h4>
-<div class="row">
-  <p class="col-2">タイトル</p>
-  <p class="col-4"><%= @contact.title %></p>
-</div>
-<div class="row">
-  <p class="col-2">内容</p>
-  <p class="col-4"><%= @contact.body %></p>
-</div>
-<div class="row">
-  <p class="col-2">名前</p>
-  <p class="col-4"><%= @contact.name %></p>
-</div>
-<div class="row">
-  <p class="col-2">メールアドレス</p>
-  <p class="col-4"><%= @contact.email %></p>
-</div>
+<div class="wrapper">
+  <div class="admin-contact">
+    <table>
+    <tr class="row">
+      <td><h5>タイトル</h5></td>
+      <td><p><%= @contact.title %></p></td>
+    </tr>
+    <tr class="row">
+      <td><h5>内容</h5></td>
+      <td><p class="contact-body"><%= @contact.body %></p></td>
+    </tr>
+    <tr class="row">
+      <td><h5>名前</h5></td>
+      <td><p><%= @contact.name %></p></td>
+    </tr>
+    <tr class="row">
+      <td><h5>メールアドレス</h5></td>
+      <td><p><%= @contact.email %></p></td>
+    </tr>
+    </table>
+  </div>
 
-<!--ステータス変更-->
-<%= form_with model: @contact, url: admin_contact_path, local: true do |f| %>
-  <%= f.select :status, Contact.statuses.keys %>
-  <%= f.submit "更新" %>
-<% end %>
-
-<%= link_to "戻る", admin_contacts_path %>
+  <!--ステータス変更-->
+  <div class="contact-status">
+    <%= form_with model: @contact, url: admin_contact_path, local: true do |f| %>
+      <%= f.select :status, Contact.statuses.keys %>
+      <%= f.submit "更新", class: "button-update" %>
+    <% end %>
+  </div>
+  <%= link_to "戻る", admin_contacts_path, class: "button" %>
+</div>

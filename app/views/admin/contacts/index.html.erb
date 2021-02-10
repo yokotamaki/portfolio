@@ -1,18 +1,20 @@
 <h4>お問い合わせ一覧</h4>
-<div class="row">
-  <p class="col-3">タイトル</p>
-  <p class="col-3">内容</p>
-  <p class="col-3">名前</p>
-  <p class="col-3">対応状況</p>
-</div>
-<div class="row">
-  <% @contacts.each do |contact| %>
-    <%= link_to  admin_contact_path(contact), class: "col-3" do %>
-      <p><%= contact.title %></p>
+<div class="admin-contacts">
+  <div class="row">
+    <h5 class="col-3">タイトル</h5>
+    <h5 class="col-3">内容</h5>
+    <h5 class="col-3">名前</h5>
+    <h5 class="col-3">対応状況</h5>
+  </div>
+    <% @contacts.each do |contact| %>
+      <%= link_to  admin_contact_path(contact) do %>
+        <div class="row">
+          <p class="col-3"><%= contact.title %></p>
+          <p class="col-3 contacts-body"><%= contact.body %></p>
+          <p class="col-3"><%= contact.name %></p>
+          <p class="col-3"><%= contact.status %></p>
+        </div>
+      <% end %>
     <% end %>
-      <p class="col-3"><%= contact.body %></p>
-      <p class="col-3"><%= contact.name %></p>
-      <p class="col-3"><%= contact.status %></p>
-    </tr>
-  <% end %>
 </div>
+<%= paginate @contacts %>

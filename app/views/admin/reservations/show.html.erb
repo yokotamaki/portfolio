@@ -1,67 +1,75 @@
 <h4>予約詳細</h4>
-<div class="row">
-  <!--宿泊者情報-->
-  <div class="col-7">
-    <table>
-      <tr>
-        <td><p>名前</p></td>
-        <td><p><%= @guest.name %></p></td>
-      </tr>
-      <tr>
-        <td><p>性別</p></td>
-        <td>
-          <% if @guest.sex == true %>
-          <p>男</p>
-          <% elsif @guest.sex == false %>
-          <p>女</p>
-          <% end %>
-        </td>
-      </tr>
-      <tr>
-        <td><p>生年月日</p></td>
-        <td><p><%= @guest.birthday %></p></td>
-      </tr>
-      <tr>
-        <td><p>郵便番号</p></td>
-        <td><p><%= @guest.zipcode %></p></td>
-      </tr>
-      <tr>
-        <td><p>住所</p></td>
-        <td><p><%= @guest.address %></p></td>
-      </tr>
-      <tr>
-        <td><p>電話番号</p></td>
-        <td><p><%= @guest.phone_number %></p></td>
-      </tr>
-      <tr>
-        <td><p>メールアドレス</p></td>
-        <td><p><%= @guest.email %></p></td>
-      </tr>
-    </table>
+<div class="wrapper">
+  <div class="admin-reservation">
+    <div class="reservation-box">
+      <h5>宿泊者情報</h5>
+      <table>
+        <tr>
+          <td><p>名前</p></td>
+          <td><p><%= @guest.name %></p></td>
+        </tr>
+        <tr>
+          <td><p>性別</p></td>
+          <td>
+            <% if @guest.sex == true %>
+            <p>男</p>
+            <% elsif @guest.sex == false %>
+            <p>女</p>
+            <% end %>
+          </td>
+        </tr>
+        <tr>
+          <td><p>生年月日</p></td>
+          <td><p><%= @guest.birthday %></p></td>
+        </tr>
+        <tr>
+          <td><p>郵便番号</p></td>
+          <td><p><%= @guest.zipcode %></p></td>
+        </tr>
+        <tr>
+          <td><p>住所</p></td>
+          <td><p><%= @guest.address %></p></td>
+        </tr>
+        <tr>
+          <td><p>電話番号</p></td>
+          <td><p><%= @guest.phone_number %></p></td>
+        </tr>
+        <tr>
+          <td><p>メールアドレス</p></td>
+          <td><p><%= @guest.email %></p></td>
+        </tr>
+      </table>
+    </div>
+      <!--部屋・日付など-->
+    <div class="reservation-box">
+      <h5>予約内容</h5>
+      <table>
+        <tr>
+          <td><p>予約番号</p></td>
+          <td><p><%= @reservation.id %></p></td>
+        </tr>
+        <tr>
+          <td><p>部屋</p></td>
+          <td><p><%= @reservation.room.name %></p></td>
+        </tr>
+        <tr>
+          <td><p>宿泊人数</p></td>
+          <td><p><%= @reservation.room.people %>名</p></td>
+        </tr>
+        <tr>
+          <td><p>料金</p></td>
+          <td><p><%= @reservation.room.price %>円</p></td>
+        </tr>
+        <tr>
+          <td><p>到着日</p></td>
+          <td><p><%= @reservation.start_date %></p></td>
+        </tr>
+        <tr>
+          <td><p>出発日</p></td>
+          <td><p><%= @reservation.end_date %></p></td>
+        </tr>
+      </table>
+    </div>
   </div>
-    <!--部屋・日付など-->
-  <div class="col-5">
-    <table>
-      <tr>
-        <td><p>名前</p></td>
-        <td><p><%= @reservation.room.name %></p></td>
-      </tr>
-      <tr>
-        <td><p>宿泊人数</p></td>
-        <td><p><%= @reservation.room.people %>名</p></td>
-      </tr>
-      <tr>
-        <td><p>料金</p></td>
-        <td><p><%= @reservation.room.price %>円</p></td>
-      </tr>
-      <tr>
-        <td><p>到着日</p></td>
-        <td><p><%= @reservation.start_date %></p></td>
-      </tr>
-      <tr>
-        <td><p>出発日</p></td>
-        <td><p><%= @reservation.end_date %></p></td>
-      </tr>
-    </table>
-  </div>
+  <%= link_to "戻る", admin_reservations_path, class: "button" %>
 </div>

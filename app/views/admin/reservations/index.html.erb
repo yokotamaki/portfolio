@@ -1,18 +1,22 @@
 <h4>予約一覧</h4>
-<div class="row">
-  <p class="col-3">名前</p>
-  <p class="col-3">部屋</p>
-  <p class="col-3">到着日</p>
-  <p class="col-3">出発日</p>
-</div>
-<div class="row">
+<div class="admin-reservations">
+  <div class="row">
+    <h5 class="col-2">予約番号</h5>
+    <h5 class="col-2">名前</h5>
+    <h5 class="col-2">部屋</h5>
+    <h5 class="col-3">到着日</h5>
+    <h5 class="col-3">出発日</h5>
+  </div>
   <% @reservations.each do |reservation| %>
-    <%= link_to  admin_reservation_path(reservation), class: "col-3" do %>
-      <p><%= reservation.guest.name %></p>
+    <%= link_to  admin_reservation_path(reservation) do %>
+      <div class="row">
+        <p class="col-2"><%= reservation.id %></p>
+        <p class="col-2"><%= reservation.guest.name %></p>
+        <p class="col-2"><%= reservation.room.name %></p>
+        <p class="col-3"><%= reservation.start_date %></p>
+        <p class="col-3"><%= reservation.end_date %></p>
+      </div>
     <% end %>
-      <p class="col-3"><%= reservation.room.name %></p>
-      <p class="col-3"><%= reservation.start_date %></p>
-      <p class="col-3"><%= reservation.end_date %></p>
-    </tr>
   <% end %>
 </div>
+<%= paginate @reservations %>
