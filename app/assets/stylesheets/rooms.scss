@@ -5,14 +5,18 @@
 /**客室一覧**/
 .rooms {
   display: flex;
-  padding: 1rem;
+  padding: 3rem;
 }
 .room-image {
   width: 50%;
 }
 .room-content {
   width: 50%;
+  padding: 3rem;
 }
 .rooms:nth-child(even) {
   flex-direction: row-reverse;
+}
+.rooms:nth-child(odd) {
+  background-color: #837b79;
 }
