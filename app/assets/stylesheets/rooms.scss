@@ -20,3 +20,23 @@
 .rooms:nth-child(odd) {
   background-color: #837b79;
 }
+
+/******************************************************************/
+/**レスポンシブ対応**/
+@media (max-width: 767px) {
+  /**客室一覧**/
+  .rooms {
+    display: block;
+    padding: 2rem 1rem;
+    width: 100vw;
+  }
+  .room-image {
+    margin: 0 auto;
+    width: 85%;
+  }
+  .room-content {
+    width: 90%;
+    margin-top: 1rem;
+    padding: 0;
+  }
+}
