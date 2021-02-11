@@ -1,5 +1,6 @@
 <h4>お問い合わせ</h4>
 <div class="wrapper">
+  <div class="contact">
   <%= form_with model: @contact, local: true do |f| %>
     <table>
       <tr>
@@ -21,4 +22,5 @@
     </table>
     <%= f.submit "送信", class: "button" %>
   <% end %>
+  </div>
 </div>

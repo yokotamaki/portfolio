@@ -68,3 +68,22 @@ td textarea {
   border-radius: 1rem;
   opacity: 0.8;
 }
+
+/******************************************************************/
+/**レスポンシブ対応**/
+@media (max-width: 767px) {
+  /**お問い合わせ入力画面**/
+  .contact table td,
+  .contact table th {
+    display: block;
+  }
+  .contact td label{
+    text-align: center;
+    margin: 0;
+  }
+  .contact td input[type=text],
+  .contact td input[type=email],
+  .contact td textarea {
+    width: 95%;
+  }
+}
