@@ -23,6 +23,11 @@
 
   <!--ステータス変更-->
   <div class="contact-status">
+    <!--サクセスメッセージ-->
+    <% flash.each do |key, value| %>
+      <%= content_tag(:div, value, class: "#{key}")%>
+    <% end %>
+
     <%= form_with model: @contact, url: admin_contact_path, local: true do |f| %>
       <%= f.select :status, Contact.statuses.keys %>
       <%= f.submit "更新", class: "button-update" %>

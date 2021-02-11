@@ -9,8 +9,10 @@ class Admin::ContactsController < ApplicationController
 
   def update
     contact = Contact.find(params[:id])
-    contact.update(contact_params)
-    redirect_to request.referer
+    if contact.update(contact_params)
+      redirect_to request.referer
+      flash[:notice] = "対応状況を更新しました！"
+    end
   end
 
   private
