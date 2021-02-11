@@ -14,8 +14,6 @@
  *= require_self
  */
 @import "bootstrap";
-@import "slick-theme";
-@import "slick";
 
 /**全体**/
 body {
@@ -91,9 +89,9 @@ a:hover {
   border-width: 0 0 200px 100vw ;
   border-color: transparent transparent #928C89 transparent;
 }
+
 /**ヘッダー アニメーション**/
 header {
-  background-color: #5C5554;
   animation-name: fadein;
   animation-duration: 1s;
   animation-timing-function: ease-out;
@@ -120,6 +118,7 @@ header {
 
 /**ヘッダーレイアウト**/
 .header-wrapper {
+  background-color: #5C5554;
   width: 100vw;
 }
 .logo {

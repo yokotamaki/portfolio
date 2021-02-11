@@ -19,23 +19,6 @@
 //= require_tree .
 
 /*global $*/
-
-const images = ["/assets/room1.jpg","/assets/towel.jpg","/assets/room3.jpg"];
-let num = -1;
-
-function change_image(){
-  if (num === 2){
-    num = 0;
-  }
-  else {
-    num ++;
-  }
-  document.getElementById("top-image").src = images[num];
-}
-
-setInterval(change_image, 3000);
-
-
 /**ヘッダー**/
 $(function(){
   $(".header-room").hover(function(){
