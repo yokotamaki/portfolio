@@ -1,0 +1,15 @@
+<div class="top-header-wrapper">
+  <%= link_to "hotel", root_path, class: "logo" %>
+  <div class="top-header">
+    <% if admin_signed_in? %>
+      <%= link_to "予約一覧", admin_reservations_path, class: "link" %>
+      <%= link_to "お問い合わせ一覧", admin_contacts_path, class: "link" %>
+      <%= link_to "ログアウト", destroy_admin_session_path, method: :delete, class: "link"  %>
+    <% else %>
+      <%= link_to "room", rooms_path, class: "top-link link header-room" %>
+      <%= link_to "reservation", search_reservations_path, class: "top-link link header-reservation" %>
+      <%= link_to "access", access_path, class: "top-link link header-access" %>
+      <%= link_to "contact", new_contact_path, class: "top-link link header-contact" %>
+    <% end %>
+  </div>
+</div>

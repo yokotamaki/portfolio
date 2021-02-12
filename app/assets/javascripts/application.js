@@ -20,28 +20,28 @@
 
 /*global $*/
 /**ヘッダー**/
-$(function(){
-  $(".header-room").hover(function(){
-    $(this).text("客室");
-  },function(){
-    $(this).text("room");
-  });
+// $(function(){
+//   $(".top-header .header-room").hover(function(){
+//     $(this).text("客室");
+//   },function(){
+//     $(this).text("room");
+//   });
 
-  $(".header-reservation").hover(function(){
-    $(this).text("予約");
-  },function(){
-    $(this).text("reservation");
-  });
+//   $(".top-header .header-reservation").hover(function(){
+//     $(this).text("予約");
+//   },function(){
+//     $(this).text("reservation");
+//   });
 
-  $(".header-access").hover(function(){
-    $(this).text("アクセス");
-  },function(){
-    $(this).text("access");
-  });
+//   $(".top-header .header-access").hover(function(){
+//     $(this).text("アクセス");
+//   },function(){
+//     $(this).text("access");
+//   });
 
-  $(".header-contact").hover(function(){
-    $(this).text("お問い合わせ");
-  },function(){
-    $(this).text("contact");
-  });
-});
+//   $(".top-header .header-contact").hover(function(){
+//     $(this).text("お問い合わせ");
+//   },function(){
+//     $(this).text("contact");
+//   });
+// });

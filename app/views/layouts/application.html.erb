@@ -16,7 +16,11 @@
 
   <body>
     <header>
+      <% if current_page?(root_path) %>
+        <%= render "layouts/top_header" %>
+      <% else %>
         <%= render "layouts/header" %>
+      <% end %>
     </header>
 
     <main>
