@@ -1,18 +1,20 @@
 <h4>お問い合わせ一覧</h4>
 <div class="admin-contacts">
   <div class="row">
-    <h5 class="col-3">タイトル</h5>
-    <h5 class="col-3">内容</h5>
-    <h5 class="col-3">名前</h5>
-    <h5 class="col-3">対応状況</h5>
+    <h5 class="col-1"><%= sort_order "id", "番号" %></h5>
+    <h5 class="col-3"><%= sort_order "title", "タイトル" %></h5>
+    <h5 class="col-4"><%= sort_order "body", "内容" %></h5>
+    <h5 class="col-2"><%= sort_order "name", "名前" %></h5>
+    <h5 class="col-2"><%= sort_order "status", "対応状況" %></h5>
   </div>
     <% @contacts.each do |contact| %>
       <%= link_to  admin_contact_path(contact) do %>
         <div class="row">
+          <p class="col-1"><%= contact.id %></p>
           <p class="col-3"><%= contact.title %></p>
-          <p class="col-3 contacts-body"><%= contact.body %></p>
-          <p class="col-3"><%= contact.name %></p>
-          <p class="col-3"><%= contact.status %></p>
+          <p class="col-4 contacts-body"><%= contact.body %></p>
+          <p class="col-2"><%= contact.name %></p>
+          <p class="col-2"><%= contact.status %></p>
         </div>
       <% end %>
     <% end %>
