@@ -20,7 +20,7 @@ body {
   box-sizing: border-box;
   padding: 0;
   margin: 0 auto;
-  background-color: #756D6B;
+  background-color: #706A69;
   color: #e7e7e7;
   text-align: center;
 }
@@ -118,7 +118,7 @@ header {
 
 /**各ページ ヘッダー**/
 .header-wrapper {
-  background-color: #5C5554;
+  background-color: #454345;
   width: 100vw;
 }
 .logo {
@@ -129,7 +129,7 @@ header {
   left: 0px;
   z-index: 1;
   padding: 2rem;
-  background-color: #45403F;
+  background-color: #333233;
 }
 .header {
   text-align: right;
@@ -172,18 +172,18 @@ header {
   opacity: 0.6;
 }
 
-/**ヘッダーカラー**/
-.header-room {
-  background-color: #332F2E;
+/**トップ ヘッダーカラー**/
+.top-header .header-room {
+  background-color: #4F4C4D;
 }
-.header-reservation {
-  background-color: #524B4A;
+.top-header .header-reservation {
+  background-color: #474747;
 }
-.header-access {
-  background-color: #918684;
+.top-header .header-access {
+  background-color: #333233;
 }
-.header-contact {
-  background-color: #45403F;
+.top-header .header-contact {
+  background-color: #615F60;
 }
 
 /**管理者ログインページ **/
