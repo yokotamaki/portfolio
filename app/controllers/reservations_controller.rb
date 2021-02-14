@@ -12,6 +12,7 @@ class ReservationsController < ApplicationController
     @reservation.valid?
     if @reservation.errors.key?(:start_date) || @reservation.errors.key?(:end_date)
       # render 'search' and return
+      return render "date_errors"
     end
 
     # 同じroom_idが複数あっても1つにまとめる（room_idごとに）
@@ -53,30 +54,27 @@ class ReservationsController < ApplicationController
   end
 
   def confirm
-    # @guestだと戻ったときに空になってしまうため別のインスタンスを用意
-    @guest_confirm = Guest.new
-
     # 情報入力 バリデーションの設定
     @guest = Guest.new(guest_params)
     @guest.valid?
-    if @guest.errors
-      render 'guest'
+    if @guest.errors.present?
+      @start_date = guest_params[:start_date]
+      @end_date = guest_params[:end_date]
+      @people = guest_params[:people]
+      @room = guest_params[:room]
+      return render 'guest'
     end
+
+    # @guestだと戻ったときに空になってしまうため別のインスタンスを用意
+    @guest_confirm = Guest.new
 
     # 日付・人数・部屋
     @start_date = guest_params[:start_date]
     @end_date = guest_params[:end_date]
     @people = guest_params[:people]
-    if guest_params[:room] == "1"
-      @room = 1
-      @room_name = Room.find(1).name
-    elsif guest_params[:room] == "2"
-      @room = 2
-      @room_name = Room.find(2).name
-    elsif guest_params[:room] == "3"
-      @room = 3
-      @room_name = Room.find(3).name
-    end
+    @room = guest_params[:room].to_i
+    @room_name = Room.find(guest_params[:room]).name
+
     # 宿泊者情報
     @name = guest_params[:name]
     @name_kana = guest_params[:name_kana]

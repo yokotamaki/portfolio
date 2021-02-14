@@ -1,39 +1,8 @@
 <h4>情報入力</h4>
-
-
-
-
-
-
 <div class="reservation">
-
-  <% if @guest.errors.messages.key?(:name) %>
-    <p class="error"><%= @guest.errors.messages[:name].first %></p>
-  <% end %>
-
-  <% if @guest.errors.messages.key?(:name_kana) %>
-    <p class="error"><%= @guest.errors.messages[:name_kana].first %></p>
-  <% end %>
-
-  <% if @guest.errors.messages.key?(:zipcode) %>
-    <p class="error"><%= @guest.errors.messages[:zipcode].first %></p>
-  <% end %>
-
-  <% if @guest.errors.messages.key?(:address) %>
-    <p class="error"><%= @guest.errors.messages[:address].first %></p>
-  <% end %>
-
-  <% if @guest.errors.messages.key?(:address) %>
-    <p class="error"><%= @guest.errors.messages[:address].first %></p>
-  <% end %>
-
-  <% if @guest.errors.messages.key?(:phone_number) %>
-    <p class="error"><%= @guest.errors.messages[:phone_number].first %></p>
-  <% end %>
-
-  <% if @guest.errors.messages.key?(:email) %>
-    <p class="error"><%= @guest.errors.messages[:email].first %></p>
-  <% end %>
+  <div id="guest-errors">
+    <%= render "reservations/guest_errors", guest: @guest %>
+  </div>
 
   <%= form_with model: @guest, url: confirm_reservations_path, local: true do |f| %>
     <table>

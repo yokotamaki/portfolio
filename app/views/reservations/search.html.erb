@@ -1,13 +1,13 @@
 <h4>空室確認</h4>
 <div class="wrapper">
-  <p>宿泊する日付と人数を選択してください。</p>
+  <p>①宿泊する日付と人数を選択してください。</p>
   <p>※１泊の予約しかできません。</p>
 
 <div id="date_errors">
   <%= render "reservations/date_errors", reservation: @reservation %>
 </div>
 
-  <%= form_with model: @reservation, url: room_reservations_path, remote: true do |f| %>
+  <%= form_with model: @reservation, url: room_reservations_path do |f| %>
     <div class="search">
       <div class="date">
         <label>チェックイン日</label><%= f.date_field :start_date, required: true %>
@@ -21,4 +21,7 @@
     </div>
     <%= f.submit "検索", class: "button" %>
   <% end %>
+</div>
+
+<div id="room-js">
 </div>
