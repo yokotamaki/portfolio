@@ -2,6 +2,16 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+/**バリデーション**/
+.error {
+  font-size: 17px;
+  background-color: #45403F;
+  color: white;
+  padding: 0.3rem;
+  border-radius: 1rem;
+  opacity: 0.8;
+}
+
 /**空室確認**/
 .search label {
   width: 10rem;
@@ -19,13 +29,6 @@
 .date {
   display: flex;
 }
-.error {
-    font-size: 17px;
-    background-color: #45403F;
-    color: white;
-    padding: 0.3rem;
-    border-radius: 1rem;
-    opacity: 0.8;}
 
 /**客室選択**/
 .room {

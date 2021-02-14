@@ -1,0 +1,5 @@
+<% if reservation.errors.key?(:start_date) %>
+  <p class="error"><%= reservation.errors.messages[:start_date].first %></p>
+<% elsif reservation.errors.key?(:end_date) %>
+  <p class="error"><%= reservation.errors.messages[:end_date].first %></p>
+<% end %>

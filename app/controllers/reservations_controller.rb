@@ -7,11 +7,11 @@ class ReservationsController < ApplicationController
     @start_date = Date.parse(reservation_params[:start_date])
     @end_date = Date.parse(reservation_params[:end_date])
 
-    # 日付の選択バリデーション
+    # 日付の選択バリデーション(非同期)
     @reservation = Reservation.new(start_date: @start_date, end_date: @end_date)
     @reservation.valid?
     if @reservation.errors.key?(:start_date) || @reservation.errors.key?(:end_date)
-      render 'search' and return
+      # render 'search' and return
     end
 
     # 同じroom_idが複数あっても1つにまとめる（room_idごとに）
@@ -55,6 +55,14 @@ class ReservationsController < ApplicationController
   def confirm
     # @guestだと戻ったときに空になってしまうため別のインスタンスを用意
     @guest_confirm = Guest.new
+
+    # 情報入力 バリデーションの設定
+    @guest = Guest.new(guest_params)
+    @guest.valid?
+    if @guest.errors
+      render 'guest'
+    end
+
     # 日付・人数・部屋
     @start_date = guest_params[:start_date]
     @end_date = guest_params[:end_date]
