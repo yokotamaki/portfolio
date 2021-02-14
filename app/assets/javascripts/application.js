@@ -20,28 +20,32 @@
 
 /*global $*/
 /**ヘッダー**/
-// $(function(){
-//   $(".top-header .header-room").hover(function(){
-//     $(this).text("客室");
-//   },function(){
-//     $(this).text("room");
-//   });
+$(document).on('turbolinks:load', function() {
 
-//   $(".top-header .header-reservation").hover(function(){
-//     $(this).text("予約");
-//   },function(){
-//     $(this).text("reservation");
-//   });
+  $(function(){
+    $(".top-header .header-room").hover(function(){
+      $(this).text("客室");
+    },function(){
+      $(this).text("room");
+    });
 
-//   $(".top-header .header-access").hover(function(){
-//     $(this).text("アクセス");
-//   },function(){
-//     $(this).text("access");
-//   });
+    $(".top-header .header-reservation").hover(function(){
+      $(this).text("予約");
+    },function(){
+      $(this).text("reservation");
+    });
 
-//   $(".top-header .header-contact").hover(function(){
-//     $(this).text("お問い合わせ");
-//   },function(){
-//     $(this).text("contact");
-//   });
-// });
+    $(".top-header .header-access").hover(function(){
+      $(this).text("アクセス");
+    },function(){
+      $(this).text("access");
+    });
+
+    $(".top-header .header-contact").hover(function(){
+      $(this).text("お問い合わせ");
+    },function(){
+      $(this).text("contact");
+    });
+  });
+
+});
