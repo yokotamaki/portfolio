@@ -1,6 +1,7 @@
 <div class="header-wrapper">
   <%= link_to "hotel", root_path, class: "logo" %>
-  <div class="header">
+  <span id="hamberger"><i class="fas fa-bars fa-3x"></i></span>
+  <div class="header" id="header">
     <% if admin_signed_in? %>
       <%= link_to "予約一覧", admin_reservations_path, class: "link" %>
       <%= link_to "お問い合わせ一覧", admin_contacts_path, class: "link" %>
@@ -13,3 +14,12 @@
     <% end %>
   </div>
 </div>
+
+<script>
+  function hamburger(){
+    document.getElementById('header').classList.toggle('open');
+  };
+  document.getElementById('hamberger').addEventListener('click',function(){
+    hamburger();
+  });
+</script>
