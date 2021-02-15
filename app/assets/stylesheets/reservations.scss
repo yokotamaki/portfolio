@@ -146,14 +146,21 @@
   }
 
   /**情報入力画面**/
+  .reservation {
+    width: 100vw;
+  }
+  .reservation table td,
+  .reservation table th {
+    width: 100vw;
+    display: block;
+  }
   .reservation label {
-    margin: 0.5rem 0.5rem;
+    margin: 1rem 0.5rem 0.5rem;
+    text-align: center;
   }
   .reservation input[type=text],
   .reservation input[type=email] {
-    width: 100%;
-  }
-  .reservation input[type=radio] {
-    margin-right: 0.5rem;
+    width: 95%;
+    margin: 0;
   }
 }

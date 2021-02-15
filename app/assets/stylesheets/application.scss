@@ -206,6 +206,10 @@ header {
 
 /***********レスポンシブ対応***********/
 @media (max-width: 767px) {
+  /**全体**/
+  main {
+    margin-top: 9rem;
+}
   /**ヘッダー**/
   .logo {
     font-size: 35px;
