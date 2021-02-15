@@ -13,24 +13,28 @@ Admin.create!(
 
 Room.create!(
   name: "type1",
-  body: "type1",
-  price: "11000",
+  body: "広さは３０平米と少しコンパクトとになっていますがリーズナブルな価格でご利用いただけます。
+        インテリアや雑貨にもこだわり、とてもお洒落な内装になっています！段差がないのでバリアフリーにも対応しております。
+          ",
+  price: "18000",
   people: "2",
   capacity: "10",
   reserved_flag: false
 )
 Room.create!(
   name: "type2",
-  body: "type2",
-  price: "12000",
+  body: "グレーと白を基調とした部屋でとても落ち着いた雰囲気のある部屋です。大きな窓からは綺麗な景色を眺めることができます。
+        また、広いお風呂が特徴的で中にはジャグジーとテレビもついています！アメニティも豊富に揃えているのでぜひご利用ください。",
+  price: "25000",
   people: "2",
   capacity: "5",
   reserved_flag: false
 )
 Room.create!(
   name: "type3",
-  body: "type3",
-  price: "13000",
+  body: "当ホテルの中で一番広い部屋です！大きいテレビとソファがあり、広いキッチンに調理器具が付いているので料理ができます。
+        キングサイズのベッドなので添い寝も可能です。家族連れにも人気の部屋です。",
+  price: "40000",
   people: "4",
   capacity: "3",
   reserved_flag: false

@@ -1,5 +1,5 @@
 <h4>客室一覧</h4>
-  <div class="rooms">
+  <div class="rooms room1">
     <div class="room-image">
       <%= image_tag 'room1.jpg', id: "image", width: "95%" %>
       <%= image_tag 'room1_sub.jpg', id: "image", width: "95%" %>
@@ -7,14 +7,14 @@
       <!--<img src="/assets/room1_sub.jpg" id="image" width="95%">-->
     </div>
     <div class="room-content">
-      <p><%= @room1.name %></p>
+      <h3><%= @room1.name %></h3>
       <p><%= @room1.body %></p>
-      <p><%= @room1.price %>円</p>
-      <p>定員<%= @room1.people %>名</p>
-      <p>全<%= @room1.capacity %>室</p>
+      <p>料金　<%= @room1.price %>円</p>
+      <p>定員　<%= @room1.people %>名</p>
+      <p>客室数　全<%= @room1.capacity %>室</p>
     </div>
   </div>
-  <div class="rooms">
+  <div class="rooms room2">
     <div class="room-image">
       <%= image_tag 'room2.jpg', id: "image", width: "95%" %>
       <%= image_tag 'room2_sub.jpg', id: "image", width: "95%" %>
@@ -22,28 +22,28 @@
       <!--<img src="/assets/room2_sub.jpg" id="image" width="95%">-->
     </div>
     <div class="room-content">
-      <p><%= @room2.name %></p>
+      <h3><%= @room2.name %></h3>
       <p><%= @room2.body %></p>
-      <p><%= @room2.price %>円</p>
-      <p>定員<%= @room2.people %>名</p>
-      <p>全<%= @room2.capacity %>室</p>
+      <p>料金　<%= @room2.price %>円</p>
+      <p>定員　<%= @room2.people %>名</p>
+      <p>客室数　全<%= @room2.capacity %>室</p>
     </div>
   </div>
-  <div class="rooms">
-  <div class="room-image">
-    <%= image_tag 'room3.jpg', id: "image", width: "95%" %>
-    <%= image_tag 'room3_sub.jpg', id: "image", width: "95%" %>
-    <!--<img src="/assets/room3.jpg" id="image" width="95%">-->
-    <!--<img src="/assets/room3_sub.jpg" id="image" width="95%">-->
+  <div class="rooms room3">
+    <div class="room-image">
+      <%= image_tag 'room3.jpg', id: "image", width: "95%" %>
+      <%= image_tag 'room3_sub.jpg', id: "image", width: "95%" %>
+      <!--<img src="/assets/room3.jpg" id="image" width="95%">-->
+      <!--<img src="/assets/room3_sub.jpg" id="image" width="95%">-->
+    </div>
+    <div class="room-content">
+      <h3><%= @room3.name %></h3>
+      <p><%= @room3.body %></p>
+      <p>料金　<%= @room3.price %>円</p>
+      <p>定員　<%= @room3.people %>名</p>
+      <p>客室数　全<%= @room3.capacity %>室</p>
+    </div>
   </div>
-  <div class="room-content">
-    <p><%= @room3.name %></p>
-    <p><%= @room3.body %></p>
-    <p><%= @room3.price %>円</p>
-    <p>定員<%= @room3.people %>名</p>
-    <p>全<%= @room3.capacity %>室</p>
-  </div>
-</div>
 
 <script>
 $(".room-image").slick({
