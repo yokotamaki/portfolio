@@ -11,10 +11,37 @@
 }
 .top-image {
   height: 100%;
+  // display: inline-block;
 }
+
+/**アクセス**/
+.access {
+  margin: 1rem;
+  width: 100vw;
+  display: flex;
+}
+.map {
+  width: 50vw;
+  margin: 2rem;
+  filter: grayscale(70%);
+}
+.access p {
+  margin: 0;
+}
+.access table {
+  margin: 2rem;
+}
+.access tr {
+  width: 50vw;
+}
+.access td {
+  padding: 1rem;
+}
+
 
 /***********レスポンシブ対応***********/
 @media (max-width: 767px) {
+  /**トップ**/
   .top-images {
     width: 100vw;
   }
@@ -24,4 +51,29 @@
     width: 100%;
     height: auto;
   }
+  /**アクセス**/
+  .access{
+    width: 100vw;
+    display: block;
+    margin: 0;
+    padding: 0;
+  }
+  .map {
+    width: 90vw;
+    margin: 0 0 2rem;
+  }
+  .access table {
+    margin: 0;
+  }
+  .access table td,
+  .access table th {
+    width: 100vw;
+    display: block;
+    padding: 0.5rem;
+  }
+  .access td:nth-child(even) {
+    margin-bottom: 2rem;
+  }
+
+
 }
