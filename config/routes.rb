@@ -6,6 +6,7 @@ Rails.application.routes.draw do
   namespace :admin do
     resources :reservations, only:[:index, :show]
     resources :contacts, only:[:index, :show, :update]
+    get 'searchs/search' => 'searchs#search', as: 'search'
   end
   # HP側
   resources :reservations, only:[:create] do

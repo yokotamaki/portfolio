@@ -1,0 +1,36 @@
+<div class="search-form">
+  <%= render "admin/searchs/form" %>
+</div>
+
+<h4>"<%= @keyword %>"の検索結果</h4>
+<% if @model == "reservation" %>
+  <% if @reservation.length == 0 %>
+    <h5>"<%= @keyword %>"の検索結果はありませんでした。</h5>
+  <% else %>
+  <div class="admin-reservations">
+    <div class="row">
+      <h5 class="col-2">予約番号</h5>
+      <h5 class="col-2">名前</h5>
+      <h5 class="col-2">部屋</h5>
+      <h5 class="col-3">到着日</h5>
+      <h5 class="col-3">出発日</h5>
+    </div>
+    <%= render "admin/reservations/index", reservations: @reservation %>
+  </div>
+  <% end %>
+<% elsif @model == "contact" %>
+  <% if @contact.length == 0 %>
+    <h5>"<%= @keyword %>"の検索結果はありませんでした。</h5>
+  <% else %>
+  <div class="admin-contacts">
+    <div class="row">
+      <h5 class="col-1">番号</h5>
+      <h5 class="col-3">タイトル</h5>
+      <h5 class="col-4">内容</h5>
+      <h5 class="col-2">名前</h5>
+      <h5 class="col-2">対応状況</h5>
+    </div>
+    <%= render "admin/contacts/index", contacts: @contact %>
+  </div>
+  <% end %>
+<% end %>

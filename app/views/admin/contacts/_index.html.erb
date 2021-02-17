@@ -1,0 +1,13 @@
+<!--管理者側 お問い合わせ一覧-->
+<% contacts.each do |contact| %>
+  <%= link_to  admin_contact_path(contact) do %>
+    <div class="row">
+      <p class="col-1"><%= contact.id %></p>
+      <p class="col-3"><%= contact.title %></p>
+      <p class="col-4 contacts-body"><%= contact.body %></p>
+      <p class="col-2"><%= contact.name %></p>
+      <p class="col-2"><%= contact.status %></p>
+    </div>
+  <% end %>
+<% end %>
+

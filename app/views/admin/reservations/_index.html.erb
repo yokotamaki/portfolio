@@ -1,0 +1,12 @@
+<!--管理者側 予約一覧-->
+<% reservations.each do |reservation| %>
+  <%= link_to  admin_reservation_path(reservation) do %>
+    <div class="row">
+      <p class="col-2"><%= reservation.id %></p>
+      <p class="col-2"><%= reservation.guest.name %></p>
+      <p class="col-2"><%= reservation.room.name %></p>
+      <p class="col-3"><%= reservation.start_date %></p>
+      <p class="col-3"><%= reservation.end_date %></p>
+    </div>
+  <% end %>
+<% end %>

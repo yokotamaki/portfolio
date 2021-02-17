@@ -18,4 +18,11 @@ class Reservation < ApplicationRecord
       errors.add(:end_date, '到着日の翌日しか選択できません！')
     end
   end
+
+  # 検索機能
+  def self.search(keyword)
+      @reservation = Reservation.joins(:room).joins(:guest)
+                                .select("reservations.*, guests.name as guest_name, rooms.name as room_name")
+                                .where(["room_name LIKE ? OR guest_name LIKE ?", "%#{keyword}%", "%#{keyword}%"])
+  end
 end
