@@ -4,10 +4,12 @@ class ContactsController < ApplicationController
   end
 
   def create
-    contact = Contact.new(contact_params)
-    if contact.save
-      NotificationMailer.contact_success_mail(contact).deliver_now
+    @contact = Contact.new(contact_params)
+    if @contact.save
+      NotificationMailer.contact_success_mail(@contact).deliver_now
       redirect_to success_contacts_path
+    else
+      render "new"
     end
   end
 

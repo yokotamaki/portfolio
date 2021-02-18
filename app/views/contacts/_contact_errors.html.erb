@@ -1,0 +1,16 @@
+<!--お問い合わせ入力 エラーメッセージ-->
+<% if contact.errors.messages.key?(:title) %>
+  <p class="error"><%= contact.errors.messages[:title].first %></p>
+<% end %>
+
+<% if contact.errors.messages.key?(:body) %>
+  <p class="error"><%= contact.errors.messages[:body].first %></p>
+<% end %>
+
+<% if contact.errors.messages.key?(:name) %>
+  <p class="error"><%= contact.errors.messages[:name].first %></p>
+<% end %>
+
+<% if contact.errors.messages.key?(:email) %>
+  <p class="error"><%= contact.errors.messages[:email].first %></p>
+<% end %>

@@ -1,3 +1,4 @@
+<!--情報入力 エラーメッセージ-->
 <% if guest.errors.messages.key?(:name) %>
   <p class="error"><%= guest.errors.messages[:name].first %></p>
 <% end %>
