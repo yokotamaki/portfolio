@@ -4,7 +4,6 @@
   <p>※１泊の予約しかできません。</p>
 
 <div id="date_errors">
-  <%= render "reservations/date_errors", reservation: @reservation %>
 </div>
 
   <%= form_with model: @reservation, url: room_reservations_path do |f| %>
