@@ -6,12 +6,12 @@
   <p class="error"><%= guest.errors.messages[:name_kana].first %></p>
 <% end %>
 
-<% if guest.errors.messages.key?(:zipcode) %>
-  <p class="error"><%= guest.errors.messages[:zipcode].first %></p>
+<% if guest.errors.messages.key?(:birthday) %>
+  <p class="error"><%= guest.errors.messages[:birthday].first %></p>
 <% end %>
 
-<% if guest.errors.messages.key?(:address) %>
-  <p class="error"><%= guest.errors.messages[:address].first %></p>
+<% if guest.errors.messages.key?(:zipcode) %>
+  <p class="error"><%= guest.errors.messages[:zipcode].first %></p>
 <% end %>
 
 <% if guest.errors.messages.key?(:address) %>
