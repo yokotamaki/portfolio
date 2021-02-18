@@ -21,17 +21,17 @@
     </table>
   </div>
 
+  <!--サクセスメッセージ-->
+  <div id="success-msg">
+  </div>
+
   <!--ステータス変更-->
   <div class="contact-status">
-    <!--サクセスメッセージ-->
-    <% flash.each do |key, value| %>
-      <%= content_tag(:div, value, class: "#{key}")%>
-    <% end %>
-
-    <%= form_with model: @contact, url: admin_contact_path, local: true do |f| %>
+    <%= form_with model: @contact, url: admin_contact_path do |f| %>
       <%= f.select :status, Contact.statuses.keys %>
       <%= f.submit "更新", class: "button-update" %>
     <% end %>
   </div>
-  <%= link_to "戻る", admin_contacts_path, class: "button" %>
+
+  <%= link_to "戻る", :back, class: "button" %>
 </div>
