@@ -8,8 +8,9 @@
     <h5 class="col-2"><%= sort_order "id", "予約番号" %></h5>
     <h5 class="col-2"><%= sort_order "guest_name", "名前" %></h5>
     <h5 class="col-2"><%= sort_order "room_name", "部屋" %></h5>
-    <h5 class="col-3"><%= sort_order "start_date", "到着日" %></h5>
-    <h5 class="col-3"><%= sort_order "end_date", "出発日" %></h5>
+    <h5 class="col-2"><%= sort_order "start_date", "到着日" %></h5>
+    <h5 class="col-2"><%= sort_order "end_date", "出発日" %></h5>
+    <h5 class="col-2"><%= sort_order "created_at", "予約日" %></h5>
   </div>
   <%= render "admin/reservations/index", reservations: @reservations %>
 </div>

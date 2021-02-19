@@ -20,11 +20,11 @@
         </tr>
         <tr>
           <td><p>生年月日</p></td>
-          <td><p><%= @guest.birthday %></p></td>
+          <td><p><%= @guest.birthday.strftime("%Y年%-m月%-d日") %></p></td>
         </tr>
         <tr>
           <td><p>郵便番号</p></td>
-          <td><p><%= @guest.zipcode %></p></td>
+          <td><p>〒<%= @guest.zipcode %></p></td>
         </tr>
         <tr>
           <td><p>住所</p></td>
@@ -62,11 +62,15 @@
         </tr>
         <tr>
           <td><p>到着日</p></td>
-          <td><p><%= @reservation.start_date %></p></td>
+          <td><p><%= @reservation.start_date.strftime("%Y年%-m月%-d日") %></p></td>
         </tr>
         <tr>
           <td><p>出発日</p></td>
-          <td><p><%= @reservation.end_date %></p></td>
+          <td><p><%= @reservation.end_date.strftime("%Y年%-m月%-d日") %></p></td>
+        </tr>
+        <tr>
+          <td><p>予約日</p></td>
+          <td><p><%= @reservation.created_at.strftime("%Y年%-m月%-d日　%-H時%-M分") %></p></td>
         </tr>
       </table>
     </div>

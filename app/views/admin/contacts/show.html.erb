@@ -20,11 +20,11 @@
       </tr>
       <tr class="row">
         <td><h5>お問い合わせ日</h5></td>
-        <td><p><%= @contact.created_at.strftime("%Y年%-m月%-d日　%-H時%-M分%-S秒") %></p></td>
+        <td><p><%= @contact.created_at.strftime("%Y年%-m月%-d日　%-H時%-M分") %></p></td>
       </tr>
       <tr class="row">
         <td><h5>更新日</h5></td>
-        <td><p><%= @contact.updated_at.strftime("%Y年%-m月%-d日　%-H時%-M分%-S秒") %></p></td>
+        <td><p><%= @contact.updated_at.strftime("%Y年%-m月%-d日　%-H時%-M分") %></p></td>
       </tr>
     </table>
   </div>
