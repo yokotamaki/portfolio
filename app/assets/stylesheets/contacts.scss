@@ -40,13 +40,14 @@ td textarea {
 }
 .admin-contact h5 {
   margin: 0;
+  line-height: 2;
 }
 .admin-contact td {
   border: solid #e7e7e7 1px;
-  padding: 1rem;
+  padding: 1rem 2rem;
 }
 .admin-contact td:nth-child(odd) {
-  width: 11rem;
+  width: 15rem;
 }
 .admin-contact td:nth-child(even) {
   text-align: left;
