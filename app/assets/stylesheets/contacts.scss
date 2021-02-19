@@ -35,14 +35,21 @@ td textarea {
 }
 
 /**管理者側 お問い合わせ詳細**/
+.admin-contact {
+  word-break: break-all;
+}
+.admin-contact h5 {
+  margin: 0;
+}
 .admin-contact td {
   border: solid #e7e7e7 1px;
-  padding: 0.5rem;
+  padding: 1rem;
 }
 .admin-contact td:nth-child(odd) {
-  width: 10rem;
+  width: 11rem;
 }
 .admin-contact td:nth-child(even) {
+  text-align: left;
   width: 50rem;
   word-wrap: normal;
 }
@@ -51,6 +58,8 @@ td textarea {
   margin: 1rem 0 3rem;
   padding: 0.5rem;
 }
+
+/**更新ボタン**/
 .button-update {
   color: #393c41;
   border-radius: 1.5rem;
@@ -59,6 +68,8 @@ td textarea {
   border: none;
   padding: 0.3rem 1rem;
 }
+
+/**サクセスメッセージ**/
 .notice {
   font-size: 17px;
   background-color: #45403F;
