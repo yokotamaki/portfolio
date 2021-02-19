@@ -19,7 +19,7 @@
 //= require_tree .
 
 /*global $*/
-/**ヘッダー**/
+/**トップ ナビゲーション**/
 $(document).on('turbolinks:load', function() {
 
   $(function(){
