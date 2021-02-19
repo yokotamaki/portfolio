@@ -217,7 +217,19 @@ a:hover {
   margin: 2rem;
 }
 .page-link {
-  color: #4c4449;
+  background-color: #494749;
+  color: #e7e7e7;
+  border: none;
+  transition: 0.3s;
+}
+.page-item.active .page-link {
+  color: #494749;
+  background-color: #e7e7e7;
+}
+.page-item a:hover {
+  opacity: 0.7;
+  background-color: #e7e7e7;
+  color: #494749;
 }
 
 /***********レスポンシブ対応***********/
