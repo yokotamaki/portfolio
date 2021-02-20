@@ -1,3 +1,69 @@
 // Place all the styles related to the admin/contacts controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+/**管理者側 お問い合わせ一覧**/
+.admin-contacts h5 {
+  padding-bottom: 0.5rem;
+}
+.admin-contacts a {
+  color: #e7e7e7;
+}
+.admin-contacts a:hover p {
+  opacity: 0.6;
+  color: #e7e7e7;
+}
+.admin-contacts a:hover {
+  text-decoration: none;
+}
+.contacts-body {
+  overflow: hidden;
+}
+
+/**管理者側 お問い合わせ詳細**/
+.admin-contact {
+  word-break: break-all;
+}
+.admin-contact h5 {
+  margin: 0;
+  line-height: 2;
+}
+.admin-contact td {
+  border: solid #e7e7e7 1px;
+  padding: 1rem 2rem;
+}
+.admin-contact td:nth-child(odd) {
+  width: 15rem;
+}
+.admin-contact td:nth-child(even) {
+  text-align: left;
+  width: 50rem;
+  word-wrap: normal;
+}
+.contact-status select {
+  color: #706A69;
+  font-size: 20px;
+  margin: 1rem 0 3rem;
+  padding: 0.5rem;
+}
+
+/**更新ボタン**/
+.button-update {
+  color: #393c41;
+  border-radius: 1.5rem;
+  background-color: #e7e7e7;
+  opacity: 1;
+  border: none;
+  padding: 0.3rem 1rem;
+}
+
+/**サクセスメッセージ**/
+.notice {
+  font-size: 17px;
+  background-color: #45403F;
+  color: white;
+  padding: 0.3rem;
+  margin-top: 1rem;
+  border-radius: 1rem;
+  opacity: 0.8;
+}

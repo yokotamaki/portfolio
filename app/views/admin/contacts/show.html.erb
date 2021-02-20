@@ -24,7 +24,9 @@
       </tr>
       <tr class="row">
         <td><h5>更新日</h5></td>
-        <td><p><%= @contact.updated_at.strftime("%Y年%-m月%-d日　%-H時%-M分") %></p></td>
+        <td id="update-<%= @contact.id %>">
+          <%= render "admin/contacts/update", contact: @contact %>
+        </td>
       </tr>
     </table>
   </div>

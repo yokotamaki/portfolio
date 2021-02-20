@@ -11,9 +11,9 @@ class Admin::ContactsController < ApplicationController
   end
 
   def update
-    contact = Contact.find(params[:id])
-    if contact.update(contact_params)
-      flash[:notice] = "対応状況を更新しました！"
+    @contact = Contact.find(params[:id])
+    if @contact.update(contact_params)
+      flash.now[:notice] = "#{@contact.status}に更新しました！"
       render "success"
     end
   end

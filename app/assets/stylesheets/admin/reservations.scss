@@ -1,3 +1,34 @@
 // Place all the styles related to the admin/reservations controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+/**管理者側 予約一覧**/
+.admin-reservations h5 {
+  padding-bottom: 0.5rem;
+}
+.admin-reservations a {
+  color: #e7e7e7;
+}
+.admin-reservations a:hover p {
+  opacity: 0.6;
+  color: #e7e7e7;
+}
+.admin-reservations a:hover {
+  text-decoration: none;
+}
+
+/**管理者側 予約詳細**/
+.admin-reservation {
+  display: flex;
+  margin-bottom: 2rem;
+}
+.reservation-box {
+  margin: 1rem;
+}
+.admin-reservation td {
+  border: solid #e7e7e7 1px ;
+}
+.admin-reservation p {
+  padding: 1rem 1.5rem;
+  margin: 0;
+}

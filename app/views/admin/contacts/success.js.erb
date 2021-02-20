@@ -1,1 +1,2 @@
 $("#success-msg").html("<%= j(render "admin/contacts/success") %>");
+$("#update-<%= @contact.id %>").html("<%= j(render "admin/contacts/update", contact: @contact) %>");

@@ -1,3 +1,16 @@
 // Place all the styles related to the searchs controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+/**検索フォーム**/
+.search-form {
+  position: absolute;
+  top: 5rem;
+  right: 3rem;
+  display: inline-block;
+}
+.search-form select {
+  color: #706A69;
+  padding: 0.3rem;
+  margin: 0 0.5rem;
+}
