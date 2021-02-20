@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.describe "guest" do
+RSpec.describe Guest, type: :model do
   describe "データを保存するとき" do
     it "保存する時、全ての値がある場合は有効である" do
       guest = build(:guest)
