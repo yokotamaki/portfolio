@@ -3,7 +3,7 @@
   <%= render "contacts/contact_errors", contact: @contact %>
 
   <div class="contact">
-  <%= form_with model: @contact, local: true do |f| %>
+  <%= form_with model: @contact, url: confirm_contacts_path ,local: true do |f| %>
     <table>
       <tr>
         <td><%= f.label :title, "タイトル" %></td>

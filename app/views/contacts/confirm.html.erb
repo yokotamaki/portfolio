@@ -1,0 +1,30 @@
+<h4>お問い合わせ確認</h4>
+<div class="contact-confirm">
+  <table>
+    <tr>
+      <td><p>タイトル</p></td>
+      <td><p><%= @contact.title %></p></td>
+    </tr>
+    <tr>
+      <td><p>内容</p></td>
+      <td><p><%= @contact.body %></p></td>
+    </tr>
+    <tr>
+      <td><p>名前</p></td>
+      <td><p><%= @contact.name %></p></td>
+    </tr>
+    <tr>
+      <td><p>メールアドレス</p></td>
+      <td><p><%= @contact.email %></p></td>
+    </tr>
+  </table>
+</div>
+
+<%= form_with model: @contact, local: true do |f| %>
+  <%= f.hidden_field :title, value: @contact.title %>
+  <%= f.hidden_field :body, value: @contact.body %>
+  <%= f.hidden_field :name, value: @contact.name %>
+  <%= f.hidden_field :email, value: @contact.email %>
+  <%= f.submit "戻る", name: :back, class: "button" %>
+  <%= f.submit "確定", class: "button" %>
+<% end %>

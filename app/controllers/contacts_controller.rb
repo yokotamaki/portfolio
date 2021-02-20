@@ -3,7 +3,15 @@ class ContactsController < ApplicationController
     @contact = Contact.new
   end
 
+  def confirm
+    @contact = Contact.new(contact_params)
+  end
+
   def create
+    # 戻るボタン
+    @contact = Contact.new(contact_params)
+    render :new and return if params[:back]
+
     @contact = Contact.new(contact_params)
     if @contact.save
       NotificationMailer.contact_success_mail(@contact).deliver_now

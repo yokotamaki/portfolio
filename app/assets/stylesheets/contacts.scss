@@ -16,6 +16,20 @@ td textarea {
   padding: 0.3rem;
 }
 
+/**お問い合わせ内容確認画面**/
+.contact-confirm {
+  display: inline-block;
+  margin: 2rem auto;
+}
+.contact-confirm td:nth-child(odd) {
+  width: 10rem;
+  padding: 0.5rem;
+}
+.contact-confirm td:nth-child(even) {
+  width: 30rem;
+  padding: 0.5rem;
+}
+
 /******************************************************************/
 /**レスポンシブ対応**/
 @media (max-width: 767px) {
