@@ -5,19 +5,18 @@ class ContactsController < ApplicationController
 
   def confirm
     @contact = Contact.new(contact_params)
+    @contact.valid?
+    if @contact.errors.present?
+      return render "new"
+    end
   end
 
   def create
-    # 戻るボタン
     @contact = Contact.new(contact_params)
     render :new and return if params[:back]
-
-    @contact = Contact.new(contact_params)
     if @contact.save
       NotificationMailer.contact_success_mail(@contact).deliver_now
       redirect_to success_contacts_path
-    else
-      render "new"
     end
   end
 
