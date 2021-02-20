@@ -9,13 +9,13 @@
   <%= form_with model: @reservation, url: room_reservations_path do |f| %>
     <div class="search">
       <div class="date">
-        <label>チェックイン日</label><%= f.date_field :start_date, required: true %>
+        <label for="reservation_start_date">チェックイン日</label><%= f.date_field :start_date, required: true %>
       </div>
       <div class="date">
-        <label>チェックアウト日</label><%= f.date_field :end_date, required: true %>
+        <label for="reservation_end_date">チェックアウト日</label><%= f.date_field :end_date, required: true %>
       </div>
       <div class="date">
-        <label>宿泊人数</label><%= f.select :people, [1,2,3,4] %>
+        <label for="reservation_people">宿泊人数</label><%= f.select :people, [1,2,3,4] %>
       </div>
     </div>
     <%= f.submit "検索", class: "button" %>
