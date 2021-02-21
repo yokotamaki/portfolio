@@ -93,16 +93,13 @@ Rails.application.configure do
   config.active_record.dump_schema_after_migration = false
 
 
-  user_name = ENV["USER_NAME"]
-  password = ENV["PASSWORD"]
-
   ActionMailer::Base.delivery_method = :smtp
   ActionMailer::Base.smtp_settings = {
   address: 'smtp.gmail.com',
   domain: 'gmail.com',
   port: 587,
-  user_name: user_name,
-  password: password,
+  user_name: ENV["USER_NAME"],
+  password: ENV["PASSWORD"],
   authentication: 'plain',
   enable_starttls_auto: true
   }
