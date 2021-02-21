@@ -224,6 +224,34 @@ a:hover {
   color: #494749;
 }
 
+/**フッター**/
+.footer {
+  opacity: 0.9;
+  position: fixed;
+  bottom: 0;
+  right: 1rem;
+  z-index: 8;
+}
+.fab:hover {
+  opacity: 0.6;
+  transition: 0.3s;
+}
+.icon1 {
+  background-color: #474747;
+  padding: 1rem;
+  margin: 0;
+}
+.icon2 {
+  background-color: #333233;
+  padding: 1rem;
+  margin: 0;
+}
+.icon3 {
+  background-color: #2C2925;
+  padding: 1rem;
+  margin: 0;
+}
+
 /***********レスポンシブ対応***********/
 @media (max-width: 767px) {
   /**全体**/

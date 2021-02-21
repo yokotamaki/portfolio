@@ -27,5 +27,11 @@
       <%= yield %>
     </main>
 
+    <footer>
+      <!--<small>Copyright © 2021 maki All Rights Reserved.</small>-->
+      <% unless current_page?(root_path) %>
+        <%= render "layouts/footer" %>
+      <% end %>
+    </footer>
   </body>
 </html>
