@@ -1,10 +1,10 @@
 <!--管理者側 予約一覧-->
 <% reservations.each do |reservation| %>
   <%= link_to  admin_reservation_path(reservation) do %>
-    <div class="row">
-      <p class="col-2"><%= reservation.id %></p>
+    <div class="row justify-content-center">
+      <p class="col-1"><%= reservation.id %></p>
       <p class="col-2"><%= reservation.guest.name %></p>
-      <p class="col-2"><%= reservation.room.name %></p>
+      <p class="col-1"><%= reservation.room.name %></p>
       <p class="col-2"><%= reservation.start_date.strftime("%Y年%-m月%-d日") %></p>
       <p class="col-2"><%= reservation.end_date.strftime("%Y年%-m月%-d日") %></p>
       <p class="col-2"><%= reservation.created_at.strftime("%Y年%-m月%-d日") %></p>

@@ -16,8 +16,10 @@
 .admin-contacts a:hover {
   text-decoration: none;
 }
-.contacts-body {
+.admin-contacts .row {
+  height: 4.5rem;
   overflow: hidden;
+  margin-bottom: 0.5rem;
 }
 
 /**管理者側 お問い合わせ詳細**/
@@ -28,6 +30,10 @@
   margin: 0;
   line-height: 2;
 }
+.admin-contact p {
+  margin: 0;
+}
+
 .admin-contact td {
   border: solid #e7e7e7 1px;
   padding: 1rem 2rem;
@@ -46,6 +52,15 @@
   margin: 1rem 0 3rem;
   padding: 0.5rem;
 }
+.mail_to {
+  display: inline-block;
+  border-bottom: 1px solid #c3c1c1;
+  padding: 0 0.3rem;
+}
+.mail_to:hover {
+  opacity: 0.7;
+}
+
 
 /**更新ボタン**/
 .button-update {
