@@ -1,6 +1,8 @@
 <div class="top-wrapper">
   <%= link_to "hotel", root_path, class: "logo top-logo" %>
 
+  <span id="hamberger"><i class="fas fa-bars fa-3x"></i></span>
+
   <div class="top-images">
     <!--<img src="/assets/room1.jpg" class="top-image">-->
     <%= image_tag('room1_sub.jpg', class: "top-image") %>
@@ -15,7 +17,7 @@
   <div class="top-nav-wrapper">
   </div>
 
-  <div class="top-nav">
+  <div class="top-nav" id="top-nav">
     <% if admin_signed_in? %>
       <%= link_to "予約一覧", admin_reservations_path, class: "link" %>
       <%= link_to "お問い合わせ一覧", admin_contacts_path, class: "link" %>
@@ -28,3 +30,13 @@
     <% end %>
   </div>
 </div>
+
+<script>
+  /**ハンバーガーメニュー**/
+  function hamburger(){
+    document.getElementById("top-nav").classList.toggle('open');
+  };
+  document.getElementById('hamberger').addEventListener('click',function(){
+    hamburger();
+  });
+</script>
