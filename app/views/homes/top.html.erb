@@ -1,5 +1,30 @@
-<div class="top-images">
-  <!--<img src="/assets/room1.jpg" class="top-image">-->
-  <%= image_tag('room1.jpg', class: "top-image") %>
-</div>
+<div class="top-wrapper">
+  <%= link_to "hotel", root_path, class: "logo top-logo" %>
 
+  <div class="top-images">
+    <!--<img src="/assets/room1.jpg" class="top-image">-->
+    <%= image_tag('room1_sub.jpg', class: "top-image") %>
+  </div>
+
+  <div class="catch-copy">
+    <h4 >「お洒落な空間で過ごしたい」を叶えるホテル</h4>
+      <h4>時間を忘れて過ごしてみませんか？</h4>
+      <h4>あなたの理想がここにある</h4>
+  </div>
+
+  <div class="top-nav-wrapper">
+  </div>
+
+  <div class="top-nav">
+    <% if admin_signed_in? %>
+      <%= link_to "予約一覧", admin_reservations_path, class: "link" %>
+      <%= link_to "お問い合わせ一覧", admin_contacts_path, class: "link" %>
+      <%= link_to "ログアウト", destroy_admin_session_path, method: :delete, class: "link"  %>
+    <% else %>
+      <%= link_to "room", rooms_path, class: "top-link nav-room" %>
+      <%= link_to "reservation", search_reservations_path, class: "top-link nav-reservation" %>
+      <%= link_to "access", access_path, class: "top-link nav-access" %>
+      <%= link_to "contact", new_contact_path, class: "top-link nav-contact" %>
+    <% end %>
+  </div>
+</div>

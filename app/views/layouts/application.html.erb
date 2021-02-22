@@ -16,9 +16,7 @@
 
   <body>
     <header>
-      <% if current_page?(root_path) %>
-        <%= render "layouts/top_header" %>
-      <% else %>
+      <% unless current_page?(root_path) %>
         <%= render "layouts/header" %>
       <% end %>
     </header>
@@ -29,7 +27,7 @@
 
     <footer>
       <!--<small>Copyright © 2021 maki All Rights Reserved.</small>-->
-      <% unless current_page?(root_path) %>
+      <% unless current_page?(root_path) || current_admin %>
         <%= render "layouts/footer" %>
       <% end %>
     </footer>

@@ -2,16 +2,95 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-/**トップページ画像**/
+
+.top_wrapper {
+  width: 100vw;
+}
+
+/**トップ画像**/
 .top-images {
-  text-align: left;
-  height: 100%;
-  position: absolute;
-  top: 0px;
+  width: 100vw;
 }
 .top-image {
-  height: 100%;
-  // display: inline-block;
+  position: fixed;
+  top: 0px;
+  left: 0;
+}
+
+/**キャッチコピー**/
+.catch-copy {
+  color: #e7e7e7;
+  padding: 0.5rem;
+  position: absolute;
+  top: 32%;
+  right: 30%;
+  text-shadow:
+    1px  1px 10px #474747,
+   -1px  1px 10px #474747,
+    1px -1px 10px #474747,
+   -1px -1px 10px #474747,
+    1px  0px 10px #474747,
+    0px  1px 10px #474747,
+   -1px  0px 10px #474747,
+    0px -1px 10px #474747;
+}
+.catch-copy h4 {
+  padding: 0;
+  margin: 0.5rem;
+  letter-spacing: 2px;
+}
+
+/**トップ フェードイン**/
+.catch-copy,
+.top-logo,
+.top-link {
+  animation-name: fadein;
+  animation-duration: 3s;
+  animation-timing-function: ease-out;
+  animation-fill-mode: forwards;
+}
+@keyframes fadein {
+  0% {
+    opacity: 0;
+    transform: translateZ(-50px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateZ(0);
+  }
+}
+
+/**トップ　ナビゲーション**/
+.top-nav-wrapper {
+  width: 20%;
+  height: 100vh;
+  position: absolute;
+  right: 0;
+  background-color: rgba(112,106,105,0.9);
+}
+.top-nav-wrapper::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 100%;
+  border-style: solid;
+  border-color: transparent transparent rgba(112,106,105,0.9) transparent;
+  border-width: 0 0 100vh 100px;
+}
+.top-nav {
+  height: 50%;
+  width: 50%;
+  position: absolute;
+  right: 0px;
+  bottom: 0px;
+  display: flex;
+  flex-direction: column;
+}
+.top-link {
+  font-family: 'Noto Serif JP', sans-serif;
+  text-align: right;
+  font-size: 2.3rem;
+  padding: 0 3rem 2rem 0;
 }
 
 /**アクセス**/
@@ -40,17 +119,61 @@
 
 
 /***********レスポンシブ対応***********/
-@media (max-width: 767px) {
-  /**トップ**/
-  .top-images {
-    width: 100vw;
-  }
-  .top-image {
+@media (max-width: 1020px) {
+  .catch-copy {
     position: absolute;
-    bottom: 0px;
-    width: 100%;
-    height: auto;
+    top: 30%;
+    right: 0;
+    width: 100vw;
+    padding: 0;
   }
+  .catch-copy h4 {
+    font-size: 20px;
+  }
+  .top-nav-wrapper {
+    width: 5%;
+    height: 100vh;
+  }
+  .top-nav-wrapper::before {
+    border-width: 0 0 100vh 350px;
+  }
+  .top-nav {
+    height: 45%;
+  }
+  .top-link {
+    padding: 0 2rem 1rem 0;
+  }
+}
+
+@media (max-width: 767px) {
+  /**トップ キャッチコピー**/
+  .catch-copy {
+    position: absolute;
+    top: 25%;
+    right: 0;
+    width: 100vw;
+    padding: 0;
+  }
+  .catch-copy h4 {
+    font-size: 15px;
+    margin: 0 3px 0 0;
+  }
+  /**トップ ナビゲーション**/
+  .top-nav-wrapper {
+    width: 100vw;
+    height: 45vh;
+    position: absolute;
+    bottom: 0;
+  }
+  .top-nav {
+    height: 40%;
+  }
+  .top-link {
+    text-align: center;
+    width: 100%;
+    padding: 0;
+  }
+
   /**アクセス**/
   .access{
     width: 100vw;
@@ -74,6 +197,4 @@
   .access td:nth-child(even) {
     margin-bottom: 2rem;
   }
-
-
 }
