@@ -5,22 +5,22 @@
   <div class="form-wrapper">
     <%= form_with model: @contact, url: confirm_contacts_path ,local: true do |f| %>
       <div class="form">
-        <%= f.label :title, "タイトル" %>
+        <%= f.label "タイトル" %>
         <%= f.text_field :title, autocomplete: "off" %>
         <span class="focus-line"></span>
       </div>
       <div class="form">
-        <%= f.label :body, "内容", class: "label-body" %>
+        <%= f.label "内容", class: "label-body" %>
         <%= f.text_area :body, autocomplete: "off" %>
         <span class="focus-line"></span>
       </div>
       <div class="form">
-        <%= f.label :name, "名前"  %>
+        <%= f.label "名前"  %>
         <%= f.text_field :name, autocomplete: "off" %>
         <span class="focus-line"></span>
       </div>
       <div class="form">
-        <%= f.label :email, "メールアドレス" %>
+        <%= f.label "メールアドレス" %>
         <%= f.email_field :email, autocomplete: "off" %>
         <span class="focus-line"></span>
       </div>
