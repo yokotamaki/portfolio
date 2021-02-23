@@ -1,44 +1,41 @@
-<div class="room-wrapper">
-
 <h4>客室一覧</h4>
-  <div class="rooms room1">
-    <div class="room-image">
-      <%= image_tag "room1.jpg", width: "95%" %>
-      <%= image_tag "room1_sub.jpg", width: "95%" %>
-    </div>
-    <div class="room-content">
-      <h3><%= @room1.name %></h3>
-      <p><%= @room1.body %></p>
-      <p>料金　<%= @room1.price %>円</p>
-      <p>定員　<%= @room1.people %>名</p>
-      <p>客室数　全<%= @room1.capacity %>室</p>
-    </div>
+<div class="rooms room1">
+  <div class="room-image">
+    <%= image_tag "room1.jpg", width: "95%" %>
+    <%= image_tag "room1_sub.jpg", width: "95%" %>
   </div>
-  <div class="rooms room2">
-    <div class="room-image">
-      <%= image_tag "room2.jpg", width: "95%" %>
-      <%= image_tag "room2_sub.jpg", width: "95%" %>
-    </div>
-    <div class="room-content">
-      <h3><%= @room2.name %></h3>
-      <p><%= @room2.body %></p>
-      <p>料金　<%= @room2.price %>円</p>
-      <p>定員　<%= @room2.people %>名</p>
-      <p>客室数　全<%= @room2.capacity %>室</p>
-    </div>
+  <div class="room-content">
+    <h3><%= @room1.name %></h3>
+    <p><%= @room1.body %></p>
+    <p>料金　<%= @room1.price %>円</p>
+    <p>定員　<%= @room1.people %>名</p>
+    <p>客室数　全<%= @room1.capacity %>室</p>
   </div>
-  <div class="rooms room3">
-    <div class="room-image">
-      <%= image_tag "room3.jpg", width: "95%" %>
-      <%= image_tag "room3_sub.jpg", width: "95%" %>
-    </div>
-    <div class="room-content">
-      <h3><%= @room3.name %></h3>
-      <p><%= @room3.body %></p>
-      <p>料金　<%= @room3.price %>円</p>
-      <p>定員　<%= @room3.people %>名</p>
-      <p>客室数　全<%= @room3.capacity %>室</p>
-    </div>
+</div>
+<div class="rooms room2">
+  <div class="room-image">
+    <%= image_tag "room2.jpg", width: "95%" %>
+    <%= image_tag "room2_sub.jpg", width: "95%" %>
+  </div>
+  <div class="room-content">
+    <h3><%= @room2.name %></h3>
+    <p><%= @room2.body %></p>
+    <p>料金　<%= @room2.price %>円</p>
+    <p>定員　<%= @room2.people %>名</p>
+    <p>客室数　全<%= @room2.capacity %>室</p>
+  </div>
+</div>
+<div class="rooms room3">
+  <div class="room-image">
+    <%= image_tag "room3.jpg", width: "95%" %>
+    <%= image_tag "room3_sub.jpg", width: "95%" %>
+  </div>
+  <div class="room-content">
+    <h3><%= @room3.name %></h3>
+    <p><%= @room3.body %></p>
+    <p>料金　<%= @room3.price %>円</p>
+    <p>定員　<%= @room3.people %>名</p>
+    <p>客室数　全<%= @room3.capacity %>室</p>
   </div>
 </div>
 

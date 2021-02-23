@@ -4,94 +4,51 @@
     <%= render "reservations/guest_errors", guest: @guest %>
   </div>
 
-<div class="form-wrapper">
-  <%= form_with model: @guest, url: confirm_reservations_path, local: true do |f| %>
-  <div class="form">
-    <%= f.label :name, "名前" %>
-    <%= f.text_field :name, autocomplete: "off" %>
+  <div class="form-wrapper">
+    <%= form_with model: @guest, url: confirm_reservations_path, local: true do |f| %>
+      <div class="form">
+        <%= f.label :name, "名前" %>
+        <%= f.text_field :name, autocomplete: "off" %>
+      </div>
+      <div class="form">
+        <%= f.label :name_kana, "フリガナ" %>
+        <%= f.text_field :name_kana, autocomplete: "off" %>
+        <span class="focus-line"></span>
+      </div>
+      <div class="form">
+        <%= f.label :birthday, "生年月日" %>
+        <%= f.date_select(:birthday, use_month_numbers: true, start_year: (Date.today.year-100), end_year: (Date.today.year-20), prompt:"---", date_separator: '/') %>
+      </div>
+      <div class="form">
+        <%= f.label :sex, "性別" %>
+        <%= f.radio_button :sex, true %><p>男</p>
+        <%= f.radio_button :sex, false %><p>女</p>
+      </div>
+      <div class="form">
+        <%= f.label :zipcode, "郵便番号" %>
+        <%= f.text_field :zipcode, autocomplete: "off" %>
+        <span class="focus-line"></span>
+      </div>
+      <div class="form">
+        <%= f.label :address, "住所" %>
+        <%= f.text_field :address, autocomplete: "off" %>
+        <span class="focus-line"></span>
+      </div>
+      <div class="form">
+        <%= f.label :phone_number, "電話番号" %>
+        <%= f.text_field :phone_number, autocomplete: "off" %>
+        <span class="focus-line"></span>
+      </div>
+      <div class="form">
+        <%= f.label :email, "メールアドレス" %>
+        <%= f.email_field :email, autocomplete: "off" %>
+        <span class="focus-line"></span>
+      </div>
+      <%= f.hidden_field :start_date, value: @start_date %>
+      <%= f.hidden_field :end_date, value: @end_date %>
+      <%= f.hidden_field :people, value: @people %>
+      <%= f.hidden_field :room, value: @room %>
+      <%= f.submit "確認", class: "button" %>
+    <% end %>
   </div>
-  <div class="form">
-    <%= f.label :name_kana, "フリガナ" %>
-    <%= f.text_field :name_kana, autocomplete: "off" %>
-    <span class="focus-line"></span>
-  </div>
-  <div class="form">
-    <%= f.label :birthday, "生年月日" %>
-    <%= f.date_select(:birthday, use_month_numbers: true, start_year: (Date.today.year-100), end_year: (Date.today.year-20), prompt:"---", date_separator: '/') %>
-  </div>
-  <div class="form">
-    <%= f.label :sex, "性別" %>
-    <%= f.radio_button :sex, true %><p>男</p>
-    <%= f.radio_button :sex, false %><p>女</p>
-  </div>
-  <div class="form">
-    <%= f.label :zipcode, "郵便番号" %>
-    <%= f.text_field :zipcode, autocomplete: "off" %>
-    <span class="focus-line"></span>
-  </div>
-  <div class="form">
-    <%= f.label :address, "住所" %>
-    <%= f.text_field :address, autocomplete: "off" %>
-    <span class="focus-line"></span>
-  </div>
-  <div class="form">
-    <%= f.label :phone_number, "電話番号" %>
-    <%= f.text_field :phone_number, autocomplete: "off" %>
-    <span class="focus-line"></span>
-  </div>
-  <div class="form">
-    <%= f.label :email, "メールアドレス" %>
-    <%= f.email_field :email, autocomplete: "off" %>
-    <span class="focus-line"></span>
-  </div>
-</div>
-
-
-
-
-
-
-    <!--<table>-->
-    <!--  <tr>-->
-    <!--  label :name, "名前" %></td>
-    <!--  text_field :name %></td>
-    <!--  </tr>-->
-    <!--  <tr>-->
-    <!--  label :name_kana, "フリガナ" %></td>
-    <!--  text_field :name_kana %></td>
-    <!--  </tr>-->
-    <!--  <tr>-->
-    <!--  label :birthday, "生年月日" %></td>
-    <!--  date_select(:birthday, use_month_numbers: true, start_year: (Date.today.year-100), end_year: (Date.today.year-20), prompt:"---", date_separator: '/') %></td>
-    <!--  </tr>-->
-    <!--  <tr>-->
-    <!--  label :sex, "性別" %></td>
-    <!--    <td>-->
-    <!--<!radio_button :sex, true %><label>男</label>-->
-    <!--<!radio_button :sex, false %><label>女</label>-->
-    <!--    </td>-->
-    <!--  </tr>-->
-    <!--  <tr>-->
-    <!--  label :zipcode, "郵便番号" %></td>
-    <!--  text_field :zipcode %></td>
-    <!--  </tr>-->
-    <!--  <tr>-->
-    <!--  label :address, "住所" %></td>
-    <!--  text_field :address %></td>
-    <!--  </tr>-->
-    <!--  <tr>-->
-    <!--  label :phone_number, "電話番号" %></td>
-    <!--  text_field :phone_number %></td>
-    <!--  </tr>-->
-    <!--  <tr>-->
-    <!--  label :email, "メールアドレス" %></td>
-    <!--  email_field :email %><br></td>
-    <!--  <tr>-->
-    <!--</table>-->
-    <%= f.hidden_field :start_date, value: @start_date %>
-    <%= f.hidden_field :end_date, value: @end_date %>
-    <%= f.hidden_field :people, value: @people %>
-    <%= f.hidden_field :room, value: @room %>
-    <%= f.submit "確認", class: "button" %>
-  <% end %>
 </div>
