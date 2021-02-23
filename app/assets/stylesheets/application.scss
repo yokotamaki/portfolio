@@ -103,6 +103,7 @@ a:hover {
 /*入力フォームの下線の設定*/
 .form input[type=text],
 .form input[type=email],
+.form input[type=radio],
 .form textarea {
 	padding: 4px 0;
 	border: 0;
@@ -137,7 +138,7 @@ a:hover {
   bottom: 6px; /*上書き*/
 }
 /*通常時のラベルの位置・色*/
-.form label {
+.form label{
 	position: absolute;
 	z-index: -1;
 	bottom: 0;
@@ -146,6 +147,15 @@ a:hover {
 	transition: 0.3s;
 	letter-spacing: 0.5px;
 	color: #e7e7e7;
+}
+/*ラジオボタン*/
+.form input[type=radio] {
+  width: 20px;
+  height: 20px;
+}
+.form input[type=radio] + p {
+  display: inline-block;
+  padding: 0 3rem 0 1rem;
 }
 
 /**各ページ ヘッダー**/
@@ -248,6 +258,16 @@ a:hover {
   background-color: #2C2925;
   padding: 1rem;
   margin: 0;
+}
+
+/**バリデーション**/
+.error {
+  font-size: 17px;
+  background-color: rgba(69,64,63,0.85);
+  color: white;
+  padding: 0.3rem;
+  border-radius: 0.5rem;
+  opacity: 0.8;
 }
 
 /***********レスポンシブ対応***********/
