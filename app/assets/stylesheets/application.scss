@@ -76,6 +76,78 @@ a:hover {
   outline: none;
 }
 
+/**入力フォーム(お問い合わせ）**/
+.form {
+	position: relative;
+	width: 40rem;
+	margin: 3rem;
+}
+/*入力フォームのの幅*/
+.form-wrapper .form input[type=text],
+.form-wrapper .form textarea {
+	width: 40rem;
+	padding: 0.5rem 0.5rem 0.5rem 6rem;
+	color: #333233;
+}
+.form-wrapper .form input[type=email] {
+  width: 40rem;
+	padding-left: 10rem;
+	color: #333233;
+}
+/*入力フォームクリック時の枠線非表示*/
+.form input[type=text]:focus,
+.form input[type=email]:focus,
+.form textarea:focus {
+	outline: none;
+}
+/*入力フォームの下線の設定*/
+.form input[type=text],
+.form input[type=email],
+.form textarea {
+	padding: 4px 0;
+	border: 0;
+	background-color: transparent; /*背景透過*/
+	border-bottom: 1px solid #e7e7e7;
+}
+/*クリック時の下線の位置・色（通常は非表示の状態）*/
+.form input[type=text] ~ .focus-line,
+.form input[type=email] ~ .focus-line,
+.form textarea ~ .focus-line {
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	width: 0;
+	height: 2px;
+	transition: 0.4s;
+	background-color: #454345;
+}
+.form textarea ~ .focus-line {
+  position: absolute;
+  bottom: 6px; /*上書き*/
+}
+/*入力フォームをクリック時の下線*/
+.form input[type=text]:focus ~ .focus-line,
+.form input[type=email]:focus ~ .focus-line,
+.form textarea:focus ~ .focus-line {
+	width: 100%;
+}
+.form textarea:focus ~ .focus-line {
+  z-index: 3;
+  position: absolute;
+  bottom: 6px; /*上書き*/
+}
+/*通常時のラベルの位置・色*/
+.form label {
+	position: absolute;
+	z-index: -1;
+	bottom: 0;
+	left: 5px;
+	text-align: left;
+	transition: 0.3s;
+	letter-spacing: 0.5px;
+	color: #e7e7e7;
+}
+
 /**各ページ ヘッダー**/
 #hamberger {
   display: none;
@@ -183,7 +255,7 @@ a:hover {
   /**全体**/
   h4 {
     padding-top: 9rem;
-}
+  }
   /**ハンバーガーメニュー（各ページ・トップ）**/
   .logo {
     font-size: 35px;
@@ -230,5 +302,22 @@ a:hover {
   }
   .open {
     right: 0;
+  }
+
+  /**入力フォーム**/
+  .form {
+    width: 100vw;
+    margin: 5rem 0 0;
+  }
+  .form-wrapper .form input[type=text],
+  .form-wrapper .form input[type=email],
+  .form-wrapper .form textarea {
+    width: 95%;
+    padding: 0.3rem 0.5rem 0.3rem 3rem;
+  }
+  .form label {
+  	position: absolute;
+  	bottom: 30px;
+  	left: 5px;
   }
 }

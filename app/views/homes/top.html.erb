@@ -4,8 +4,7 @@
   <span id="hamberger"><i class="fas fa-bars fa-3x"></i></span>
 
   <div class="top-images">
-    <!--<img src="/assets/room1.jpg" class="top-image">-->
-    <%= image_tag('room1_sub.jpg', class: "top-image") %>
+    <%= image_tag("room1_sub.jpg", class: "top-image") %>
   </div>
 
   <div class="catch-copy">
@@ -34,9 +33,9 @@
 <script>
   /**ハンバーガーメニュー**/
   function hamburger(){
-    document.getElementById("top-nav").classList.toggle('open');
+    document.getElementById("top-nav").classList.toggle("open");
   };
-  document.getElementById('hamberger').addEventListener('click',function(){
+  document.getElementById("hamberger").addEventListener("click",function(){
     hamburger();
   });
 </script>

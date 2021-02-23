@@ -7,32 +7,32 @@
   <% if @reservation.length == 0 %>
     <h5>"<%= @keyword %>"の検索結果はありませんでした。</h5>
   <% else %>
-  <div class="admin-reservations">
-    <div class="row justify-content-center">
-      <h5 class="col-1">予約番号</h5>
-      <h5 class="col-2">名前</h5>
-      <h5 class="col-1">部屋</h5>
-      <h5 class="col-2">到着日</h5>
-      <h5 class="col-2">出発日</h5>
-      <h5 class="col-2">予約日</h5>
+    <div class="admin-reservations">
+      <div class="row justify-content-center">
+        <h5 class="col-1">予約番号</h5>
+        <h5 class="col-2">名前</h5>
+        <h5 class="col-1">部屋</h5>
+        <h5 class="col-2">到着日</h5>
+        <h5 class="col-2">出発日</h5>
+        <h5 class="col-2">予約日</h5>
+      </div>
+      <%= render "admin/reservations/index", reservations: @reservation %>
     </div>
-    <%= render "admin/reservations/index", reservations: @reservation %>
-  </div>
   <% end %>
 <% elsif @model == "contact" %>
   <% if @contact.length == 0 %>
     <h5>"<%= @keyword %>"の検索結果はありませんでした。</h5>
   <% else %>
-  <div class="admin-contacts">
-    <div class="row justify-content-center">
-      <h5 class="col-1">番号</h5>
-      <h5 class="col-2">タイトル</h5>
-      <h5 class="col-3">内容</h5>
-      <h5 class="col-2">名前</h5>
-      <h5 class="col-1">対応状況</h5>
-      <h5 class="col-2">お問い合わせ日</h5>
+    <div class="admin-contacts">
+      <div class="row justify-content-center">
+        <h5 class="col-1">番号</h5>
+        <h5 class="col-2">タイトル</h5>
+        <h5 class="col-3">内容</h5>
+        <h5 class="col-2">名前</h5>
+        <h5 class="col-1">対応状況</h5>
+        <h5 class="col-2">お問い合わせ日</h5>
+      </div>
+      <%= render "admin/contacts/index", contacts: @contact %>
     </div>
-    <%= render "admin/contacts/index", contacts: @contact %>
-  </div>
   <% end %>
 <% end %>

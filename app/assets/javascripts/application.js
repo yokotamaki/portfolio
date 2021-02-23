@@ -19,9 +19,9 @@
 //= require_tree .
 
 /*global $*/
-/**トップ ナビゲーション**/
 $(document).on('turbolinks:load', function() {
 
+  /**トップ ナビゲーション**/
   $(function(){
     $(".top-nav .nav-room").hover(function(){
       $(this).text("客室");
@@ -48,4 +48,8 @@ $(document).on('turbolinks:load', function() {
     });
   });
 
+  // テキストエリアの高さ自動調整
+  $("textarea").attr("rows", 1).on("input", function() {
+    $(this).height(0).innerHeight(this.scrollHeight);
+  });
 });

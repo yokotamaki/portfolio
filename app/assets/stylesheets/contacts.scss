@@ -2,49 +2,23 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-/**お問い合わせ入力画面**/
-td label{
-  width: 7rem;
-  text-align: right;
-  margin: 0.5rem 1rem;
-}
-td input[type=text],
-td input[type=email],
-td textarea {
-  width: 30rem;
-  margin: 0.5rem;
-  padding: 0.3rem;
-}
-
 /**お問い合わせ内容確認画面**/
 .contact-confirm {
   display: inline-block;
   margin: 2rem auto;
 }
+.contact-confirm p {
+  padding: 1rem;
+  margin: 0;
+}
+.contact-confirm td {
+  border: solid 1px #e7e7e7;
+  padding: 1rem 0.5rem;
+}
 .contact-confirm td:nth-child(odd) {
-  width: 10rem;
-  padding: 0.5rem;
+  width: 13rem;
 }
 .contact-confirm td:nth-child(even) {
+  text-align: left;
   width: 30rem;
-  padding: 0.5rem;
-}
-
-/******************************************************************/
-/**レスポンシブ対応**/
-@media (max-width: 767px) {
-  /**お問い合わせ入力画面**/
-  .contact table td,
-  .contact table th {
-    display: block;
-  }
-  .contact td label{
-    text-align: center;
-    margin: 0;
-  }
-  .contact td input[type=text],
-  .contact td input[type=email],
-  .contact td textarea {
-    width: 95%;
-  }
 }

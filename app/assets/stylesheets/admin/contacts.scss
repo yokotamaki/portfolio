@@ -3,6 +3,9 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 /**管理者側 お問い合わせ一覧**/
+// .admin-contacts {
+//   font-family: sans-serif;
+// }
 .admin-contacts h5 {
   padding-bottom: 0.5rem;
 }
@@ -52,6 +55,8 @@
   margin: 1rem 0 3rem;
   padding: 0.5rem;
 }
+
+/**返信メール テンプレート**/
 .mail_to {
   display: inline-block;
   border-bottom: 1px solid #c3c1c1;

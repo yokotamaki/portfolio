@@ -2,27 +2,29 @@
 <div class="wrapper">
   <%= render "contacts/contact_errors", contact: @contact %>
 
-  <div class="contact">
-  <%= form_with model: @contact, url: confirm_contacts_path ,local: true do |f| %>
-    <table>
-      <tr>
-        <td><%= f.label :title, "タイトル" %></td>
-        <td><%= f.text_field :title %></td>
-      </tr>
-        <tr>
-        <td><%= f.label :body, "内容" %></td>
-        <td><%= f.text_area :body, size: "57x7" %></td>
-      </tr>
-      <tr>
-        <td><%= f.label :name, "名前" %></td>
-        <td><%= f.text_field :name %></td>
-      </tr>
-      <tr>
-        <td><%= f.label :email, "メールアドレス" %></td>
-        <td><%= f.email_field :email %></td>
-      </tr>
-    </table>
-    <%= f.submit "送信", class: "button" %>
+  <div class="form-wrapper">
+    <%= form_with model: @contact, url: confirm_contacts_path ,local: true do |f| %>
+      <div class="form">
+        <%= f.label :title, "タイトル" %>
+        <%= f.text_field :title, autocomplete: "off" %>
+        <span class="focus-line"></span>
+      </div>
+      <div class="form">
+        <%= f.label :body, "内容", class: "label-body" %>
+        <%= f.text_area :body, autocomplete: "off" %>
+        <span class="focus-line"></span>
+      </div>
+      <div class="form">
+        <%= f.label :name, "名前"  %>
+        <%= f.text_field :name, autocomplete: "off" %>
+        <span class="focus-line"></span>
+      </div>
+      <div class="form">
+        <%= f.label :email, "メールアドレス" %>
+        <%= f.email_field :email, autocomplete: "off" %>
+        <span class="focus-line"></span>
+      </div>
+      <%= f.submit "送信", class: "button" %>
   <% end %>
   </div>
 </div>
