@@ -1,0 +1,43 @@
+<h4>宿泊者情報</h4>
+<div class="wrapper">
+      <div class="form-wrapper">
+      <%= form_with model: @guest, url: customer_path, local: true do |f| %>
+      <div class="form">
+        <%= f.label :name, "名前" %>
+        <%= f.text_field :name, autocomplete: "off" %>
+        <span class="focus-line"></span>
+      </div>
+      <div class="form">
+        <%= f.label :name_kana, "フリガナ" %>
+        <%= f.text_field :name_kana, autocomplete: "off" %>
+        <span class="focus-line"></span>
+      </div>
+      <div class="form">
+        <%= f.label :birthday, "生年月日" %>
+        <%= f.date_select(:birthday, use_month_numbers: true, start_year: (Date.today.year-100), end_year: (Date.today.year-20), prompt:"---", date_separator: '/') %>
+      </div>
+      <div class="form">
+        <%= f.label :sex, "性別" %>
+        <%= f.radio_button :sex, true %><p>男</p>
+        <%= f.radio_button :sex, false %><p>女</p>
+      </div>
+      <div class="form">
+        <%= f.label :zipcode, "郵便番号" %>
+        <%= f.text_field :zipcode, autocomplete: "off" %>
+        <span class="focus-line"></span>
+      </div>
+      <div class="form">
+        <%= f.label :address, "住所" %>
+        <%= f.text_field :address, autocomplete: "off" %>
+        <span class="focus-line"></span>
+      </div>
+      <div class="form">
+        <%= f.label :phone_number, "電話番号" %>
+        <%= f.text_field :phone_number, autocomplete: "off" %>
+        <span class="focus-line"></span>
+      </div>
+      <%= link_to "戻る", :back, class: "button" %>
+      <%= f.submit "更新", class: "button" %>
+    <% end %>
+</div>
+</div>

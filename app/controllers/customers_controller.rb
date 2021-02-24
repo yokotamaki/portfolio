@@ -11,4 +11,20 @@ class CustomersController < ApplicationController
     @guest = Guest.find(params[:id])
     @reservation = Reservation.find_by(id: @guest.id)
   end
+
+  def edit
+    @guest = Guest.find(params[:id])
+    
+  end
+
+  def update
+    @guest = Guest.find(params[:id])
+    @guest.update(guest_params)
+    redirect_to customer_path(@guest)
+  end
+
+  private
+  def guest_params
+    params.require(:guest).permit(:name, :name_kana, :birthday, :sex, :zipcode, :address, :phone_number)
+  end
 end
