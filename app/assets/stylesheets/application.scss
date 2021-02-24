@@ -216,6 +216,22 @@ a:hover {
   padding: 0.3rem;
 }
 
+/**予約詳細（ユーザ・管理者）**/
+.reservation-history {
+  display: flex;
+  margin-bottom: 2rem;
+}
+.reservation-box {
+  margin: 1rem;
+}
+.reservation-history td {
+  border: solid #e7e7e7 1px ;
+}
+.reservation-history p {
+  padding: 1rem 1.5rem;
+  margin: 0;
+}
+
 /**ページング機能**/
 .pagination {
   justify-content: center;
