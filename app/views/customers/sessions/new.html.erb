@@ -1,6 +1,7 @@
 <h2>Log in</h2>
 
-<%= form_with model: @user, url: user_session_path, local: true do |f| %>  <div class="field">
+<%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+  <div class="field">
     <%= f.label :email %><br />
     <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
   </div>
@@ -22,4 +23,4 @@
   </div>
 <% end %>
 
-<%= render "users/shared/links" %>
+<%= render "customers/shared/links" %>

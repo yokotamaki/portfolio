@@ -1,6 +1,16 @@
 Rails.application.routes.draw do
+  # devise_for :customers
+  # devise_for :users
   root 'homes#top'
   get '/access' => 'homes#access'
+  # resources :users
+  # devise_for :users
+
+  devise_for :customers, controllers: {
+    sessions:      'customers/sessions',
+    passwords:     'customers/passwords',
+    registrations: 'customers/registrations'
+  }
   # 管理者側
   devise_for :admins
   namespace :admin do

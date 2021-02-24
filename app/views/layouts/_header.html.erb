@@ -5,7 +5,7 @@
     <% if admin_signed_in? %>
       <%= link_to "予約一覧", admin_reservations_path, class: "link header-reservation", id: "link" %>
       <%= link_to "お問い合わせ一覧", admin_contacts_path, class: "link header-contact", id: "link" %>
-      <%= link_to "ログアウト", destroy_admin_session_path, method: :delete, class: "link", id: "link"  %>
+      <%= link_to "ログアウト", destroy_admin_session_path, method: :delete, class: "link", id: "link" %>
     <% else %>
       <%= link_to "room", rooms_path, class: "link header-room", id: "link" %>
       <%= link_to "reservation", search_reservations_path, class: "link header-reservation", id: "link" %>
@@ -26,8 +26,8 @@
 
   /**カレント表示**/
   $(function(){
-　　path = location.pathname
-　　 if(path.match("/rooms")){
+    path = location.pathname
+    if(path.match("/rooms")){
     $(".header-room").addClass("current");
     }
     if(path.match("/reservations")){
