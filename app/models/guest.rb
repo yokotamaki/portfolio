@@ -1,5 +1,6 @@
 class Guest < ApplicationRecord
   has_one :reservation, dependent: :destroy
+  belongs_to :customer, optional: true
 
   # バリデーションの設定
   validates :name, presence: { message: "名前を入力してください" },

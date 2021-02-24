@@ -2,7 +2,7 @@
 <div class="wrapper">
   <div class="reservation-history">
     <div class="reservation-box">
-      <h5>宿泊者情報</h5>
+      <h5>宿泊者情報　(<%= link_to "編集する", edit_customer_path(@guest) %>)</h5>
       <table>
         <tr>
           <td><p>名前</p></td>
@@ -40,7 +40,7 @@
         </tr>
       </table>
     </div>
-      <!--部屋・日付など-->
+    <!--部屋・日付など-->
     <div class="reservation-box">
       <h5>予約内容</h5>
       <table>
@@ -75,5 +75,7 @@
       </table>
     </div>
   </div>
-  <%= link_to "戻る", :back, class: "button" %>
+  <%= link_to "戻る", mypage_customer_path(current_customer), class: "button" %>
 </div>
+
+

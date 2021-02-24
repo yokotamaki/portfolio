@@ -52,11 +52,9 @@
 @keyframes fadein {
   0% {
     opacity: 0;
-    transform: translateZ(0);
   }
   100% {
     opacity: 1;
-    transform: translateZ(0);
   }
 }
 
@@ -78,8 +76,8 @@
   border-width: 0 0 100vh 100px;
 }
 .top-nav {
-  height: 50%;
-  width: 50%;
+  height: 70%;
+  width: 20%;
   position: absolute;
   right: 0px;
   bottom: 0px;
@@ -138,7 +136,8 @@
     border-width: 0 0 100vh 350px;
   }
   .top-nav {
-    height: 45%;
+    height: 57%;
+    width: 25%;
   }
   .top-link {
     padding: 0 2rem 1rem 0;
