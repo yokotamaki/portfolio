@@ -6,11 +6,18 @@
       <%= link_to "予約一覧", admin_reservations_path, class: "link header-reservation", id: "link" %>
       <%= link_to "お問い合わせ一覧", admin_contacts_path, class: "link header-contact", id: "link" %>
       <%= link_to "ログアウト", destroy_admin_session_path, method: :delete, class: "link", id: "link" %>
+    <% elsif customer_signed_in? %>
+      <%= link_to "room", rooms_path, class: "link header-room", id: "link" %>
+      <%= link_to "reservation", search_reservations_path, class: "link header-reservation", id: "link" %>
+      <%= link_to "access", access_path, class: "link header-access", id: "link" %>
+      <%= link_to "contact", new_contact_path, class: "link header-contact", id: "link" %>
+      <%= link_to "logout", destroy_customer_session_path, method: :delete, class: "link header-logout", id: "link" %>
     <% else %>
       <%= link_to "room", rooms_path, class: "link header-room", id: "link" %>
       <%= link_to "reservation", search_reservations_path, class: "link header-reservation", id: "link" %>
       <%= link_to "access", access_path, class: "link header-access", id: "link" %>
       <%= link_to "contact", new_contact_path, class: "link header-contact", id: "link" %>
+      <%= link_to "login", new_customer_session_path, class: "link header-login", id: "link" %>
     <% end %>
   </div>
 </div>
@@ -38,6 +45,12 @@
     }
     if(path.match("/contacts")){
     $(".header-contact").addClass("current");
+    }
+    if(path.match("/customers/sign_in")){
+    $(".header-login").addClass("current");
+    }
+    if(path.match("/customers/sign_up")){
+    $(".header-logout").addClass("current");
     }
     if(path.match("/admin/reservations")){
     $(".header-access").addClass("current");
