@@ -344,6 +344,14 @@ a:hover {
     right: 0;
   }
 
+  /**予約詳細（ユーザ・管理者）**/
+  .reservation-history {
+    display: block;
+  }
+  .reservation-box {
+    margin-bottom: 3rem;
+  }
+
   /**入力フォーム**/
   .form {
     width: 100vw;
@@ -354,6 +362,12 @@ a:hover {
   .form-wrapper .form textarea {
     width: 95%;
     padding: 0.3rem 0.5rem 0.3rem 3rem;
+  }
+  .form input[type=text] ~ .focus-line,
+  .form input[type=email] ~ .focus-line,
+  .form input[type=password] ~ .focus-line,
+  .form textarea ~ .focus-line {
+  	height: 4px;
   }
   .form label {
   	position: absolute;

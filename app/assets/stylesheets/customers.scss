@@ -5,9 +5,14 @@
 /**ユーザ 予約一覧**/
 .customer-reservation td {
   padding: 1rem 2rem;
-}
-.customer-reservation td {
   border: solid 1px #e7e7e7;
+}
+.customer-reservation p {
+  margin: 0;
+}
+.customer-reservation h5 {
+  margin: 0;
+  padding: 1rem;
 }
 .customer-reservation a {
   border-bottom: 1px solid #c3c1c1;
@@ -15,4 +20,21 @@
 }
 .customer-reservation a:hover {
   opacity: 0.7;
+}
+
+/***********レスポンシブ対応***********/
+@media (max-width: 767px) {
+  .customer-reservation {
+    margin: 0.5rem;
+  }
+  .customer-reservation h5{
+    font-size: 15px;
+    padding: 0.5rem;
+  }
+  .customer-reservation p{
+    font-size: 12px;
+  }
+  .customer-reservation td {
+    padding: 0.5rem 0.1rem;
+  }
 }
