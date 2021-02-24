@@ -1,0 +1,18 @@
+// Place all the styles related to the users controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+/*ユーザ マイページ**/
+.customer-reservation td {
+  padding: 1rem 2rem;
+}
+.customer-reservation td {
+  border: solid 1px #e7e7e7;
+}
+.customer-reservation a {
+  border-bottom: 1px solid #c3c1c1;
+  padding: 0 0.3rem;
+}
+.customer-reservation a:hover {
+  opacity: 0.7;
+}

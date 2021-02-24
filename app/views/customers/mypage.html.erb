@@ -1,0 +1,25 @@
+<div class="wrapper">
+  <div class="customer-reservation">
+    <h4>予約履歴（全<%= @reservation.count %>件）</h4>
+    <table>
+      <tr>
+        <td><h5>予約名</h5></td>
+        <td><h5>チェックイン日</h5></td>
+        <td><h5>チェックアウト日</h5></td>
+      </tr>
+      <% @guest.each do |guest| %>
+        <tr>
+          <td>
+            <%= link_to customer_path(guest) do %>
+              <%= guest.name %>
+            <% end %>
+          </td>
+          <% @reservation.each do |reservation| %>
+            <td><%= guest.reservation.start_date.strftime("%Y年%-m月%-d日") %></td>
+            <td><%= guest.reservation.end_date.strftime("%Y年%-m月%-d日") %></td>
+          <% end %>
+        </tr>
+      <% end %>
+    </table>
+  </div>
+</div>

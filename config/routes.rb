@@ -8,17 +8,25 @@ Rails.application.routes.draw do
 
   devise_for :customers, controllers: {
     sessions:      'customers/sessions',
-    passwords:     'customers/passwords',
     registrations: 'customers/registrations'
   }
+
   # 管理者側
-  devise_for :admins
+  devise_for :admins, controllers: {
+    sessions:      'admins/sessions',
+  }
+  # devise_for :admins
   namespace :admin do
     resources :reservations, only:[:index, :show]
     resources :contacts, only:[:index, :show, :update]
     get 'searchs/search' => 'searchs#search', as: 'search'
   end
   # HP側
+  resources :customers, only:[:show] do
+    member do
+      get :mypage
+    end
+  end
   resources :reservations, only:[:create] do
     collection do
       get :search

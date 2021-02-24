@@ -1,6 +1,7 @@
 class Reservation < ApplicationRecord
   belongs_to :room
   belongs_to :guest
+  belongs_to :customer, optional: true
 
   # start_dateに対するバリデーション
   validate :not_before_today
