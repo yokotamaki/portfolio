@@ -53,6 +53,12 @@ $(document).on('turbolinks:load', function() {
       $(this).text("login");
     });
 
+    $(".top-nav .nav-mypage").hover(function(){
+      $(this).text("マイページ");
+    },function(){
+      $(this).text("mypage");
+    });
+
     $(".top-nav .nav-logout").hover(function(){
       $(this).text("ログアウト");
     },function(){
