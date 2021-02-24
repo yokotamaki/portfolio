@@ -90,6 +90,7 @@ a:hover {
 	padding: 0.5rem 0.5rem 0.5rem 6rem;
 	color: #333233;
 }
+.form-wrapper .form input[type=password],
 .form-wrapper .form input[type=email] {
   width: 40rem;
 	padding-left: 10rem;
@@ -98,12 +99,14 @@ a:hover {
 /*入力フォームクリック時の枠線非表示*/
 .form input[type=text]:focus,
 .form input[type=email]:focus,
+.form input[type=password]:focus,
 .form textarea:focus {
 	outline: none;
 }
 /*入力フォームの下線の設定*/
 .form input[type=text],
 .form input[type=email],
+.form input[type=password],
 .form input[type=radio],
 .form textarea {
 	padding: 4px 0;
@@ -114,6 +117,7 @@ a:hover {
 /*クリック時の下線の位置・色（通常は非表示の状態）*/
 .form input[type=text] ~ .focus-line,
 .form input[type=email] ~ .focus-line,
+.form input[type=password] ~ .focus-line,
 .form textarea ~ .focus-line {
 	position: absolute;
 	bottom: 0;
@@ -130,6 +134,7 @@ a:hover {
 /*入力フォームをクリック時の下線*/
 .form input[type=text]:focus ~ .focus-line,
 .form input[type=email]:focus ~ .focus-line,
+.form input[type=password]:focus ~ .focus-line,
 .form textarea:focus ~ .focus-line {
 	width: 100%;
 }
