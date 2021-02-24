@@ -14,13 +14,17 @@ class CustomersController < ApplicationController
 
   def edit
     @guest = Guest.find(params[:id])
-    
+
   end
 
   def update
     @guest = Guest.find(params[:id])
-    @guest.update(guest_params)
-    redirect_to customer_path(@guest)
+    if @guest.update(guest_params)
+      redirect_to customer_path(@guest)
+    else
+      @guest.errors.present?
+      render :edit
+    end
   end
 
   private
