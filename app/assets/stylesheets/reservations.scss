@@ -35,18 +35,19 @@
   border: 30px solid transparent;
   border-bottom: 30px solid rgba(51,50,51,0.6);
 }
-.room {
+.room-wrapper .room {
   display: flex;
+}
+.room-wrapper .room label {
+  width: 33%;
+  transition: 0.3s;
+  margin: 0 auto;
 }
 .room img {
   margin: 1rem;
 }
 .room input[type=radio] {
   display: none;
-}
-.room label {
-  opacity: 0.7;
-  transition: 0.3s;
 }
 .room input[type=radio]:hover + label {
   transform: scale(0.95);
