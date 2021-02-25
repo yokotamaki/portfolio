@@ -2,3 +2,9 @@
 <% flash.each do |key, value| %>
   <%= content_tag(:div, value, class: "#{key}")%>
 <% end %>
+
+<script>
+  $(function(){
+    $(".notice").fadeOut(5000);
+  });
+</script>

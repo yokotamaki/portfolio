@@ -19,7 +19,7 @@
 .admin-contacts a:hover {
   text-decoration: none;
 }
-.admin-contacts .row {
+.admin-contacts .row p {
   height: 4.5rem;
   overflow: hidden;
   margin-bottom: 0.5rem;
@@ -36,7 +36,6 @@
 .admin-contact p {
   margin: 0;
 }
-
 .admin-contact td {
   border: solid #e7e7e7 1px;
   padding: 1rem 2rem;
@@ -52,7 +51,7 @@
 .contact-status select {
   color: #706A69;
   font-size: 20px;
-  margin: 1rem 0 3rem;
+  margin: 1.5rem 0.5rem 0;
   padding: 0.5rem;
 }
 
@@ -84,6 +83,6 @@
   color: white;
   padding: 0.3rem;
   margin-top: 1rem;
-  border-radius: 1rem;
+  border-radius: 0.5rem;
   opacity: 0.8;
 }
