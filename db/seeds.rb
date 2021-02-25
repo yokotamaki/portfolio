@@ -56,7 +56,7 @@ Guest.create!(
   zipcode: "1111111",
   address: Gimei.address.kanji,
   phone_number: "09000000000",
-  email: "test1@test",
+  email: "test@test",
   created_at: "2021-02-19"
   )
 Guest.create!(
@@ -117,14 +117,6 @@ Reservation.create!(
   created_at: "2021-02-19"
   )
 Reservation.create!(
-  guest_id: 1,
-  room_id: 2,
-  start_date: "2021-03-06",
-  end_date: "2021-03-07",
-  people: 2,
-  created_at: "2021-02-19"
-  )
-Reservation.create!(
   guest_id: 2,
   room_id: 2,
   start_date: "2021-03-05",
@@ -155,14 +147,6 @@ Reservation.create!(
   end_date: "2021-03-02",
   people: 2,
   created_at: "2021-02-23"
-  )
-Reservation.create!(
-  guest_id: 1,
-  room_id: 2,
-  start_date: "2021-03-15",
-  end_date: "2021-03-16",
-  people: 2,
-  created_at: "2021-02-19"
   )
 
 Contact.create!(
