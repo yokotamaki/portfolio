@@ -46,6 +46,24 @@ $(document).on('turbolinks:load', function() {
     },function(){
       $(this).text("contact");
     });
+
+    $(".top-nav .nav-login").hover(function(){
+      $(this).text("ログイン");
+    },function(){
+      $(this).text("login");
+    });
+
+    $(".top-nav .nav-mypage").hover(function(){
+      $(this).text("マイページ");
+    },function(){
+      $(this).text("mypage");
+    });
+
+    $(".top-nav .nav-logout").hover(function(){
+      $(this).text("ログアウト");
+    },function(){
+      $(this).text("logout");
+    });
   });
 
   // テキストエリアの高さ自動調整

@@ -1,11 +1,11 @@
-<h4>情報入力</h4>
+<h4>宿泊者情報</h4>
 <div class="wrapper">
   <div id="guest-errors">
     <%= render "reservations/guest_errors", guest: @guest %>
   </div>
 
   <div class="form-wrapper">
-    <%= form_with model: @guest, url: confirm_reservations_path, local: true do |f| %>
+    <%= form_with model: @guest, url: customer_path, local: true do |f| %>
       <div class="form">
         <%= f.label :name, "名前" %>
         <%= f.text_field :name, autocomplete: "off" %>
@@ -40,16 +40,8 @@
         <%= f.text_field :phone_number, autocomplete: "off" %>
         <span class="focus-line"></span>
       </div>
-      <div class="form">
-        <%= f.label :email, "メールアドレス" %>
-        <%= f.email_field :email, autocomplete: "off" %>
-        <span class="focus-line"></span>
-      </div>
-      <%= f.hidden_field :start_date, value: @start_date %>
-      <%= f.hidden_field :end_date, value: @end_date %>
-      <%= f.hidden_field :people, value: @people %>
-      <%= f.hidden_field :room, value: @room %>
-      <%= f.submit "確認", class: "button" %>
+      <%= link_to "戻る", :back, class: "button" %>
+      <%= f.submit "更新", class: "button" %>
     <% end %>
   </div>
 </div>

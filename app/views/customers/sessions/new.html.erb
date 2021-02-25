@@ -1,0 +1,19 @@
+<h4>ログイン</h4>
+<div class="wrapper">
+  <div class="form-wrapper">
+    <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+      <div class="form">
+        <%= f.label "メールアドレス" %>
+        <%= f.email_field :email, autofocus: true, autocomplete: "off" %>
+        <span class="focus-line"></span>
+      </div>
+      <div class="form">
+        <%= f.label "パスワード" %>
+        <%= f.password_field :password, autocomplete: "off" %>
+        <span class="focus-line"></span>
+      </div>
+      <%= f.submit "ログイン", class: "button" %>
+      <%= link_to "新規登録はこちら", new_customer_registration_path %>
+    <% end %>
+  </div>
+</div>
