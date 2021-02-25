@@ -22,10 +22,10 @@
 
 /**客室選択**/
 .room-wrapper {
-  background-color: rgba(51,50,51,0.3);
-  padding-top: 5rem;
+  background-color: rgba(51,50,51,0.6);
+  padding: 5rem 1rem 0 1rem;
+  margin: 1rem 1rem 2rem;
   position: relative;
-  // width: 100vw;
 }
 .room-wrapper:before {
   content: "";
@@ -33,7 +33,7 @@
   top: -60px;
   left: 47.5%;
   border: 30px solid transparent;
-  border-bottom: 30px solid rgba(51,50,51,0.3);
+  border-bottom: 30px solid rgba(51,50,51,0.6);
 }
 .room {
   display: flex;
@@ -51,13 +51,13 @@
 .room input[type=radio]:hover + label {
   transform: scale(0.95);
   transition-duration: 0.2s;
-  // opacity: 0.8;
-  // opacity: 0.;
   transform : scale(1.02);
   transition: 0.3s;
 }
 .room input[type=radio]:checked + label {
   opacity: 1;
+  border: 2px solid rgba(231,231,231,0.5);
+  transition: 0.3s;
 }
 
 /**予約確認**/
@@ -90,11 +90,18 @@
     opacity: 0.8;
   }
   /**客室選択**/
+  .room-wrapper {
+    margin: 3rem 0.5rem 1rem;
+  }
+  .room-wrapper:before {
+    position: absolute;
+    left: 43%;
+  }
   .room {
     display: block;
   }
   .room img {
-   width: 90%;
+   width: 95%;
   }
 
   /**情報入力画面**/
