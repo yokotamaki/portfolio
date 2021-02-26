@@ -10,16 +10,17 @@
 .step-content {
   background-color: #706A69;
   padding: 1rem;
-  border-radius: 3rem;
+  // border-radius: 3rem;
+  border: 1px solid rgba(51,50,51,0.3);
 }
 .step-content p {
   margin: 1rem;
 }
 .step {
-  display: inline-block;
+  display: flex;
 }
 .step-now {
-  background-color: rgba(51,50,51,0.8);;
+  background-color: rgba(51,50,51,0.8);
 }
 
 /**空室確認**/
@@ -87,7 +88,8 @@
   display: inline-block;
   margin: 0 auto;
 }
-.reservation-confirm td {
+.reservation-confirm table td {
+  border: 1px solid #e7e7e7;
   width: 10rem;
   padding: 0.5rem;
 }

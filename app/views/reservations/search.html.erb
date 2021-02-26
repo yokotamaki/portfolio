@@ -1,9 +1,8 @@
-<h4></h4>
+<h4>空室確認</h4>
 <div class="wrapper">
   <%= render "reservations/step" %>
 </div>
-  <h5>空室確認</h5>
-  <p>①宿泊する日付と人数を選択してください。</p>
+  <!--<h5>空室確認</h5>-->
   <p>※１泊の予約しかできません。</p>
 
 <div class="wrapper">
@@ -21,7 +20,7 @@
         <label for="reservation_people">宿泊人数</label><%= f.select :people, [1,2,3,4] %>
       </div>
     </div>
-    <%= f.submit "検索", class: "button" %>
+    <%= f.submit "検索", class: "button", id: "button" %>
   <% end %>
 </div>
 

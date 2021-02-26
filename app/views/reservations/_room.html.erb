@@ -1,5 +1,4 @@
 <div class="room-wrapper">
-  <p>②客室を選択してください。</p>
   <%= form_with model: Reservation.new, url: guest_reservations_path, local: true do |f| %>
     <div class="room">
       <% rooms.each do |room| %>
