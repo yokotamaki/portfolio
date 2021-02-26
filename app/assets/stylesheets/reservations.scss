@@ -2,6 +2,29 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+/**順序**/
+.steps {
+  display: flex;
+  margin: 0 0 2rem;
+}
+.step-content {
+  background-color: #706A69;
+  padding: 1rem;
+  border-radius: 3rem;
+}
+.step-content p {
+  margin: 1rem;
+}
+.step {
+  display: flex;
+}
+.step-now {
+  background-color: rgba(51,50,51,0.8);;
+}
+.step-content span {
+  line-height: 8;
+}
+
 /**空室確認**/
 .search label {
   width: 10rem;
@@ -67,6 +90,7 @@
   margin: 0 auto;
 }
 .reservation-confirm td {
+  // border: 1px solid #e7e7e7;
   width: 10rem;
   padding: 0.5rem;
 }

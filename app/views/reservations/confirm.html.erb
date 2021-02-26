@@ -1,4 +1,8 @@
 <h4>予約確認</h4>
+<div class="wrapper">
+  <%= render "reservations/step" %>
+</div>
+<div class="wrapper">
 <div class="reservation-confirm">
   <table>
     <tr>
@@ -51,6 +55,7 @@
     <tr>
   </table>
 </div>
+</div>
 
 <%= form_with model: @guest_confirm, url: reservations_path, local: true do |f| %>
   <%= f.hidden_field :start_date, value: @start_date %>
@@ -69,3 +74,11 @@
   <%= f.submit "確定", class: "button" %>
 <% end %>
 
+<script>
+  $(function(){
+    path = location.pathname
+    if(path.match("/reservations/confirm")){
+    $(".step4").addClass("step-now");
+    }
+  });
+</script>
