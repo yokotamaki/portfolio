@@ -5,7 +5,7 @@
 /**順序**/
 .steps {
   display: flex;
-  margin: 0 0 2rem;
+  margin: 0 0.5rem 2rem;
 }
 .step-content {
   background-color: #706A69;
@@ -16,13 +16,10 @@
   margin: 1rem;
 }
 .step {
-  display: flex;
+  display: inline-block;
 }
 .step-now {
   background-color: rgba(51,50,51,0.8);;
-}
-.step-content span {
-
 }
 
 /**空室確認**/
@@ -65,6 +62,7 @@
   width: 33%;
   transition: 0.3s;
   margin: 0 auto;
+  opacity: 0.7;
 }
 .room img {
   margin: 1rem;
@@ -97,6 +95,27 @@
 /******************************************************************/
 /**レスポンシブ対応**/
 @media (max-width: 767px) {
+  /**順序**/
+  // .steps {
+  //   display: flex;
+  //   margin: 0 0.5rem 2rem;
+  // }
+  // .step-content {
+  //   background-color: #706A69;
+  //   padding: 1rem;
+  //   border-radius: 3rem;
+  // // }
+  // .step-content p {
+  //   margin: 0.5rem;
+  //   font-size: 10px;
+  // }
+  // .step {
+  //   display: flex;
+  // }
+  // .step-now {
+  //   background-color: rgba(51,50,51,0.8);;
+  // }
+
   /**空室確認**/
   .search label {
     margin: 0;

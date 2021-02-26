@@ -177,14 +177,13 @@ a:hover {
   opacity: 0.9;
 }
 .logo {
+  width: 150px;
+  height: 130px;
   opacity: 0.95;
-  font-size: 50px;
-  color: #e7e7e7;
   position: fixed;
   top: 0px;
   left: 0px;
   z-index: 10;
-  padding: 2rem;
   background-color: #333233;
 }
 .header {
@@ -299,10 +298,11 @@ a:hover {
   }
   /**ハンバーガーメニュー（各ページ・トップ）**/
   .logo {
-    font-size: 35px;
-    padding: 1.5rem 1rem;
+    width: 130px;
+    height: 120px;
     z-index: 8;
   }
+
   #hamberger {
     position: absolute;
     top: 0;

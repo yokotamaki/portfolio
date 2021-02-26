@@ -1,5 +1,7 @@
 <div class="header-wrapper">
-  <%= link_to "hotel", root_path, class: "logo" %>
+  <%= link_to root_path do %>
+    <%= image_tag("hotel-logo.png", class: "logo") %>
+  <% end %>
   <span id="hamberger"><i class="fas fa-bars fa-3x"></i></span>
   <div class="header" id="header">
     <% if admin_signed_in? %>
