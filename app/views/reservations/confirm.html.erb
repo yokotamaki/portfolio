@@ -1,60 +1,58 @@
 <h4>予約確認</h4>
 <div class="wrapper">
   <%= render "reservations/step" %>
-</div>
-<div class="wrapper">
-<div class="reservation-confirm">
-  <table>
-    <tr>
-      <td><p>チェックイン日</p></td>
-      <td><p><%= @start_date %></p></td>
-    </tr>
-    <tr>
-      <td><p>チェックアウト日</p></td>
-      <td><p><%= @end_date %></p></td>
-    </tr>
-    <tr>
-      <td><p>宿泊人数</p></td>
-      <td><p><%= @people %>名</p></td>
-    </tr>
-    <tr>
-      <td><p>部屋タイプ</p></td>
-      <td><p><%= @room_name %></p></td>
-    </tr>
-    <tr>
-      <td><p>名前</p></td>
-      <td><p><%= @name %></p></td>
-    </tr>
-    <tr>
-      <td><p>フリガナ</p></td>
-      <td><p><%= @name_kana %></p></td>
-    </tr>
-    <tr>
-      <td><p>生年月日</p></td>
-      <td><p><%= @birthday %></p></td>
-    </tr>
-    <tr>
-      <td><p>性別</p></td>
-      <td><p><%= @sex %></p></td>
-    </tr>
-    <tr>
-      <td><p>郵便番号</p></td>
-      <td><p><%= @zipcode %></p></td>
-    </tr>
-    <tr>
-      <td><p>住所</p></td>
-      <td><p><%= @address %></p></td>
-    </tr>
-    <tr>
-    <td><p>電話番号</p></td>
-    <td><p><%= @phone_number %></p></td>
-    </tr>
-    <tr>
-      <td><p>メールアドレス</p></td>
-      <td><p><%= @email %></p></td>
-    <tr>
-  </table>
-</div>
+  <div class="reservation-confirm">
+    <table>
+      <tr>
+        <td><p>チェックイン日</p></td>
+        <td><p><%= @start_date %></p></td>
+      </tr>
+      <tr>
+        <td><p>チェックアウト日</p></td>
+        <td><p><%= @end_date %></p></td>
+      </tr>
+      <tr>
+        <td><p>宿泊人数</p></td>
+        <td><p><%= @people %>名</p></td>
+      </tr>
+      <tr>
+        <td><p>部屋タイプ</p></td>
+        <td><p><%= @room_name %></p></td>
+      </tr>
+      <tr>
+        <td><p>名前</p></td>
+        <td><p><%= @name %></p></td>
+      </tr>
+      <tr>
+        <td><p>フリガナ</p></td>
+        <td><p><%= @name_kana %></p></td>
+      </tr>
+      <tr>
+        <td><p>生年月日</p></td>
+        <td><p><%= @birthday %></p></td>
+      </tr>
+      <tr>
+        <td><p>性別</p></td>
+        <td><p><%= @sex %></p></td>
+      </tr>
+      <tr>
+        <td><p>郵便番号</p></td>
+        <td><p><%= @zipcode %></p></td>
+      </tr>
+      <tr>
+        <td><p>住所</p></td>
+        <td><p><%= @address %></p></td>
+      </tr>
+      <tr>
+      <td><p>電話番号</p></td>
+      <td><p><%= @phone_number %></p></td>
+      </tr>
+      <tr>
+        <td><p>メールアドレス</p></td>
+        <td><p><%= @email %></p></td>
+      <tr>
+    </table>
+  </div>
 </div>
 
 <%= form_with model: @guest_confirm, url: reservations_path, local: true do |f| %>

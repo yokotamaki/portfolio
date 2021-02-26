@@ -5,9 +5,10 @@
   <h5>空室確認</h5>
   <p>①宿泊する日付と人数を選択してください。</p>
   <p>※１泊の予約しかできません。</p>
+
+<div class="wrapper">
   <div id="date_errors">
   </div>
-<div class="wrapper">
   <%= form_with model: @reservation, url: room_reservations_path do |f| %>
     <div class="search">
       <div class="date">
