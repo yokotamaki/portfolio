@@ -3,16 +3,14 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 /**管理者側 お問い合わせ一覧**/
-// .admin-contacts {
-//   font-family: sans-serif;
-// }
 .admin-contacts h5 {
   padding-bottom: 0.5rem;
 }
 .admin-contacts a {
   color: #e7e7e7;
 }
-.admin-contacts a:hover p {
+.admin-contacts a:hover p,
+.sort:hover {
   opacity: 0.6;
   color: #e7e7e7;
 }

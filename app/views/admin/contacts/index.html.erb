@@ -5,12 +5,12 @@
 <h4>お問い合わせ一覧</h4>
 <div class="admin-contacts">
   <div class="row mt-4 justify-content-center">
-    <h5 class="col-1"><%= sort_order "id", "番号" %></h5>
+    <h5 class="col-1 sort"><%= sort_order "id", "番号" %></h5>
     <h5 class="col-2"><%= sort_order "title", "タイトル" %></h5>
     <h5 class="col-3"><%= sort_order "body", "内容" %></h5>
     <h5 class="col-2"><%= sort_order "name", "名前" %></h5>
     <h5 class="col-1"><%= sort_order "status", "対応状況" %></h5>
-    <h5 class="col-2"><%= sort_order "updated_at", "お問い合わせ日" %></h5>
+    <h5 class="col-2 sort"><%= sort_order "created_at", "お問い合わせ日" %></h5>
   </div>
   <%= render "admin/contacts/index", contacts: @contacts %>
 </div>
