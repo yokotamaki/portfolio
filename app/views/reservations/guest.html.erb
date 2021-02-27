@@ -1,8 +1,8 @@
 <h4>情報入力</h4>
 <div class="wrapper">
-  <%= render "reservations/step" %>
-</div>
-<div class="wrapper">
+  <div class="step-wrapper">
+    <%= render "reservations/step" %>
+  </div>
   <div id="guest-errors">
     <%= render "reservations/guest_errors", guest: @guest %>
   </div>
@@ -61,10 +61,10 @@
   $(function(){
     path = location.pathname
     if(path.match("/reservations/guest")){
-    $(".step3").addClass("step-now");
+    $(".step2").addClass("step-now");
     }
     if(path.match("/reservations")){
-    $(".step3").addClass("step-now");
+    $(".step2").addClass("step-now");
     }
   });
 </script>

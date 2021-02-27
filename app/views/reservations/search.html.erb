@@ -1,11 +1,11 @@
 <h4>空室確認</h4>
-<div class="wrapper">
-  <%= render "reservations/step" %>
-</div>
-  <!--<h5>空室確認</h5>-->
   <p>※１泊の予約しかできません。</p>
 
 <div class="wrapper">
+  <div class="step-wrapper">
+    <%= render "reservations/step" %>
+  </div>
+
   <div id="date_errors">
   </div>
   <%= form_with model: @reservation, url: room_reservations_path do |f| %>

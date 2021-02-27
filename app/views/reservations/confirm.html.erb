@@ -1,57 +1,69 @@
 <h4>内容確認</h4>
 <div class="wrapper">
-  <%= render "reservations/step" %>
-  <div class="reservation-confirm">
-    <table>
-      <tr>
-        <td><p>チェックイン日</p></td>
-        <td><p><%= @start_date %></p></td>
-      </tr>
-      <tr>
-        <td><p>チェックアウト日</p></td>
-        <td><p><%= @end_date %></p></td>
-      </tr>
-      <tr>
-        <td><p>宿泊人数</p></td>
-        <td><p><%= @people %>名</p></td>
-      </tr>
-      <tr>
-        <td><p>部屋タイプ</p></td>
-        <td><p><%= @room_name %></p></td>
-      </tr>
-      <tr>
-        <td><p>名前</p></td>
-        <td><p><%= @name %></p></td>
-      </tr>
-      <tr>
-        <td><p>フリガナ</p></td>
-        <td><p><%= @name_kana %></p></td>
-      </tr>
-      <tr>
-        <td><p>生年月日</p></td>
-        <td><p><%= @birthday %></p></td>
-      </tr>
-      <tr>
-        <td><p>性別</p></td>
-        <td><p><%= @sex %></p></td>
-      </tr>
-      <tr>
-        <td><p>郵便番号</p></td>
-        <td><p><%= @zipcode %></p></td>
-      </tr>
-      <tr>
-        <td><p>住所</p></td>
-        <td><p><%= @address %></p></td>
-      </tr>
-      <tr>
-      <td><p>電話番号</p></td>
-      <td><p><%= @phone_number %></p></td>
-      </tr>
-      <tr>
-        <td><p>メールアドレス</p></td>
-        <td><p><%= @email %></p></td>
-      <tr>
-    </table>
+  <div class="step-wrapper">
+    <%= render "reservations/step" %>
+  </div>
+  <div class="reservation-history">
+    <div class="reservation-box">
+      <h5>宿泊者情報</h5>
+      <table>
+        <tr>
+          <td><p>名前</p></td>
+          <td><p><%= @name %></p></td>
+        </tr>
+        <tr>
+          <td><p>フリガナ</p></td>
+          <td><p><%= @name_kana %></p></td>
+        </tr>
+        <tr>
+          <td><p>生年月日</p></td>
+          <td><p><%= @birthday %></p></td>
+        </tr>
+        <tr>
+          <td><p>性別</p></td>
+          <td><p><%= @sex %></p></td>
+        </tr>
+        <tr>
+          <td><p>郵便番号</p></td>
+          <td><p><%= @zipcode %></p></td>
+        </tr>
+        <tr>
+          <td><p>住所</p></td>
+          <td><p><%= @address %></p></td>
+        </tr>
+        <tr>
+          <td><p>電話番号</p></td>
+          <td><p><%= @phone_number %></p></td>
+        </tr>
+        <tr>
+          <td><p>メールアドレス</p></td>
+          <td><p><%= @email %></p></td>
+        <tr>
+      </table>
+    </div>
+
+    <div class="reservation-box">
+      <h5>予約内容</h5>
+      <table>
+        <tr>
+          <td><p>チェックイン日</p></td>
+          <td><p><%= @start_date %></p></td>
+        </tr>
+        <tr>
+          <td><p>チェックアウト日</p></td>
+          <td><p><%= @end_date %></p></td>
+        </tr>
+        <tr>
+          <td><p>宿泊人数</p></td>
+          <td><p><%= @people %>名</p></td>
+        </tr>
+        <tr>
+          <td><p>部屋タイプ</p></td>
+          <td><p><%= @room_name %></p></td>
+        </tr>
+      </table>
+    </div>
+
   </div>
 </div>
 
@@ -76,7 +88,7 @@
   $(function(){
     path = location.pathname
     if(path.match("/reservations/confirm")){
-    $(".step4").addClass("step-now");
+    $(".step3").addClass("step-now");
     }
   });
 </script>
