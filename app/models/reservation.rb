@@ -23,7 +23,7 @@ class Reservation < ApplicationRecord
   # 検索機能
   def self.search(keyword)
       @reservation = Reservation.joins(:room).joins(:guest)
-                                .select("reservations.*, guests.name as guest_name, rooms.name as room_name")
-                                .where(["room_name LIKE ? OR guest_name LIKE ?", "%#{keyword}%", "%#{keyword}%"])
+                                .select("reservations.*, guests.name, rooms.name")
+                                .where(["rooms.name LIKE ? OR guests.name LIKE ?", "%#{keyword}%", "%#{keyword}%"])
   end
 end
