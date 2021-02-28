@@ -40,7 +40,7 @@
         </tr>
       </table>
       <% if @reservation.is_flag == true %>
-        <%= button_to "予約をキャンセルにする", admin_reservation_path(@reservation), method: :patch, class: "button-flag" %>
+        <%= button_to "予約をキャンセルする", admin_reservation_path(@reservation), method: :patch, class: "button-flag" %>
       <% elsif @reservation.is_flag == false %>
         <%= button_to "キャンセルを取り消す", admin_reservation_path(@reservation), method: :patch, class: "button-flag" %>
       <% end %>

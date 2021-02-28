@@ -78,6 +78,23 @@ a:hover {
   outline: none;
 }
 
+/**予約状況更新ボタン（ユーザー・管理者の予約詳細）**/
+.button-flag {
+  width: 20rem;
+  color: #e7e7e7;
+  background-color: #454345;
+  opacity: 0.8;
+  border: none;
+  padding: 0.5rem 2rem;
+  margin-top: 1rem;
+}
+.button-flag:hover {
+  opacity: 1;
+}
+.button-flag:focus {
+  outline: none;
+}
+
 /**入力フォーム(お問い合わせ）**/
 .form {
 	position: relative;

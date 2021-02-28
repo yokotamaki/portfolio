@@ -21,7 +21,7 @@ Rails.application.routes.draw do
       get :mypage
     end
   end
-  resources :reservations, only:[:create] do
+  resources :reservations, only:[:create, :update] do
     collection do
       get :search
       post :room

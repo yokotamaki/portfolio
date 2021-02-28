@@ -18,7 +18,6 @@ class Admin::ReservationsController < ApplicationController
     elsif reservation.is_flag == false
       reservation.update(is_flag: true)
     end
-    # reservation.update
     redirect_to request.referer
   end
 
