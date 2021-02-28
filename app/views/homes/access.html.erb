@@ -1,6 +1,6 @@
 <h4>アクセス</h4>
 <div class="access">
-  <%= image_tag "map.png", class: "map" %>
+  <div id="map"></div>
   <table>
     <tr>
       <td><p>住所</p></td>
@@ -28,3 +28,13 @@
     </tr>
   </table>
 </div>
+
+<script>
+  var MyLatLng = new google.maps.LatLng(35.6811673, 139.7670516);
+  var Options = {
+   zoom: 14,      //地図の縮尺値
+   center: MyLatLng,    //地図の中心座標
+   mapTypeId: "roadmap"   //地図の種類
+  };
+  var map = new google.maps.Map(document.getElementById("map"), Options);
+</script>
