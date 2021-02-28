@@ -17,3 +17,15 @@
 .admin-reservations a:hover {
   text-decoration: none;
 }
+.button-flag {
+  width: 20rem;
+  color: #e7e7e7;
+  background-color: #454345;
+  opacity: 0.8;
+  border: none;
+  padding: 0.5rem 2rem;
+  margin-top: 1rem;
+}
+.button-flag:hover {
+  opacity: 1;
+}

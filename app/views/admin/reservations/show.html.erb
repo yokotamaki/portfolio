@@ -39,6 +39,11 @@
           <td><p><%= @guest.email %></p></td>
         </tr>
       </table>
+      <% if @reservation.is_flag == true %>
+        <%= button_to "予約をキャンセルにする", admin_reservation_path(@reservation), method: :patch, class: "button-flag" %>
+      <% elsif @reservation.is_flag == false %>
+        <%= button_to "キャンセルを取り消す", admin_reservation_path(@reservation), method: :patch, class: "button-flag" %>
+      <% end %>
     </div>
       <!--部屋・日付など-->
     <div class="reservation-box">
@@ -72,8 +77,24 @@
           <td><p>予約日</p></td>
           <td><p><%= @reservation.created_at.strftime("%Y年%-m月%-d日　%-H時%-M分") %></p></td>
         </tr>
+        <% if @reservation.is_flag == true %>
+          <tr>
+            <td><p>予約状況</p></td>
+            <td>
+              <p>予約完了</p>
+            </td>
+          </tr>
+        <% elsif @reservation.is_flag == false %>
+          <tr>
+            <td><p style="color: #333233;">予約状況</p></td>
+            <td>
+              <p style="color: #333233;">キャンセル</p>
+            </td>
+          </tr>
+        <% end %>
       </table>
     </div>
   </div>
   <%= link_to "戻る", :back, class: "button" %>
 </div>
+
