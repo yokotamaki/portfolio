@@ -12,13 +12,12 @@ class Admin::ReservationsController < ApplicationController
   end
 
   def update
-    reservation = Reservation.find(params[:id])
-    if reservation.is_flag == true
-      reservation.update(is_flag: false)
-    elsif reservation.is_flag == false
-      reservation.update(is_flag: true)
+    @reservation = Reservation.find(params[:id])
+    if @reservation.is_flag == true
+      @reservation.update(is_flag: false)
+    elsif @reservation.is_flag == false
+      @reservation.update(is_flag: true)
     end
-    redirect_to request.referer
   end
 
   private

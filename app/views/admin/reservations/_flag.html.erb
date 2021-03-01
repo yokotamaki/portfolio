@@ -1,0 +1,12 @@
+<!--管理者 予約詳細 予約状況切り替え-->
+<% if reservation.is_flag == true %>
+  <td><p>予約状況</p></td>
+  <td>
+    <p>予約完了</p>
+  </td>
+<% elsif reservation.is_flag == false %>
+  <td><p style="color: #333233;">予約状況</p></td>
+  <td>
+    <p style="color: #333233;">キャンセル</p>
+  </td>
+<% end %>
