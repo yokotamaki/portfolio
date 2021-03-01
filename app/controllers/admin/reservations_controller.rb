@@ -11,6 +11,15 @@ class Admin::ReservationsController < ApplicationController
     @guest = @reservation.guest
   end
 
+  def update
+    @reservation = Reservation.find(params[:id])
+    if @reservation.is_flag == true
+      @reservation.update(is_flag: false)
+    elsif @reservation.is_flag == false
+      @reservation.update(is_flag: true)
+    end
+  end
+
   private
   def sort_direction
     %w[asc desc].include?(params[:direction]) ? params[:direction] : "asc"

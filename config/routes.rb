@@ -7,7 +7,7 @@ Rails.application.routes.draw do
     sessions:      'admins/sessions',
   }
   namespace :admin do
-    resources :reservations, only:[:index, :show]
+    resources :reservations, only:[:index, :show, :update]
     resources :contacts, only:[:index, :show, :update]
     get 'searchs/search' => 'searchs#search', as: 'search'
   end
@@ -21,7 +21,7 @@ Rails.application.routes.draw do
       get :mypage
     end
   end
-  resources :reservations, only:[:create] do
+  resources :reservations, only:[:create, :update] do
     collection do
       get :search
       post :room

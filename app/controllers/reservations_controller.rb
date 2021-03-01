@@ -11,7 +11,6 @@ class ReservationsController < ApplicationController
     @reservation = Reservation.new(start_date: @start_date, end_date: @end_date)
     @reservation.valid?
     if @reservation.errors.key?(:start_date) || @reservation.errors.key?(:end_date)
-      # render 'search' and return
       return render "date_errors"
     end
 
@@ -126,6 +125,16 @@ class ReservationsController < ApplicationController
   end
 
   def success
+  end
+
+  def update
+    # 予約詳細（ユーザ）フラグ切り替え
+    @reservation = Reservation.find(params[:id])
+    if @reservation.is_flag == true
+      @reservation.update(is_flag: false)
+    elsif @reservation.is_flag == false
+      @reservation.update(is_flag: true)
+    end
   end
 
   private
