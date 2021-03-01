@@ -8,6 +8,11 @@
       <p class="col-2"><%= reservation.start_date.strftime("%Y年%-m月%-d日") %></p>
       <p class="col-2"><%= reservation.end_date.strftime("%Y年%-m月%-d日") %></p>
       <p class="col-2"><%= reservation.created_at.strftime("%Y年%-m月%-d日") %></p>
+      <% if reservation.is_flag == true %>
+        <p class="col-1">予約完了</p>
+      <% elsif reservation.is_flag == false %>
+        <p class="col-1" style="color: #333233;">キャンセル</p>
+      <% end %>
     </div>
   <% end %>
 <% end %>
