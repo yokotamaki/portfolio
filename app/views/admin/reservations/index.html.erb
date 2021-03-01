@@ -11,6 +11,7 @@
     <h5 class="col-2 sort"><%= sort_order "start_date", "到着日" %></h5>
     <h5 class="col-2 sort"><%= sort_order "end_date", "出発日" %></h5>
     <h5 class="col-2 sort"><%= sort_order "created_at", "予約日" %></h5>
+    <h5 class="col-1 sort"><%= sort_order "is_flag", "予約状況" %></h5>
   </div>
   <%= render "admin/reservations/index", reservations: @reservations %>
 </div>

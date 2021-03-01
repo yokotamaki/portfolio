@@ -7,6 +7,7 @@
         <td><h5>到着日</h5></td>
         <td><h5>出発日</h5></td>
         <td><h5>予約日</h5></td>
+        <td><h5>予約状況</h5></td>
       </tr>
       <% @guest.each do |guest| %>
         <tr>
@@ -19,6 +20,12 @@
             <td><p><%= guest.reservation.start_date.strftime("%Y年%-m月%-d日") %></p></td>
             <td><p><%= guest.reservation.end_date.strftime("%Y年%-m月%-d日") %></p></td>
             <td><p><%= guest.reservation.created_at.strftime("%Y年%-m月%-d日") %></p></td>
+            <% if guest.reservation.is_flag == true %>
+              <td><p>予約完了</p></td>
+            <% elsif guest.reservation.is_flag == false %>
+              <td><p style="color: #333233;">キャンセル</p></td>
+            <% end %>
+
           <% end %>
         </tr>
       <% end %>
