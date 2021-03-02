@@ -96,8 +96,9 @@ ActiveRecord::Schema.define(version: 2021_03_02_034607) do
   create_table "reviews", force: :cascade do |t|
     t.integer "room_id", null: false
     t.float "star", null: false
+    t.string "name", null: false
     t.text "comment"
-    t.boolean "sex", null: false
+    t.integer "sex", default: 0, null: false
     t.integer "age", default: 0, null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
