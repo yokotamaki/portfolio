@@ -1,2 +1,19 @@
-<h1>Reviews#index</h1>
-<p>Find me in app/views/reviews/index.html.erb</p>
+<h4>レビュー一覧</h4>
+<% @reviews.each do |review| %>
+  <p>評価</p>
+  <% if review.star == 5.0 %>
+  <p class="star">★★★★★ 5<p>
+  <% elsif review.star == 4.0 %>
+  <p class="star">★★★★ 4<p>
+  <% elsif review.star == 3.0 %>
+  <p class="star">★★★ 3<p>
+  <% elsif review.star == 2.0 %>
+  <p class="star">★★ 2<p>
+  <% elsif review.star == 1.0 %>
+  <p class="star">★ 1<p>
+  <% end %>
+  <p><%= review.comment %></p>
+  <p>宿泊した部屋：<%= review.room.name %></p>
+  <p><%= review.name %>（<%= review.age %> / <%= review.sex %>）</p>
+  <p><%= review.created_at.strftime("%Y年%-m月%-d日 %-H時%-M分") %></p>
+<% end %>
