@@ -60,9 +60,9 @@
   background-color: #e7e7e7;
 }
 
-.review-select label {
-  margin: 1rem;
-}
+// .review-select label {
+//   margin: 1rem;
+// }
 
 /**レビュー投稿ボタン**/
 .review-button {
@@ -112,6 +112,12 @@
   transform: translate(-50%,-50%);
   border: 1px solid #333233;
   width: 800px;
+}
+.modal-close {
+  position: absolute;
+  top: 1rem;
+  right: 2rem;
+  font-size: 40px;
 }
 
 /***********レスポンシブ対応***********/

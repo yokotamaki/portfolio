@@ -26,19 +26,14 @@
         <%= f.text_field :name %>
         <span class="focus-line"></span>
       </div>
-      <div class="review-select">
-      <div class="review-select-item">
-      <%= f.label :age, "年代" %>
-      <%= f.select :age, Review.ages.keys, { include_blank: "選択してください", selected: "" } %><br>
-      </div>
-      <div class="review-select-item">
-      <%= f.label :sex, "性別" %>
-      <%= f.select :sex, Review.sexes.keys, { include_blank: "選択してください", selected: "" } %><br>
-      </div>
-      <div class="review-select-item">
-      <%= f.label :room, "部屋タイプ"  %>
-      <%= f.select :room, {"type1": 1, "type2": 2, "type3": 3}, {include_blank: "選択してください"} %><br>
-      </div>
+
+      <div class="select">
+        <%= f.label :age, "年代" %>
+        <%= f.select :age, Review.ages.keys, { include_blank: "選択してください", selected: "" } %><br>
+        <%= f.label :sex, "性別" %>
+        <%= f.select :sex, Review.sexes.keys, { include_blank: "選択してください", selected: "" } %><br>
+        <%= f.label :room, "部屋タイプ"  %>
+        <%= f.select :room, {"type1": 1, "type2": 2, "type3": 3}, {include_blank: "選択してください"} %><br>
       </div>
       <%= f.submit "投稿", class: "review-button" %>
     <% end %>
