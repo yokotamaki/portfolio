@@ -1,0 +1,41 @@
+<h5>レビュー投稿</h5>
+<div class="wrapper">
+  <div class="form-wrapper">
+    <%= form_with model: review, local: true do |f| %>
+      <div class="evaluation">
+        <%= f.radio_button :star, "5" %>
+        <label for="review_star_5" >★</label>
+        <%= f.radio_button :star, "4" %>
+        <label for="review_star_4" >★</label>
+        <%= f.radio_button :star, "3" %>
+        <label for="review_star_3" >★</label>
+        <%= f.radio_button :star, "2" %>
+        <label for="review_star_2" >★</label>
+        <%= f.radio_button :star, "1" %>
+        <label for="review_star_1" >★</label>
+      </div>
+
+      <div class="form">
+        <%= f.label :comment, "コメント" %>
+        <%= f.text_area :comment %>
+        <span class="focus-line"></span>
+      </div>
+
+      <div class="form">
+        <%= f.label :name, "名前" %>
+        <%= f.text_field :name %>
+        <span class="focus-line"></span>
+      </div>
+
+      <div class="select">
+        <%= f.label :age, "年代" %>
+        <%= f.select :age, Review.ages.keys, { include_blank: "選択してください", selected: "" } %><br>
+        <%= f.label :sex, "性別" %>
+        <%= f.select :sex, Review.sexes.keys, { include_blank: "選択してください", selected: "" } %><br>
+        <%= f.label :room, "部屋タイプ"  %>
+        <%= f.select :room, {"type1": 1, "type2": 2, "type3": 3}, {include_blank: "選択してください"} %><br>
+      </div>
+      <%= f.submit "投稿", class: "review-button" %>
+    <% end %>
+  </div>
+</div>

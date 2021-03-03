@@ -19,9 +19,9 @@
         <%= f.text_field :name_kana, autocomplete: "off" %>
         <span class="focus-line"></span>
       </div>
-      <div class="form">
+      <div class=" form select">
         <%= f.label :birthday, "生年月日" %>
-        <%= f.date_select(:birthday, use_month_numbers: true, start_year: (Date.today.year-100), end_year: (Date.today.year-20), prompt:"---", date_separator: '/') %>
+        <%= f.date_select(:birthday, use_month_numbers: true, start_year: (Date.today.year-100), end_year: (Date.today.year-20), prompt: "-----", date_separator: '/') %>
       </div>
       <div class="form">
         <%= f.label :sex, "性別" %>

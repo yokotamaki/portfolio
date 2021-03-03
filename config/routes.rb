@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  get 'reviews/index'
   root 'homes#top'
   get '/access' => 'homes#access'
 
@@ -31,6 +32,7 @@ Rails.application.routes.draw do
     end
   end
   resources :rooms, only:[:index]
+  resources :reviews, only:[:index, :new, :create]
   resources :contacts, only:[:new, :create] do
     collection do
       get :success

@@ -11,6 +11,7 @@
     <% elsif customer_signed_in? %>
       <%= link_to "room", rooms_path, class: "link header-room", id: "link" %>
       <%= link_to "reservation", search_reservations_path, class: "link header-reservation", id: "link" %>
+      <%= link_to "review", reviews_path, class: "link header-review" %>
       <%= link_to "access", access_path, class: "link header-access", id: "link" %>
       <%= link_to "contact", new_contact_path, class: "link header-contact", id: "link" %>
       <%= link_to "mypage", mypage_customer_path(current_customer), class: "link header-mypage", id: "link" %>
@@ -18,6 +19,7 @@
     <% else %>
       <%= link_to "room", rooms_path, class: "link header-room", id: "link" %>
       <%= link_to "reservation", search_reservations_path, class: "link header-reservation", id: "link" %>
+      <%= link_to "review", reviews_path, class: "link header-review" %>
       <%= link_to "access", access_path, class: "link header-access", id: "link" %>
       <%= link_to "contact", new_contact_path, class: "link header-contact", id: "link" %>
       <%= link_to "login", new_customer_session_path, class: "link header-login", id: "link" %>
@@ -42,6 +44,9 @@
     }
     if(path.match("/reservations")){
     $(".header-reservation").addClass("current");
+    }
+    if(path.match("/reviews")){
+    $(".header-review").addClass("current");
     }
     if(path.match("/access")){
     $(".header-access").addClass("current");

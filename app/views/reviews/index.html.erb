@@ -1,0 +1,49 @@
+<h4>レビュー一覧</h4>
+<div class="wrapper">
+
+  <a class="modal-open review-new" href="">クチコミを投稿する</a>
+
+  <% @reviews.each do |review| %>
+    <div class="review">
+      <p class="star-top">評価</p>
+      <% if review.star == 5.0 %>
+        <p class="star">★★★★★ 5<p>
+      <% elsif review.star == 4.0 %>
+        <p class="star">★★★★ 4<p>
+      <% elsif review.star == 3.0 %>
+        <p class="star">★★★ 3<p>
+      <% elsif review.star == 2.0 %>
+        <p class="star">★★ 2<p>
+      <% elsif review.star == 1.0 %>
+        <p class="star">★ 1<p>
+      <% end %>
+      <p><%= review.comment %></p>
+      <div class="review-bottom">
+        <p>宿泊した部屋：<%= review.room.name %></p>
+        <p>投稿者：<%= review.name %>（<%= review.age %> / <%= review.sex %>）</p>
+        <p>投稿日時：<%= review.created_at.strftime("%Y年%-m月%-d日 %-H時%-M分") %></p>
+      </div>
+    </div>
+  <% end %>
+</div>
+
+<div class="modal">
+  <div class="modal_bg modal-close"></div>
+  <div class="modal_content">
+    <%= render "reviews/new", review: @review %>
+    <a class="modal-close" href="">×</a>
+  </div>
+</div>
+
+<script>
+$(function(){
+  $(".modal-open").on("click",function(){
+    $('.modal').fadeIn();
+      return false;
+  });
+  $(".modal-close").on("click",function(){
+    $(".modal").fadeOut();
+      return false;
+  });
+});
+</script>
