@@ -35,6 +35,12 @@ $(document).on('turbolinks:load', function() {
       $(this).text("reservation");
     });
 
+    $(".top-nav .nav-review").hover(function(){
+      $(this).text("クチコミ");
+    },function(){
+      $(this).text("review");
+    });
+
     $(".top-nav .nav-access").hover(function(){
       $(this).text("アクセス");
     },function(){
