@@ -7,16 +7,17 @@
     <div class="review">
       <p class="star-top">評価</p>
       <% if review.star == 5.0 %>
-        <p class="star">★★★★★ 5<p>
+        <p class="star <%= "star2" if review.score.to_f < 0.0 %>">★★★★★ 5<p>
       <% elsif review.star == 4.0 %>
-        <p class="star">★★★★ 4<p>
+        <p class="star <%= "star2" if review.score.to_f < 0.0 %>">★★★★ 4<p>
       <% elsif review.star == 3.0 %>
-        <p class="star">★★★ 3<p>
+        <p class="star <%= "star2" if review.score.to_f < 0.0 %>">★★★ 3<p>
       <% elsif review.star == 2.0 %>
-        <p class="star">★★ 2<p>
+        <p class="star <%= "star2" if review.score.to_f < 0.0 %>">★★ 2<p>
       <% elsif review.star == 1.0 %>
-        <p class="star">★ 1<p>
+        <p class="star <%= "star2" if review.score.to_f < 0.0 %>">★ 1<p>
       <% end %>
+
       <p><%= review.comment %></p>
       <div class="review-bottom">
         <p>宿泊した部屋：<%= review.room.name %></p>

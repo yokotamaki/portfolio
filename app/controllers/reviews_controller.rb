@@ -12,6 +12,7 @@ class ReviewsController < ApplicationController
       age: review_params[:age],
       sex: review_params[:sex]
     })
+    review.score = Language.get_data(review_params[:comment])
     review.save
     redirect_to reviews_path
   end
