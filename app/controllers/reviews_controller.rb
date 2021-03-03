@@ -17,7 +17,8 @@ class ReviewsController < ApplicationController
   end
 
   def index
-    @reviews = Review.all
+    @reviews = Review.all.order(id: "DESC")
+    @review = Review.new
   end
 
   private
