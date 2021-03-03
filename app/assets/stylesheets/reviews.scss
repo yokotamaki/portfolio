@@ -64,10 +64,6 @@
   background-color: #e7e7e7;
 }
 
-// .review-select label {
-//   margin: 1rem;
-// }
-
 /**レビュー投稿ボタン**/
 .review-button {
   display: inline-block;
@@ -110,7 +106,7 @@
 .modal_content{
   background: rgba(125,118,116,0.95);
   left: 50%;
-  padding: 2rem 3rem;
+  padding: 4rem 0 2rem;
   position: absolute;
   top: 50%;
   transform: translate(-50%,-50%);
@@ -142,7 +138,7 @@
 
   /**モーダル表示**/
   .modal_content{
-    padding: 2.5rem 0;
+    padding: 3rem 0 1rem;
     width: 98%;
     z-index: 9;
   }
