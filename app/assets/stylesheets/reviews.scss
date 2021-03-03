@@ -111,5 +111,32 @@
   top: 50%;
   transform: translate(-50%,-50%);
   border: 1px solid #333233;
-  width: 60%;
+  width: 800px;
+}
+
+/***********レスポンシブ対応***********/
+@media (max-width: 767px) {
+  /**レビュー一覧**/
+  .review {
+    width: 95%;
+  }
+  /**新規投稿ボタン**/
+  .review-new {
+    padding: 0.5rem 1rem;
+    top: 5rem;
+    right: 1rem;
+  }
+  .modal_content .form-wrapper {
+    width: 100vw;
+    }
+
+  /**モーダル表示**/
+  .modal_content{
+    padding: 2.5rem 0;
+    width: 98%;
+    z-index: 9;
+  }
+  .review-select {
+    margin-top: 2rem;
+  }
 }
