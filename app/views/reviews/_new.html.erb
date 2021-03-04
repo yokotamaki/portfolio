@@ -1,7 +1,7 @@
 <h5>レビュー投稿</h5>
 <div class="wrapper">
   <div class="form-wrapper">
-    <%= form_with model: review, local: true do |f| %>
+    <%= form_with model: Review.new, local: true do |f| %>
       <div class="evaluation">
         <%= f.radio_button :star, "5" %>
         <label for="review_star_5" >★</label>
@@ -29,9 +29,11 @@
 
       <div class="select">
         <%= f.label :age, "年代" %>
-        <%= f.select :age, Review.ages.keys, { include_blank: "選択してください", selected: "" } %><br>
+        <!--<= f.select :age, Review.ages.keys, { include_blank: "選択してください", selected: "" } %><br>-->
+        <%= f.select :age, {１０代: "１０代", ２０代: "２０代", ３０代: "３０代", ４０代: "４０代", ５０代: "５０代" ,６０代〜: "６０代〜"}, { include_blank: "選択してください", selected: "" } %><br>
         <%= f.label :sex, "性別" %>
-        <%= f.select :sex, Review.sexes.keys, { include_blank: "選択してください", selected: "" } %><br>
+        <!--<= f.select :sex, Review.sexes.keys, { include_blank: "選択してください", selected: "" } %><br>-->
+        <%= f.select :sex, {男性: "男性",女性: "女性"}, { include_blank: "選択してください", selected: "" } %><br>
         <%= f.label :room, "部屋タイプ"  %>
         <%= f.select :room, {"type1": 1, "type2": 2, "type3": 3}, {include_blank: "選択してください"} %><br>
       </div>

@@ -98,8 +98,8 @@ ActiveRecord::Schema.define(version: 2021_03_03_085928) do
     t.float "star", null: false
     t.string "name", null: false
     t.text "comment"
-    t.integer "sex", default: 0, null: false
-    t.integer "age", default: 0, null: false
+    t.string "sex", null: false
+    t.string "age", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.decimal "score", precision: 5, scale: 3
