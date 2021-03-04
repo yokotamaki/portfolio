@@ -5,8 +5,8 @@ class CreateReviews < ActiveRecord::Migration[5.2]
       t.float :star, null: false
       t.string :name, null: false
       t.text :comment
-      t.integer :sex, default: 0, null: false
-      t.integer :age, default: 0, null: false
+      t.string :sex, null: false
+      t.string :age, null: false
       t.timestamps
     end
   end

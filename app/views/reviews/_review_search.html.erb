@@ -1,0 +1,44 @@
+<!--レビュー 絞り込み検索-->
+<%= search_form_for(@q, url: reviews_path) do |f| %>
+
+<!--<p>評価</p>-->
+  <!--<= f.label :star_eq_any, "星５" %>-->
+  <!--<= f.check_box :star_eq_any, { multiple: true }, 5 %>-->
+  <!--<= f.label :star_eq_any, "星４" %>-->
+  <!--<= f.check_box :star_eq_any, { multiple: true }, 4 %>-->
+  <!--<= f.label :star_eq_any, "星３" %>-->
+  <!--<= f.check_box :star_eq_any, { multiple: true }, 3 %>-->
+  <!--<= f.label :star_eq_any, "星２" %>-->
+  <!--<= f.check_box :star_eq_any, { multiple: true }, 2 %>-->
+  <!--<= f.label :star_eq_any, "星１" %>-->
+  <!--<= f.check_box :star_eq_any, { multiple: true }, 1 %>-->
+
+<!--<p>年代</p>-->
+<!--  <= f.label :age_eq_any, "１０代" %>-->
+<!--  <= f.check_box :age_eq_any, { multiple: true }, "１０代" %>-->
+<!--  <= f.label :age_eq_any, "２０代" %>-->
+<!--  <= f.check_box :age_eq_any, { multiple: true }, "２０代" %>-->
+<!--  <= f.label :age_eq_any, "３０代" %>-->
+<!--  <= f.check_box :age_eq_any, { multiple: true }, "３０代" %>-->
+<!--  <= f.label :age_eq_any, "４０代" %>-->
+<!--  <= f.check_box :age_eq_any, { multiple: true }, "４０代" %>-->
+<!--  <= f.label :age_eq_any, "５０代" %>-->
+<!--  <= f.check_box :age_eq_any, { multiple: true }, "５０代" %>-->
+<!--  <= f.label :age_eq_any, "６０代〜" %>-->
+<!--  <= f.check_box :age_eq_any, { multiple: true }, "６０代〜" %>-->
+
+<!--<p>性別</p>-->
+<!--  <= f.check_box :sex_eq_any, { multiple: true }, "男性" %>-->
+<!--  <= f.label :sex_eq_any, "男性" %>-->
+<!--  <= f.check_box :sex_eq_any, { multiple: true }, "女性" %>-->
+<!--  <= f.label :sex_eq_any, "女性" %>-->
+
+  <p>部屋タイプ</p>
+  <%= f.check_box :room_id_eq_any, { multiple: true }, "1" %>
+  <%= f.label :room_id_eq_any, "type1" %>
+  <%= f.check_box :room_id_eq_any, { multiple: true }, "2" %>
+  <%= f.label :room_id_eq_any, "type2" %>
+  <%= f.check_box :room_id_eq_any, { multiple: true }, "3" %>
+  <%= f.label :room_id_eq_any, "type3" %>
+  <%= f.submit "検索" %>
+<% end %>
