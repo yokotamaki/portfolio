@@ -111,8 +111,8 @@ Guest.create!(
 Reservation.create!(
   guest_id: 1,
   room_id: 2,
-  start_date: "2021-03-01",
-  end_date: "2021-03-02",
+  start_date: "2021-03-11",
+  end_date: "2021-03-12",
   people: 2,
   created_at: "2021-02-19"
   )
@@ -143,8 +143,8 @@ Reservation.create!(
 Reservation.create!(
   guest_id: 5,
   room_id: 1,
-  start_date: "2021-03-01",
-  end_date: "2021-03-02",
+  start_date: "2021-03-11",
+  end_date: "2021-03-12",
   people: 2,
   created_at: "2021-02-23"
   )
