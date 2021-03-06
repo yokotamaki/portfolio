@@ -8,9 +8,8 @@ class ReviewsController < ApplicationController
 
   def index
     @review = Review.new
-    # @reviews = Review.all
     @reviews = Review.review_search(review_search_params)
-                    # .order(id: "DESC").page(params[:page]).per(8)
+                    .order(id: "DESC").page(params[:page]).per(8)
   end
 
   private

@@ -35,7 +35,7 @@
   <div class="contact-status">
     <%= form_with model: @contact, url: admin_contact_path do |f| %>
       <%= f.select :status, Contact.statuses.keys %>
-      <%= f.submit "更新", class: "button-update" %>
+      <%= f.submit "更新", class: "button-mini" %>
     <% end %>
   </div>
 

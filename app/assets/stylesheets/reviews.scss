@@ -24,6 +24,17 @@
   color: #eeb75b;
 }
 
+/**レビューレイアウト**/
+.review-right {
+  width: 25vw;
+  position: fixed;
+  top: 6rem;
+  right :0;
+}
+.review-left {
+  width: 75vw;
+}
+
 /**レビュー一覧**/
 .star-top {
   display: inline-block;
@@ -38,11 +49,11 @@
   color: #F0DDB0;
 }
 .review {
-  width: 70%;
+  width: 90%;
   border-top: 1px solid #e7e7e7;
   border-bottom: 1px solid #e7e7e7;
   margin: 0.5rem auto;
-  padding: 2rem;
+  padding: 2rem 3rem;
   text-align: left;
 }
 .review-bottom p{
@@ -50,14 +61,29 @@
   margin-bottom: 5px;
 }
 
-/**新規投稿ボタン**/
+/**レビュー検索**/
+.review-form {
+  background-color: rgba(69,67,69,0.9);
+  padding: 1rem 1.5rem 0.5rem;
+  margin: 1rem;
+  text-align: left;
+}
+.review-form p {
+  margin: 0.5rem 0 0;
+}
+.line {
+  border: 1px solid #333233;
+}
+.review-form label {
+  margin-right: 1.5rem;
+}
+
+/**新規投稿表示ボタン**/
 .review-new {
+  display: inline-block;
   background-color: #454345;
-  padding: 1rem 2rem;
+  padding: 1rem 1.5rem;
   transition: 0.3s;
-  position: fixed;
-  top: 5rem;
-  right: 2rem;
 }
 .review-new:hover {
   color: #454345;
@@ -122,19 +148,29 @@
 
 /***********レスポンシブ対応***********/
 @media (max-width: 767px) {
+  /**レビューレイアウト**/
+  .review-right {
+    width: 100vw;
+  }
+  .review-left {
+    width: 100vw;
+  }
+
   /**レビュー一覧**/
   .review {
-    width: 95%;
+    width: 100%;
+  }
+  .review {
+    width: 90%;
+    padding: 2rem 1rem;
   }
   /**新規投稿ボタン**/
   .review-new {
     padding: 0.5rem 1rem;
-    top: 5rem;
-    right: 1rem;
   }
   .modal_content .form-wrapper {
     width: 100vw;
-    }
+  }
 
   /**モーダル表示**/
   .modal_content{

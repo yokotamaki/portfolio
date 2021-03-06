@@ -1,11 +1,20 @@
 <h4>レビュー一覧</h4>
-<!--絞り込み検索-->
-<%= render "reviews/review_search" %>
-<a class="modal-open review-new" href="">クチコミを投稿する</a>
+<!--絞り込み検索・新規投稿ボタン-->
+<div class="review-right">
+  <div class="review-fixed">
+  <a class="modal-open review-new" href="">クチコミを投稿する</a>
+  <div class="review-form">
+    <%= render "reviews/review_search" %>
+  </div>
+  </div>
+</div>
 
 <!--レビュー一覧-->
-<%= render "reviews/index", reviews: @reviews %>
-<!--<= paginate @reviews %>-->
+<div class="review-left">
+  <%= render "reviews/index", reviews: @reviews %>
+  <div style="height: 2rem;"></div>
+  <%= paginate @reviews %>
+</div>
 
 <!--新規投稿（モーダル表示）-->
 <div class="modal">

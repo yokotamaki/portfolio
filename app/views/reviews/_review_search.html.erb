@@ -7,36 +7,38 @@
   <%= f.label :room, "type2" %>
   <%= f.check_box :room, { multiple: true }, "3", nil %>
   <%= f.label :room, "type3" %>
-  <%= f.submit "検索" %>
-
+  <div class="line"></div>
   <p>評価</p>
+  <%= f.check_box :star, { multiple: true }, 5, nil %>
   <%= f.label :star, "星５" %>
-  <%= f.check_box :star, { multiple: true }, 5,nil %>
+  <%= f.check_box :star, { multiple: true }, 4, nil %>
   <%= f.label :star, "星４" %>
-  <%= f.check_box :star, { multiple: true }, 4,nil %>
-  <%= f.label :star, "星３" %>
-  <%= f.check_box :star, { multiple: true }, 3,nil %>
+  <%= f.check_box :star, { multiple: true }, 3, nil %>
+  <%= f.label :star, "星３" %><br>
+  <%= f.check_box :star, { multiple: true }, 2, nil %>
   <%= f.label :star, "星２" %>
-  <%= f.check_box :star, { multiple: true }, 2,nil %>
+  <%= f.check_box :star, { multiple: true }, 1, nil %>
   <%= f.label :star, "星１" %>
-  <%= f.check_box :star, { multiple: true }, 1,nil %>
+  <div class="line"></div>
   <p>年代</p>
-  <%= f.label :age, "１０代" %>
   <%= f.check_box :age, { multiple: true }, "１０代", nil %>
-  <%= f.label :age, "２０代" %>
+  <%= f.label :age, "１０代" %>
   <%= f.check_box :age, { multiple: true }, "２０代", nil %>
-  <%= f.label :age, "３０代" %>
+  <%= f.label :age, "２０代" %><br>
   <%= f.check_box :age, { multiple: true }, "３０代", nil %>
-  <%= f.label :age, "４０代" %>
+  <%= f.label :age, "３０代" %>
   <%= f.check_box :age, { multiple: true }, "４０代", nil %>
-  <%= f.label :age, "５０代" %>
+  <%= f.label :age, "４０代" %><br>
   <%= f.check_box :age, { multiple: true }, "５０代", nil %>
-  <%= f.label :age, "６０代〜" %>
+  <%= f.label :age, "５０代" %>
   <%= f.check_box :age, { multiple: true }, "６０代〜", nil %>
-
+  <%= f.label :age, "６０代〜" %>
+  <div class="line"></div>
   <p>性別</p>
   <%= f.check_box :sex, { multiple: true }, "男性", nil %>
   <%= f.label :sex, "男性" %>
   <%= f.check_box :sex, { multiple: true }, "女性", nil %>
-  <%= f.label :sex, "女性" %>
+  <%= f.label :sex, "女性" %><br>
+  <div class="line"></div>
+  <%= f.submit "検索", class: "button-mini" %>
 <% end %>
