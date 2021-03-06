@@ -1,5 +1,7 @@
 <!--レビュー 絞り込み検索-->
 <%= form_with  scope: :review_search, url: reviews_path, method: :get, local: true do |f| %>
+  <a class="review-form-close" href="">×</a>
+
   <p>部屋タイプ</p>
   <%= f.check_box :room, { multiple: true }, "1", nil %>
   <%= f.label :room, "type1" %>
@@ -40,5 +42,5 @@
   <%= f.check_box :sex, { multiple: true }, "女性", nil %>
   <%= f.label :sex, "女性" %><br>
   <div class="line"></div>
-  <%= f.submit "検索", class: "button-mini" %>
+  <%= f.submit "検索", class: "button-mini", id: "review-submit" %>
 <% end %>

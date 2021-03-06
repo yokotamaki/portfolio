@@ -62,9 +62,13 @@
 }
 
 /**レビュー検索**/
+.search,
+.review-form-close {
+  display: none;
+}
 .review-form {
   background-color: rgba(69,67,69,0.9);
-  padding: 1rem 1.5rem 0.5rem;
+  padding: 1.5rem 1.5rem 0.5rem;
   margin: 1rem;
   text-align: left;
 }
@@ -76,6 +80,10 @@
 }
 .review-form label {
   margin-right: 1.5rem;
+}
+#review-submit {
+  display: block;
+  margin: 1rem 1rem 1rem  auto;
 }
 
 /**新規投稿表示ボタン**/
@@ -113,23 +121,23 @@
 }
 
 /**モーダル表示**/
-.content{
+.content {
   margin: 0 auto;
   padding: 40px;
 }
-.modal{
+.modal {
   display: none;
   height: 100vh;
   position: fixed;
   top: 0;
   width: 100%;
 }
-.modal_bg{
+.modal_bg {
   height: 100vh;
   width: 100%;
   position: absolute;
 }
-.modal_content{
+.modal_content {
   background: rgba(125,118,116,0.95);
   left: 50%;
   padding: 4rem 0 2rem;
@@ -164,12 +172,44 @@
     width: 90%;
     padding: 2rem 1rem;
   }
+
   /**新規投稿ボタン**/
   .review-new {
     padding: 0.5rem 1rem;
+    position: absolute;
+    top: -1rem;
+    right: 1rem;
   }
   .modal_content .form-wrapper {
     width: 100vw;
+  }
+
+  /**レビュー検索**/
+  .search {
+    position: fixed;
+    bottom: 4.5rem;
+    right: 1rem;
+    z-index: 10;
+    padding: 1rem;
+    display: inline-block;
+    background-color: rgba(69,67,69,0.9);
+    border-radius: 50%;
+  }
+  .review-form-close {
+    padding-top: 0.5rem;
+    font-size: 40px;
+    text-align: right;
+    display: block;
+  }
+  .review-form {
+    padding-top: 0;
+    margin: 0.5rem;
+    display: none;
+  }
+  .review-form_bg {
+    height: 100vh;
+    width: 100%;
+    position: absolute;
   }
 
   /**モーダル表示**/
