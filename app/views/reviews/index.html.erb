@@ -1,6 +1,6 @@
 <h4>レビュー一覧</h4>
 <!--絞り込み検索・新規投稿ボタン-->
-<span class="search"><i class="fas fa-search-plus fa-2x"></i></span>
+<span class="search-icon"><i class="fas fa-search-plus fa-2x"></i></span>
 <div class="review-right">
   <div class="review-fixed">
   <a class="modal-open review-new" href="">クチコミを投稿する</a>
@@ -42,7 +42,7 @@ $(function(){
 
 /**レビュー検索 モーダル表示**/
 $(function(){
-  $(".search").on("click",function(){
+  $(".search-icon").on("click",function(){
     $('.review-form').fadeIn();
       return false;
   });
