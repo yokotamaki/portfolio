@@ -77,6 +77,25 @@ a:hover {
 .button:focus {
   outline: none;
 }
+/**小さいボタン(検索・更新)**/
+.button-mini {
+  display: inline-block;
+  margin: 0.5rem;
+  color: #393c41;
+  border-radius: 1.5rem;
+  background-color: #e7e7e7;
+  opacity: 0.9;
+  border: none;
+  padding: 0.3rem 1rem;
+}
+.button-mini:hover {
+  opacity: 1;
+  border: none;
+  text-decoration: none;
+}
+.button-mini:focus {
+  outline: none;
+}
 
 /**予約状況更新ボタン（ユーザー・管理者の予約詳細）**/
 .button-flag {

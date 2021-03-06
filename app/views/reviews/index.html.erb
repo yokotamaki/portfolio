@@ -1,11 +1,22 @@
 <h4>レビュー一覧</h4>
-<!--絞り込み検索-->
-<%= render "reviews/review_search" %>
-<a class="modal-open review-new" href="">クチコミを投稿する</a>
+<!--絞り込み検索・新規投稿ボタン-->
+<span class="search"><i class="fas fa-search-plus fa-2x"></i></span>
+<div class="review-right">
+  <div class="review-fixed">
+  <a class="modal-open review-new" href="">クチコミを投稿する</a>
+  <div class="review-form">
+    <div class="review-form_bg review-form-close"></div>
+    <%= render "reviews/review_search" %>
+  </div>
+  </div>
+</div>
 
 <!--レビュー一覧-->
-<%= render "reviews/index", reviews: @reviews %>
-<!--<= paginate @reviews %>-->
+<div class="review-left">
+  <%= render "reviews/index", reviews: @reviews %>
+  <div style="height: 2rem;"></div>
+  <%= paginate @reviews %>
+</div>
 
 <!--新規投稿（モーダル表示）-->
 <div class="modal">
@@ -17,6 +28,7 @@
 </div>
 
 <script>
+/**新規投稿 モーダル表示**/
 $(function(){
   $(".modal-open").on("click",function(){
     $('.modal').fadeIn();
@@ -24,6 +36,18 @@ $(function(){
   });
   $(".modal-close").on("click",function(){
     $(".modal").fadeOut();
+      return false;
+  });
+});
+
+/**レビュー検索 モーダル表示**/
+$(function(){
+  $(".search").on("click",function(){
+    $('.review-form').fadeIn();
+      return false;
+  });
+  $(".review-form-close").on("click",function(){
+    $(".review-form").fadeOut();
       return false;
   });
 });

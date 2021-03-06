@@ -33,10 +33,6 @@ Rails.application.routes.draw do
   end
   resources :rooms, only:[:index]
   resources :reviews, only:[:index, :create] do
-    # collection do
-    #   get :review_search
-    #   get :result
-    # end
   end
   resources :contacts, only:[:new, :create] do
     collection do
