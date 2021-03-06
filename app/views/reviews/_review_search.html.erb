@@ -1,44 +1,42 @@
 <!--レビュー 絞り込み検索-->
-<%= search_form_for(@q, url: reviews_path) do |f| %>
-
-<!--<p>評価</p>-->
-  <!--<= f.label :star_eq_any, "星５" %>-->
-  <!--<= f.check_box :star_eq_any, { multiple: true }, 5 %>-->
-  <!--<= f.label :star_eq_any, "星４" %>-->
-  <!--<= f.check_box :star_eq_any, { multiple: true }, 4 %>-->
-  <!--<= f.label :star_eq_any, "星３" %>-->
-  <!--<= f.check_box :star_eq_any, { multiple: true }, 3 %>-->
-  <!--<= f.label :star_eq_any, "星２" %>-->
-  <!--<= f.check_box :star_eq_any, { multiple: true }, 2 %>-->
-  <!--<= f.label :star_eq_any, "星１" %>-->
-  <!--<= f.check_box :star_eq_any, { multiple: true }, 1 %>-->
-
-<!--<p>年代</p>-->
-<!--  <= f.label :age_eq_any, "１０代" %>-->
-<!--  <= f.check_box :age_eq_any, { multiple: true }, "１０代" %>-->
-<!--  <= f.label :age_eq_any, "２０代" %>-->
-<!--  <= f.check_box :age_eq_any, { multiple: true }, "２０代" %>-->
-<!--  <= f.label :age_eq_any, "３０代" %>-->
-<!--  <= f.check_box :age_eq_any, { multiple: true }, "３０代" %>-->
-<!--  <= f.label :age_eq_any, "４０代" %>-->
-<!--  <= f.check_box :age_eq_any, { multiple: true }, "４０代" %>-->
-<!--  <= f.label :age_eq_any, "５０代" %>-->
-<!--  <= f.check_box :age_eq_any, { multiple: true }, "５０代" %>-->
-<!--  <= f.label :age_eq_any, "６０代〜" %>-->
-<!--  <= f.check_box :age_eq_any, { multiple: true }, "６０代〜" %>-->
-
-<!--<p>性別</p>-->
-<!--  <= f.check_box :sex_eq_any, { multiple: true }, "男性" %>-->
-<!--  <= f.label :sex_eq_any, "男性" %>-->
-<!--  <= f.check_box :sex_eq_any, { multiple: true }, "女性" %>-->
-<!--  <= f.label :sex_eq_any, "女性" %>-->
-
+<%= form_with  scope: :review_search, url: reviews_path, method: :get, local: true do |f| %>
   <p>部屋タイプ</p>
-  <%= f.check_box :room_id_eq_any, { multiple: true }, "1" %>
-  <%= f.label :room_id_eq_any, "type1" %>
-  <%= f.check_box :room_id_eq_any, { multiple: true }, "2" %>
-  <%= f.label :room_id_eq_any, "type2" %>
-  <%= f.check_box :room_id_eq_any, { multiple: true }, "3" %>
-  <%= f.label :room_id_eq_any, "type3" %>
+  <%= f.check_box :room, { multiple: true }, "1", nil %>
+  <%= f.label :room, "type1" %>
+  <%= f.check_box :room, { multiple: true }, "2", nil %>
+  <%= f.label :room, "type2" %>
+  <%= f.check_box :room, { multiple: true }, "3", nil %>
+  <%= f.label :room, "type3" %>
   <%= f.submit "検索" %>
+
+  <p>評価</p>
+  <%= f.label :star, "星５" %>
+  <%= f.check_box :star, { multiple: true }, 5,nil %>
+  <%= f.label :star, "星４" %>
+  <%= f.check_box :star, { multiple: true }, 4,nil %>
+  <%= f.label :star, "星３" %>
+  <%= f.check_box :star, { multiple: true }, 3,nil %>
+  <%= f.label :star, "星２" %>
+  <%= f.check_box :star, { multiple: true }, 2,nil %>
+  <%= f.label :star, "星１" %>
+  <%= f.check_box :star, { multiple: true }, 1,nil %>
+  <p>年代</p>
+  <%= f.label :age, "１０代" %>
+  <%= f.check_box :age, { multiple: true }, "１０代", nil %>
+  <%= f.label :age, "２０代" %>
+  <%= f.check_box :age, { multiple: true }, "２０代", nil %>
+  <%= f.label :age, "３０代" %>
+  <%= f.check_box :age, { multiple: true }, "３０代", nil %>
+  <%= f.label :age, "４０代" %>
+  <%= f.check_box :age, { multiple: true }, "４０代", nil %>
+  <%= f.label :age, "５０代" %>
+  <%= f.check_box :age, { multiple: true }, "５０代", nil %>
+  <%= f.label :age, "６０代〜" %>
+  <%= f.check_box :age, { multiple: true }, "６０代〜", nil %>
+
+  <p>性別</p>
+  <%= f.check_box :sex, { multiple: true }, "男性", nil %>
+  <%= f.label :sex, "男性" %>
+  <%= f.check_box :sex, { multiple: true }, "女性", nil %>
+  <%= f.label :sex, "女性" %>
 <% end %>
