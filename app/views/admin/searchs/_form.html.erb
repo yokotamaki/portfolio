@@ -2,5 +2,5 @@
 <%= form_with(url: admin_search_path, local: true, method: :get) do |f| %>
   <%= f.text_field :keyword %>
   <%= f.select :model, {"予約": "reservation", "お問い合わせ": "contact"} %>
-  <%= f.submit "検索", class: "button-update" %>
+  <%= f.submit "検索", class: "button-mini" %>
 <% end %>
