@@ -241,102 +241,124 @@ name: Gimei.name.kanji,
 created_at: "2021-02-24"
 )
 
+comment = "また行きたいです"
 Review.create!(
   star: 4.0,
-  comment: "また行きたいです",
+  comment: comment,
   name: "はなこ",
   age: "２０代",
   sex: "女性",
   room_id: 1,
+  score: Language.get_data(comment),
   created_at: "2021-02-15"
   )
+comment = "部屋もサービスも良かったです！また機会があれば行きたいと思います！"
 Review.create!(
   star: 5.0,
-  comment: "部屋もサービスも良かったです！また機会があれば行きたいと思います！",
+  comment: comment,
   name: "みかん",
   age: "２０代",
   sex: "女性",
   room_id: 2,
+  score: Language.get_data(comment),
   created_at: "2021-02-15"
   )
+comment = "チェックインに時間がかかったので星４つにさせていただきました。ですが部屋もフロントの方の対応も丁寧で良かったです。"
 Review.create!(
   star: 4.0,
-  comment: "チェックインに時間がかかったので星４つにさせていただきました。ですが部屋もフロントの方の対応も丁寧で良かったです。",
+  comment: comment,
   name: "たろう",
   age: "４０代",
   sex: "男性",
   room_id: 1,
+  score: Language.get_data(comment),
   created_at: "2021-02-17"
   )
+comment = "部屋に埃がありました。残念です。"
 Review.create!(
   star: 2.0,
-  comment: "部屋に埃がありました。残念です。",
+  comment: comment,
   name: "ピカチュウ",
   age: "４０代",
   sex: "女性",
   room_id: 2,
+  score: Language.get_data(comment),
   created_at: "2021-02-18"
   )
+comment = "家族で利用させていただきました。子供も大満足です。子供がいるとのことで部屋まで荷物を運んでいただき感謝の気持ちでいっぱいです。"
 Review.create!(
   star: 5.0,
-  comment: "家族で利用させていただきました。子供も大満足です。子供がいるとのことで部屋まで荷物を運んでいただき感謝の気持ちでいっぱいです。",
+  comment: comment,
   name: "鈴木",
   age: "４０代",
   sex: "女性",
   room_id: 3,
+  score: Language.get_data(comment),
   created_at: "2021-02-20"
   )
+comment = "ちょうど混雑している時間帯でチェックインに３０分も待たされました。"
 Review.create!(
   star: 1.0,
-  comment: "ちょうど混雑している時間帯でチェックインに３０分も待たされました。",
+  comment: comment,
   name: "次郎",
   age: "５０代",
   sex: "男性",
   room_id: 1,
+  score: Language.get_data(comment),
   created_at: "2021-02-20"
   )
+comment = "３度目の利用で、フロントの方が名前を覚えていてくださったのがとても嬉しかったです。"
 Review.create!(
   star: 5.0,
-  comment: "３度目の利用で、フロントの方が名前を覚えていてくださったのがとても嬉しかったです。",
+  comment: comment,
   name: "さくら",
   age: "３０代",
   sex: "女性",
   room_id: 2,
+  score: Language.get_data(comment),
   created_at: "2021-02-23"
   )
+comment = "お洒落な部屋で大満足です！"
 Review.create!(
   star: 4.0,
-  comment: "お洒落な部屋で大満足です！",
+  comment: comment,
   name: "鈴木花子",
   age: "２０代",
   sex: "女性",
   room_id: 2,
+  score: Language.get_data(comment),
   created_at: "2021-02-27"
   )
+comment = "期待通りお洒落な部屋でした！初めての利用でしたが大満足です！また機会があれば泊まりに行きます^^"
 Review.create!(
   star: 4.0,
-  comment: "期待通りお洒落な部屋でした！初めての利用でしたが大満足です！また機会があれば泊まりに行きます^^",
+  comment: comment,
   name: "まり",
   age: "１０代",
   sex: "女性",
   room_id: 1,
+  score: Language.get_data(comment),
   created_at: "2021-03-01"
   )
+comment = "良かったです"
 Review.create!(
   star: 3.0,
-  comment: "良かったです",
+  comment: comment,
   name: "サブロウ",
   age: "２０代",
   sex: "男性",
   room_id: 1,
+  score: Language.get_data(comment),
   created_at: "2021-03-02"
   )
+comment = "従業員の方の親切な対応が良かったです！"
 Review.create!(
   star: 5.0,
-  comment: "従業員の方の親切な対応が良かったです！",
+  comment: comment,
   name: "りんご",
   age: "２０代",
   sex: "女性",
   room_id: 2,
+  score: Language.get_data(comment),
   created_at: "2021-03-04"
   )
