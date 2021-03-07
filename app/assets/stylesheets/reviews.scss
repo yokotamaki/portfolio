@@ -13,7 +13,7 @@
 }
 .evaluation label {
   position: relative;
-  padding: 0 1rem 0;
+  padding: 0 10px 0;
   color: #e7e7e7;
   cursor: pointer;
   font-size: 40px;
@@ -63,22 +63,22 @@
 
 /**レビュー検索**/
 .search-icon,
-.review-form-close {
+.review-close {
   display: none;
 }
-.review-form {
+.review-form-content {
   background-color: rgba(69,67,69,0.9);
   padding: 1.5rem 1.5rem 0.5rem;
   margin: 1rem;
   text-align: left;
 }
-.review-form p {
+.review-form-content p {
   margin: 0.5rem 0 0;
 }
 .line {
   border: 1px solid #333233;
 }
-.review-form label {
+.review-form-content label {
   margin-right: 1.5rem;
 }
 #review-submit {
@@ -195,21 +195,30 @@
     background-color: rgba(69,67,69,0.9);
     border-radius: 50%;
   }
-  .review-form-close {
+  .review-form {
+    display: none;
+    height: 100vh;
+    width: 100vw;
+    position: fixed;
+    top: 0;
+  }
+  .review-form-bg {
+    height: 100%;
+    width: 100%;
+  }
+  .review-form-content {
+    width: 98%;
+    z-index: 9;
+    padding-top: 0;
+    margin: 0.5rem;
+    position: absolute;
+    top: 8rem;
+  }
+  .review-close {
     padding-top: 0.5rem;
     font-size: 40px;
     text-align: right;
     display: block;
-  }
-  .review-form {
-    padding-top: 0;
-    margin: 0.5rem;
-    display: none;
-  }
-  .review-form_bg {
-    height: 100vh;
-    width: 100%;
-    position: absolute;
   }
 
   /**モーダル表示**/
