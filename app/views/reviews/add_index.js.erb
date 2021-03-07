@@ -1,0 +1,6 @@
+<!--レビュー投稿 追加部分-->
+$("#add-index").html("<%= j(render "reviews/add_index", review: @review) %>");
+$(function(){
+  $(".modal_content").fadeOut();
+    return false;
+});

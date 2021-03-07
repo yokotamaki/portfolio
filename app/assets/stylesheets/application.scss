@@ -332,10 +332,11 @@ a:hover {
 
 /**バリデーション**/
 .error {
-  font-size: 17px;
+  font-size: 16px;
   background-color: rgba(69,64,63,0.85);
   color: white;
-  padding: 0.3rem;
+  padding: 0.1rem;
+  margin-bottom: 0.3rem;
   border-radius: 0.5rem;
   opacity: 0.8;
 }

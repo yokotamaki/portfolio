@@ -1,7 +1,10 @@
 <h5>レビュー投稿</h5>
 <div class="wrapper">
+
+  <div id="review-errors"></div>
+
   <div class="form-wrapper">
-    <%= form_with model: @review, local: true do |f| %>
+    <%= form_with model: @review do |f| %>
       <div class="evaluation">
         <%= f.radio_button :star, "5" %>
         <label for="review_star_5" >★</label>

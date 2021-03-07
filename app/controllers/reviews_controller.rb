@@ -1,9 +1,12 @@
 class ReviewsController < ApplicationController
   def create
-    review = Review.new(review_params)
-    review.score = Language.get_data(review_params[:comment])
-    review.save
-    redirect_to reviews_path
+    @review = Review.new(review_params)
+    @review.score = Language.get_data(review_params[:comment])
+    if @review.save
+      render "add_index"
+    else
+      render "review_errors"
+    end
   end
 
   def index

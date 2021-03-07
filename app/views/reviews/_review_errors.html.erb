@@ -1,0 +1,20 @@
+<!--レビュー入力 エラーメッセージ-->
+<% if review.errors.messages.key?(:star) %>
+  <p class="error"><%= review.errors.messages[:star].first %></p>
+<% end %>
+
+<% if review.errors.messages.key?(:name) %>
+  <p class="error"><%= review.errors.messages[:name].first %></p>
+<% end %>
+
+<% if review.errors.messages.key?(:age) %>
+  <p class="error"><%= review.errors.messages[:age].first %></p>
+<% end %>
+
+<% if review.errors.messages.key?(:sex) %>
+  <p class="error"><%= review.errors.messages[:sex].first %></p>
+<% end %>
+
+<% if review.errors.messages.key?(:room_id) %>
+  <p class="error"><%= review.errors.messages[:room_id].first %></p>
+<% end %>

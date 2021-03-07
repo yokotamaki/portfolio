@@ -13,6 +13,7 @@
 
 <!--レビュー一覧-->
 <div class="review-left">
+  <div id="add-index"></div>
   <%= render "reviews/index", reviews: @reviews %>
   <div style="height: 2rem;"></div>
   <%= paginate @reviews %>
@@ -22,7 +23,7 @@
 <div class="modal">
   <div class="modal_bg modal-close"></div>
   <div class="modal_content">
-    <%= render "reviews/new", review: @review %>
+    <%= render "reviews/new" %>
     <a class="modal-close" href="">×</a>
   </div>
 </div>

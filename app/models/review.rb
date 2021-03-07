@@ -1,6 +1,12 @@
 class Review < ApplicationRecord
   belongs_to :room
 
+  validates :star, presence: { message: "星を選択してください" }
+  validates :name, presence: { message: "名前入力してください" }
+  validates :age, presence: { message: "年代選択してください" }
+  validates :sex, presence: { message: "性別を選択してください" }
+  validates :room_id, presence: { message: "宿泊した部屋タイプを選択してください" }
+
   # レビュー絞り込み検索
   scope :review_search, -> (search_params) do
     return if search_params.blank?
