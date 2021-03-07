@@ -336,7 +336,7 @@ a:hover {
   background-color: rgba(69,64,63,0.85);
   color: white;
   padding: 0.1rem;
-  margin-bottom: 0.3rem;
+  margin: 0.2rem 0.5rem;
   border-radius: 0.5rem;
   opacity: 0.8;
 }
@@ -433,5 +433,9 @@ a:hover {
   /**ページング機能**/
   .pagination {
     margin: 2rem 0 7rem;
+  }
+  /**バリデーション**/
+  .error {
+    font-size: 13px;
   }
 }

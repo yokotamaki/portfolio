@@ -173,8 +173,10 @@
     margin: 0;
     padding: 0;
   }
-  .map {
-    width: 90vw;
+  #map {
+    display: inline-block;
+    height: 300px;
+    width: 90%;
     margin: 0 0 2rem;
   }
   .access table {
