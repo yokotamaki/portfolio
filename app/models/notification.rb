@@ -2,7 +2,7 @@ class Notification < ApplicationRecord
   belongs_to :reservation, optional: true
   belongs_to :contact, optional: true
 
-  # 通知 何分前か
+  # 時間（何分前）
   def time
     if (Time.now - self.created_at) <= 60 * 60
       # 60分以内

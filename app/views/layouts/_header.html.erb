@@ -6,6 +6,9 @@
   <div class="header" id="header">
     <% if admin_signed_in? %>
       <%= link_to "通知", admin_notifications_path, class: "link header-notification", id: "link" %>
+        <% if not_checked_notifications.any? %>
+          <span><i class="fas fa-circle" style="font-size: 10px;"></i></span>
+        <% end %>
       <%= link_to "予約一覧", admin_reservations_path, class: "link header-reservation", id: "link" %>
       <%= link_to "お問い合わせ一覧", admin_contacts_path, class: "link header-contact", id: "link" %>
       <%= link_to "ログアウト", destroy_admin_session_path, method: :delete, class: "link", id: "link" %>
