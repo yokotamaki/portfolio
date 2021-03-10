@@ -5,6 +5,7 @@
   <span id="hamberger"><i class="fas fa-bars fa-3x"></i></span>
   <div class="header" id="header">
     <% if admin_signed_in? %>
+      <%= link_to "通知", admin_notifications_path, class: "link header-notification", id: "link" %>
       <%= link_to "予約一覧", admin_reservations_path, class: "link header-reservation", id: "link" %>
       <%= link_to "お問い合わせ一覧", admin_contacts_path, class: "link header-contact", id: "link" %>
       <%= link_to "ログアウト", destroy_admin_session_path, method: :delete, class: "link", id: "link" %>
@@ -63,8 +64,11 @@
     if(path.match("/customers/sign_up")){
     $(".header-logout").addClass("current");
     }
+    if(path.match("/admin/notifications")){
+    $(".header-notification").addClass("current");
+    }
     if(path.match("/admin/reservations")){
-    $(".header-access").addClass("current");
+    $(".header-reservation").addClass("current");
     }
     if(path.match("/admin/contacts")){
     $(".header-contact").addClass("current");
