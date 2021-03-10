@@ -1,4 +1,6 @@
 class Contact < ApplicationRecord
+  has_one :notification
+
   enum status: {未対応: 0, 対応中: 1, 対応完了: 2,}
 
   # バリデーションの設定

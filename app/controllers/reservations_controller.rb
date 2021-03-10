@@ -121,6 +121,12 @@ class ReservationsController < ApplicationController
     if reservation.save!
       NotificationMailer.success_mail(guest).deliver_now
       redirect_to success_reservations_path
+      # 管理者へ通知
+      notification = Notification.new(
+        reservation_id: reservation.id,
+        action: "予約"
+      )
+      notification.save
     end
   end
 

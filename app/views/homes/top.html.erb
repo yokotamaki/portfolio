@@ -20,6 +20,7 @@
 
   <div class="top-nav" id="top-nav">
     <% if admin_signed_in? %>
+      <%= link_to "通知", admin_notifications_path, class: "link" %>
       <%= link_to "予約一覧", admin_reservations_path, class: "link" %>
       <%= link_to "お問い合わせ一覧", admin_contacts_path, class: "link" %>
       <%= link_to "ログアウト", destroy_admin_session_path, method: :delete, class: "link"  %>
