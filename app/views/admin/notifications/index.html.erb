@@ -1,14 +1,22 @@
 <h4>通知</h4>
 <% @notifications.each do |notification| %>
   <% if notification.action == "お問い合わせ" %>
-    <p><%= notification.contact.name %>さんから
-    「<%= notification.contact.title %>」の
-    <%= notification.action %>がありました
-    <small>( <%= notification.time %> )</small><p>
+    <p>
+      <%= link_to admin_contact_path(notification.contact), class: "bottom_link" do %>
+        <%= notification.contact.name %>さんから
+        「<%= notification.contact.title %>」の
+        <%= notification.action %>がありました
+        <small>( <%= notification.time %> )</small>
+      <% end %>
+    <p>
   <% elsif notification.action == "予約" %>
-    <p><%= notification.reservation.guest.name %>さんが
-    <%= notification.reservation.start_date.strftime("%-m月%-d日") %>に
-    <%= notification.reservation.room.name %>を予約しました
-    <small>( <%= notification.time %> )</small><p>
+    <p>
+      <%= link_to admin_reservation_path(notification.reservation), class: "bottom_link" do %>
+        <%= notification.reservation.guest.name %>さんが
+        <%= notification.reservation.start_date.strftime("%-m月%-d日") %>に
+        <%= notification.reservation.room.name %>を予約しました
+        <small>( <%= notification.time %> )</small>
+      <% end %>
+    <p>
   <% end %>
 <% end %>

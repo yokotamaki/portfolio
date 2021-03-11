@@ -54,12 +54,12 @@
 }
 
 /**返信メール テンプレート**/
-.mail_to {
+.bottom_link {
   display: inline-block;
   border-bottom: 1px solid #c3c1c1;
-  padding: 0 0.3rem;
+  // padding: 0 0.3rem;
 }
-.mail_to:hover {
+.bottom_link:hover {
   opacity: 0.7;
 }
 

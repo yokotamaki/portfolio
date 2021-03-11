@@ -15,7 +15,7 @@ class Notification < ApplicationRecord
       (Date.today - self.created_at.to_date).to_i.to_s + "日前"
     else
       # それ以降
-      self.created_at
+      self.created_at.strftime("%Y年%-m月%-d日 %-H時%-M分")
     end
   end
 end
