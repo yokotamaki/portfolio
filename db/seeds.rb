@@ -362,3 +362,95 @@ Review.create!(
   score: Language.get_data(comment),
   created_at: "2021-03-04"
   )
+
+
+Notification.create!(
+  contact_id: 1,
+  action: "お問い合わせ",
+  created_at: "2021-02-01"
+)
+Notification.create!(
+  contact_id: 2,
+  action: "お問い合わせ",
+  created_at: "2021-02-15"
+)
+Notification.create!(
+  contact_id: 3,
+  action: "お問い合わせ",
+  created_at: "2021-02-16"
+)
+Notification.create!(
+  contact_id: 4,
+  action: "お問い合わせ",
+  created_at: "2021-02-17"
+)
+Notification.create!(
+  contact_id: 5,
+  action: "お問い合わせ",
+  created_at: "2021-02-17"
+)
+Notification.create!(
+  contact_id: 6,
+  action: "お問い合わせ",
+  created_at: "2021-02-18"
+)
+Notification.create!(
+  contact_id: 7,
+  action: "お問い合わせ",
+  created_at: "2021-02-19"
+)
+Notification.create!(
+  reservation_id: 1,
+  action: "予約",
+  created_at: "2021-02-19"
+)
+Notification.create!(
+  reservation_id: 2,
+  action: "予約",
+  created_at: "2021-02-20"
+)
+Notification.create!(
+  contact_id: 8,
+  action: "お問い合わせ",
+  created_at: "2021-02-10"
+)
+Notification.create!(
+  contact_id: 9,
+  action: "お問い合わせ",
+  created_at: "2021-02-10"
+)
+Notification.create!(
+  reservation_id: 3,
+  action: "予約",
+  created_at: "2021-02-20"
+)
+Notification.create!(
+  contact_id: 10,
+  action: "お問い合わせ",
+  created_at: "2021-02-20"
+)
+Notification.create!(
+  reservation_id: 4,
+  action: "予約",
+  created_at: "2021-02-21"
+)
+Notification.create!(
+  contact_id: 11,
+  action: "お問い合わせ",
+  created_at: "2021-02-21"
+)
+Notification.create!(
+  contact_id: 12,
+  action: "お問い合わせ",
+  created_at: "2021-02-22"
+)
+Notification.create!(
+  reservation_id: 5,
+  action: "予約",
+  created_at: "2021-02-23"
+)
+Notification.create!(
+  contact_id: 13,
+  action: "お問い合わせ",
+  created_at: "2021-02-24"
+)
