@@ -1,4 +1,9 @@
 <h4>通知</h4>
+<%= form_with scope: :notification_search, url: admin_notifications_path, local: true, method: :get do |f| %>
+  <%= f.select :action, {全て: "all", 予約: "reservation", 予約キャンセル: "cxl", お問い合わせ: "contact"} %>
+  <%= f.submit "絞り込み", class: "button-mini" %>
+<% end %>
+
 <% @notifications.each do |notification| %>
   <% if notification.action == "お問い合わせ" %>
     <p>
