@@ -138,8 +138,19 @@ class ReservationsController < ApplicationController
     @reservation = Reservation.find(params[:id])
     if @reservation.is_flag == true
       @reservation.update(is_flag: false)
+      notification = Notification.new(
+        reservation_id: @reservation.id,
+        action: "キャンセル"
+      )
+      notification.save
     elsif @reservation.is_flag == false
       @reservation.update(is_flag: true)
+        notification = Notification.new(
+        reservation_id: @reservation.id,
+        action: "キャンセル→予約"
+      )
+      notification.save
+
     end
   end
 
