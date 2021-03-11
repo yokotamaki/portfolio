@@ -150,7 +150,6 @@ class ReservationsController < ApplicationController
         action: "キャンセル→予約"
       )
       notification.save
-
     end
   end
 
