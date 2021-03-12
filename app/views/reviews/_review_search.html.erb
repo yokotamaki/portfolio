@@ -1,56 +1,57 @@
 <!--レビュー 絞り込み検索-->
 <%= form_with  scope: :review_search, url: reviews_path, method: :get, local: true do |f| %>
   <a class="review-form-close review-close" href="">×</a>
-<label><input type="checkbox" id="check_all" name="check_all">すべて選択</label>
-<div class="line"></div>
+  <input type="checkbox" id="check-all" name="check-all">
+  <label for="check-all" class="check-all-label">すべて選択</label>
+  <div class="line"></div>
 
-<div id="checkbox-items">
-  <p>部屋タイプ</p>
-  <%= f.check_box :room, { multiple: true, class: "checkbox-item" }, "1", nil %>
-  <%= f.label :room_1, "type1" %>
-  <%= f.check_box :room, { multiple: true, class: "checkbox-item" }, "2", nil %>
-  <%= f.label :room_2, "type2" %><br>
-  <%= f.check_box :room, { multiple: true, class: "checkbox-item" }, "3", nil %>
-  <%= f.label :room_3, "type3" %>
-  <div class="line"></div>
-  <p>評価</p>
-  <%= f.check_box :star, { multiple: true, class: "checkbox-item" }, 5, nil %>
-  <%= f.label :star_5, "星５" %>
-  <%= f.check_box :star, { multiple: true, class: "checkbox-item" }, 4, nil %>
-  <%= f.label :star_4, "星４" %>
-  <%= f.check_box :star, { multiple: true, class: "checkbox-item" }, 3, nil %>
-  <%= f.label :star_3, "星３" %><br>
-  <%= f.check_box :star, { multiple: true, class: "checkbox-item" }, 2, nil %>
-  <%= f.label :star_2, "星２" %>
-  <%= f.check_box :star, { multiple: true, class: "checkbox-item" }, 1, nil %>
-  <%= f.label :star_1, "星１" %>
-  <div class="line"></div>
-  <p>年代</p>
-  <%= f.check_box :age, { multiple: true, class: "checkbox-item" }, "１０代", nil %>
-  <%= f.label :age_１０代, "１０代" %>
-  <%= f.check_box :age, { multiple: true, class: "checkbox-item" }, "２０代", nil %>
-  <%= f.label :age_２０代, "２０代" %><br>
-  <%= f.check_box :age, { multiple: true, class: "checkbox-item" }, "３０代", nil %>
-  <%= f.label :age_３０代, "３０代" %>
-  <%= f.check_box :age, { multiple: true, class: "checkbox-item" }, "４０代", nil %>
-  <%= f.label :age_４０代, "４０代" %><br>
-  <%= f.check_box :age, { multiple: true, class: "checkbox-item" }, "５０代", nil %>
-  <%= f.label :age_５０代, "５０代" %>
-  <%= f.check_box :age, { multiple: true, class: "checkbox-item" }, "６０代〜", nil %>
-  <%= f.label :age_６０代〜, "６０代〜" %>
-  <div class="line"></div>
-  <p>性別</p>
-  <%= f.check_box :sex, { multiple: true, class: "checkbox-item" }, "男性", nil %>
-  <%= f.label :sex_男性, "男性" %>
-  <%= f.check_box :sex, { multiple: true, class: "checkbox-item" }, "女性", nil %>
-  <%= f.label :sex_女性, "女性" %><br>
-  <div class="line"></div>
-</div>
+  <div id="checkbox-items">
+    <p>部屋タイプ</p>
+    <%= f.check_box :room, { multiple: true, class: "checkbox-item" }, "1", nil %>
+    <%= f.label :room_1, "type1" %>
+    <%= f.check_box :room, { multiple: true, class: "checkbox-item" }, "2", nil %>
+    <%= f.label :room_2, "type2" %><br>
+    <%= f.check_box :room, { multiple: true, class: "checkbox-item" }, "3", nil %>
+    <%= f.label :room_3, "type3" %>
+    <div class="line"></div>
+    <p>評価</p>
+    <%= f.check_box :star, { multiple: true, class: "checkbox-item" }, 5, nil %>
+    <%= f.label :star_5, "星５" %>
+    <%= f.check_box :star, { multiple: true, class: "checkbox-item" }, 4, nil %>
+    <%= f.label :star_4, "星４" %>
+    <%= f.check_box :star, { multiple: true, class: "checkbox-item" }, 3, nil %>
+    <%= f.label :star_3, "星３" %><br>
+    <%= f.check_box :star, { multiple: true, class: "checkbox-item" }, 2, nil %>
+    <%= f.label :star_2, "星２" %>
+    <%= f.check_box :star, { multiple: true, class: "checkbox-item" }, 1, nil %>
+    <%= f.label :star_1, "星１" %>
+    <div class="line"></div>
+    <p>年代</p>
+    <%= f.check_box :age, { multiple: true, class: "checkbox-item" }, "１０代", nil %>
+    <%= f.label :age_１０代, "１０代" %>
+    <%= f.check_box :age, { multiple: true, class: "checkbox-item" }, "２０代", nil %>
+    <%= f.label :age_２０代, "２０代" %><br>
+    <%= f.check_box :age, { multiple: true, class: "checkbox-item" }, "３０代", nil %>
+    <%= f.label :age_３０代, "３０代" %>
+    <%= f.check_box :age, { multiple: true, class: "checkbox-item" }, "４０代", nil %>
+    <%= f.label :age_４０代, "４０代" %><br>
+    <%= f.check_box :age, { multiple: true, class: "checkbox-item" }, "５０代", nil %>
+    <%= f.label :age_５０代, "５０代" %>
+    <%= f.check_box :age, { multiple: true, class: "checkbox-item" }, "６０代〜", nil %>
+    <%= f.label :age_６０代〜, "６０代〜" %>
+    <div class="line"></div>
+    <p>性別</p>
+    <%= f.check_box :sex, { multiple: true, class: "checkbox-item" }, "男性", nil %>
+    <%= f.label :sex_男性, "男性" %>
+    <%= f.check_box :sex, { multiple: true, class: "checkbox-item" }, "女性", nil %>
+    <%= f.label :sex_女性, "女性" %><br>
+    <div class="line"></div>
+  </div>
   <%= f.submit "検索", class: "button-mini", id: "review-submit" %>
 <% end %>
 
 <script>
-$('#check_all').on('change', function() {
+$('#check-all').on('change', function() {
   // 「選択肢」のチェック状態を切替える
   $('.checkbox-item').prop('checked', $(this).is(':checked'));
 });
@@ -58,9 +59,9 @@ $('#check_all').on('change', function() {
 $('.checkbox-item').on('change', function() {
   // 「全選択」のチェック状態を切替える
   if ($('#checkbox-items :checked').length == $('#checkbox-items :input').length){
-    $('#check_all').prop('checked', true);
+    $('#check-all').prop('checked', true);
   }else{
-    $('#check_all').prop('checked', false);
+    $('#check-all').prop('checked', false);
   }
 });
 </script>
