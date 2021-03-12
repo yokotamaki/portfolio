@@ -1,0 +1,46 @@
+<% @notifications.each do |notification| %>
+  <% if notification.action == "お問い合わせ" %>
+    <p>
+      <%= link_to admin_contact_path(notification.contact), class: "bottom_link" do %>
+        <%= notification.contact.name %>さんから
+        「<%= notification.contact.title %>」の
+        <%= notification.action %>がありました
+        <small>( <%= notification.time %> )</small>
+      <% end %>
+    <p>
+  <% elsif notification.action == "予約" %>
+    <p>
+      <%= link_to admin_reservation_path(notification.reservation), class: "bottom_link" do %>
+        <%= notification.reservation.guest.name %>さんが
+        <%= notification.reservation.start_date.strftime("%-m月%-d日") %>に
+        <%= notification.reservation.room.name %>を<%= notification.action %>しました
+        <small>( <%= notification.time %> )</small>
+      <% end %>
+    <p>
+  <% elsif notification.action == "キャンセル" %>
+    <p>
+      <%= link_to admin_reservation_path(notification.reservation), class: "bottom_link" do %>
+        <%= notification.reservation.guest.name %>さんが
+        予約を<%= notification.action %>しました
+        <small>( <%= notification.time %> )</small>
+      <% end %>
+    <p>
+  <% elsif notification.action == "キャンセル→予約" %>
+    <p>
+      <%= link_to admin_reservation_path(notification.reservation), class: "bottom_link" do %>
+        <%= notification.reservation.guest.name %>さんが
+        <%= notification.action %>しました
+        <small>( <%= notification.time %> )</small>
+      <% end %>
+    <p>
+  <% elsif notification.action == "レビュー" %>
+    <p>
+      <%= link_to reviews_path, class: "bottom_link" do %>
+        <%= notification.review.name %>さんが
+        評価<%= notification.review.star %>の
+        <%= notification.action %>を投稿しました
+        <small>( <%= notification.time %> )</small>
+      <% end %>
+    <p>
+  <% end %>
+<% end %>
