@@ -39,10 +39,12 @@
           <td><p><%= @guest.email %></p></td>
         </tr>
       </table>
-      <% if @reservation.is_flag == true %>
-        <%= button_to "予約をキャンセルにする", reservation_path(@reservation), method: :patch, remote: true, class: "button-flag" %>
-      <% elsif @reservation.is_flag == false %>
-        <%= button_to "キャンセルを取り消す", reservation_path(@reservation), method: :patch, remote: true, class: "button-flag" %>
+      <% if @reservation.start_date > Date.today %>
+        <% if @reservation.is_flag == true %>
+          <%= button_to "予約をキャンセルにする", reservation_path(@reservation), method: :patch, remote: true, class: "button-flag" %>
+        <% elsif @reservation.is_flag == false %>
+          <%= button_to "キャンセルを取り消す", reservation_path(@reservation), method: :patch, remote: true, class: "button-flag" %>
+        <% end %>
       <% end %>
     </div>
     <!--部屋・日付など-->
