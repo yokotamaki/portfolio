@@ -1,5 +1,7 @@
 <h4>通知</h4>
-<%= render "admin/notifications/search" %>
 <div id="notification-index">
   <%= render "admin/notifications/index", notifications: @notifications %>
+</div>
+<div class="search-form">
+  <%= render "admin/notifications/search" %>
 </div>
