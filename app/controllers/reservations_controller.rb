@@ -145,7 +145,7 @@ class ReservationsController < ApplicationController
       notification.save
     elsif @reservation.is_flag == false
       @reservation.update(is_flag: true)
-        notification = Notification.new(
+      notification = Notification.new(
         reservation_id: @reservation.id,
         action: "キャンセル→予約"
       )

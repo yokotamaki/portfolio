@@ -4,6 +4,12 @@ class ReviewsController < ApplicationController
     @review.score = Language.get_data(review_params[:comment])
     if @review.save
       render "add_index"
+      # 管理者へ通知
+      notification = Notification.new(
+        review_id: @review.id,
+        action: "レビュー"
+      )
+      notification.save
     else
       render "review_errors"
     end

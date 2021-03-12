@@ -107,47 +107,147 @@ Guest.create!(
   email: "test5@test",
   created_at: "2021-02-23"
   )
+Guest.create!(
+  id: 6,
+  name: Gimei.name.kanji,
+  name_kana: Gimei.name.katakana,
+  birthday: "1998-06-26",
+  sex: true,
+  zipcode: "1111111",
+  address: Gimei.address.kanji,
+  phone_number: "09000000000",
+  email: "test6@test",
+  created_at: "2021-02-28"
+  )
+Guest.create!(
+  id: 7,
+  name: Gimei.name.kanji,
+  name_kana: Gimei.name.katakana,
+  birthday: "1995-04-30",
+  sex: false,
+  zipcode: "1111111",
+  address: Gimei.address.kanji,
+  phone_number: "09000000000",
+  email: "test7@test",
+  created_at: "2021-03-03"
+  )
+Guest.create!(
+  id: 8,
+  name: Gimei.name.kanji,
+  name_kana: Gimei.name.katakana,
+  birthday: "1987-07-21",
+  sex: true,
+  zipcode: "1111111",
+  address: Gimei.address.kanji,
+  phone_number: "09000000000",
+  email: "test8@test",
+  created_at: "2021-03-04"
+  )
+Guest.create!(
+  id: 9,
+  name: Gimei.name.kanji,
+  name_kana: Gimei.name.katakana,
+  birthday: "1999-06-21",
+  sex: false,
+  zipcode: "1111111",
+  address: Gimei.address.kanji,
+  phone_number: "09000000000",
+  email: "test9@test",
+  created_at: "2021-03-10"
+  )
+Guest.create!(
+  id: 10,
+  name: Gimei.name.kanji,
+  name_kana: Gimei.name.katakana,
+  birthday: "1993-01-04",
+  sex: false,
+  zipcode: "1111111",
+  address: Gimei.address.kanji,
+  phone_number: "09000000000",
+  email: "test10@test",
+  created_at: "2021-03-12"
+  )
 
-Reservation.create!(
+Reservation.new(
   guest_id: 1,
   room_id: 2,
-  start_date: "2021-03-11",
-  end_date: "2021-03-12",
+  start_date: "2021-03-01",
+  end_date: "2021-03-02",
   people: 2,
   created_at: "2021-02-19"
-  )
-Reservation.create!(
+  ).save(validate: false)
+Reservation.new(
   guest_id: 2,
   room_id: 2,
-  start_date: "2021-03-16",
-  end_date: "2021-03-17",
+  start_date: "2021-03--7",
+  end_date: "2021-03-08",
   people: 2,
   created_at: "2021-02-20"
-  )
-Reservation.create!(
+  ).save(validate: false)
+Reservation.new(
   guest_id: 3,
   room_id: 2,
   start_date: "2021-03-15",
   end_date: "2021-03-16",
   people: 2,
   created_at: "2021-02-20"
-  )
-Reservation.create!(
+  ).save(validate: false)
+Reservation.new(
   guest_id: 4,
   room_id: 3,
-  start_date: "2021-03-12",
-  end_date: "2021-03-13",
+  start_date: "2021-03-20",
+  end_date: "2021-03-21",
   people: 4,
   created_at: "2021-02-21"
-  )
-Reservation.create!(
+  ).save(validate: false)
+Reservation.new(
   guest_id: 5,
   room_id: 1,
-  start_date: "2021-03-11",
-  end_date: "2021-03-12",
+  start_date: "2021-03-12",
+  end_date: "2021-03-13",
   people: 2,
   created_at: "2021-02-23"
-  )
+  ).save(validate: false)
+Reservation.new(
+  guest_id: 6,
+  room_id: 1,
+  start_date: "2021-03-27",
+  end_date: "2021-03-28",
+  people: 2,
+  created_at: "2021-02-28"
+  ).save(validate: false)
+Reservation.new(
+  guest_id: 7,
+  room_id: 3,
+  start_date: "2021-04-04",
+  end_date: "2021-04-05",
+  people: 2,
+  created_at: "2021-03-03"
+  ).save(validate: false)
+Reservation.new(
+  guest_id: 8,
+  room_id: 1,
+  start_date: "2021-04-12",
+  end_date: "2021-04-13",
+  people: 2,
+  created_at: "2021-03-04"
+  ).save(validate: false)
+Reservation.new(
+  guest_id: 9,
+  room_id: 3,
+  start_date: "2021-03-30",
+  end_date: "2021-03-31",
+  people: 4,
+  created_at: "2021-03-10"
+  ).save(validate: false)
+Reservation.new(
+  guest_id: 10,
+  room_id: 3,
+  start_date: "2021-04-20",
+  end_date: "2021-04-21",
+  people: 4,
+  created_at: "2021-03-12"
+  ).save(validate: false)
 
 Contact.create!(
   title: "充電器のコードを忘れてしまった",
@@ -194,51 +294,51 @@ created_at: "2021-02-18"
 Contact.create!(
 title: "部屋の中に靴下を忘れたかもしれない",
 body: "宿泊した際に赤い靴下を置いていってしまったかもしれないので確認してください！もしあれば連絡お願いします。",
-email: "test@test",
+email: "test7@test",
 name: Gimei.name.kanji,
 created_at: "2021-02-19"
 )
 Contact.create!(
 title: "チェックイン前に荷物を預かって欲しい",
 body: "27日から１泊する予定なのですが、チェックイン前にだけ預かって欲しいです。預かっていただくことは可能でしょうか？",
-email: "test7@test",
+email: "test8@test",
 name: Gimei.name.kanji,
 created_at: "2021-02-20"
 )
 Contact.create!(
 title: "部屋の指定はできますか？？",
 body: "子供が車椅子を利用しているのと年配の人がいるのででなるべくフロント空近い部屋がいいのですがどのようにすればいいでしょうか？また駐車場もなるべく近いところを利用したいです。",
-email: "test8@test",
+email: "test9@test",
 name: Gimei.name.kanji,
 created_at: "2021-02-20"
 )
 Contact.create!(
 title: "喫煙できますか？？",
 body: "部屋は禁煙・喫煙のどちらでしょうか？ もし禁煙だとしたらどこか館内に喫煙スペースはありますか？",
-email: "test9@test",
+email: "test10@test",
 name: Gimei.name.kanji,
 created_at: "2021-02-20"
 )
 Contact.create!(
 title: "周辺の観光スポットを知りたい",
 body: "ホテル周辺の観光スポットなどを教えてください。おすすめがあれば行ってみたいです！",
-email: "test10@test",
+email: "test11@test",
 name: Gimei.name.kanji,
 created_at: "2021-02-21"
 )
 Contact.create!(
 title: "ケーキを持ち込みたい",
 body: "友達の誕生日祝いで宿泊したいと考えています。ケーキをサプライズで渡したいので事前に郵送して、部屋の中に入れておいていただきたいのですが可能でしょうか？",
-email: "test11@test",
+email: "test12@test",
 name: Gimei.name.kanji,
-created_at: "2021-02-22"
+created_at: "2021-03-02"
 )
 Contact.create!(
 title: "部屋から景色は見えますか？",
 body: "部屋からはどんな景色が見れますか？？部屋タイプによって異なるのでしょうか？？詳細が知りたいです。",
-email: "test12@test",
+email: "test13@test",
 name: Gimei.name.kanji,
-created_at: "2021-02-24"
+created_at: "2021-03-11"
 )
 
 comment = "また行きたいです"
@@ -375,6 +475,16 @@ Notification.create!(
   created_at: "2021-02-15"
 )
 Notification.create!(
+  review_id: 1,
+  action: "レビュー",
+  created_at: "2021-02-15"
+)
+Notification.create!(
+  review_id: 2,
+  action: "レビュー",
+  created_at: "2021-02-15"
+)
+Notification.create!(
   contact_id: 3,
   action: "お問い合わせ",
   created_at: "2021-02-16"
@@ -388,6 +498,16 @@ Notification.create!(
   contact_id: 5,
   action: "お問い合わせ",
   created_at: "2021-02-17"
+)
+Notification.create!(
+  review_id: 3,
+  action: "レビュー",
+  created_at: "2021-02-17"
+)
+Notification.create!(
+  review_id: 4,
+  action: "レビュー",
+  created_at: "2021-02-18"
 )
 Notification.create!(
   contact_id: 6,
@@ -410,14 +530,24 @@ Notification.create!(
   created_at: "2021-02-20"
 )
 Notification.create!(
+  review_id: 5,
+  action: "レビュー",
+  created_at: "2021-02-20"
+)
+Notification.create!(
   contact_id: 8,
   action: "お問い合わせ",
-  created_at: "2021-02-10"
+  created_at: "2021-02-20"
+)
+Notification.create!(
+  review_id: 6,
+  action: "レビュー",
+  created_at: "2021-02-20"
 )
 Notification.create!(
   contact_id: 9,
   action: "お問い合わせ",
-  created_at: "2021-02-10"
+  created_at: "2021-02-20"
 )
 Notification.create!(
   reservation_id: 3,
@@ -440,17 +570,67 @@ Notification.create!(
   created_at: "2021-02-21"
 )
 Notification.create!(
-  contact_id: 12,
-  action: "お問い合わせ",
-  created_at: "2021-02-22"
-)
-Notification.create!(
   reservation_id: 5,
   action: "予約",
   created_at: "2021-02-23"
 )
 Notification.create!(
+  review_id: 7,
+  action: "レビュー",
+  created_at: "2021-02-23"
+)
+Notification.create!(
+  review_id: 8,
+  action: "レビュー",
+  created_at: "2021-02-27"
+)
+Notification.create!(
+  reservation_id: 6,
+  action: "予約",
+  created_at: "2021-02-28"
+)
+Notification.create!(
+  review_id: 9,
+  action: "レビュー",
+  created_at: "2021-03-01"
+)
+Notification.create!(
+  review_id: 10,
+  action: "レビュー",
+  created_at: "2021-03-02"
+)
+Notification.create!(
+  contact_id: 12,
+  action: "お問い合わせ",
+  created_at: "2021-03-02"
+)
+Notification.create!(
+  reservation_id: 7,
+  action: "予約",
+  created_at: "2021-03-03"
+)
+Notification.create!(
+  review_id: 11,
+  action: "レビュー",
+  created_at: "2021-03-04"
+)
+Notification.create!(
+  reservation_id: 8,
+  action: "予約",
+  created_at: "2021-03-04"
+)
+Notification.create!(
+  reservation_id: 9,
+  action: "予約",
+  created_at: "2021-03-10"
+)
+Notification.create!(
   contact_id: 13,
   action: "お問い合わせ",
-  created_at: "2021-02-24"
+  created_at: "2021-03-11"
+)
+Notification.create!(
+  reservation_id: 10,
+  action: "予約",
+  created_at: "2021-03-12"
 )

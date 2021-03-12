@@ -1,6 +1,7 @@
 class Notification < ApplicationRecord
   belongs_to :reservation, optional: true
   belongs_to :contact, optional: true
+  belongs_to :review, optional: true
 
   # 時間（何分前）
   def time
