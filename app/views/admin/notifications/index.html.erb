@@ -1,6 +1,6 @@
 <h4>通知</h4>
 <%= form_with scope: :notification_search, url: admin_notifications_path, local: true, method: :get do |f| %>
-  <%= f.select :action, {全て: "all", 予約: "reservation", 予約キャンセル: "cxl", お問い合わせ: "contact"} %>
+  <%= f.select :action, {全て: "all", 予約: "reservation", 予約キャンセル: "cxl", お問い合わせ: "contact", レビュー: "review"} %>
   <%= f.submit "絞り込み", class: "button-mini" %>
 <% end %>
 
@@ -36,6 +36,14 @@
       <%= link_to admin_reservation_path(notification.reservation), class: "bottom_link" do %>
         <%= notification.reservation.guest.name %>さんが
         <%= notification.action %>しました
+        <small>( <%= notification.time %> )</small>
+      <% end %>
+    <p>
+  <% elsif notification.action == "レビュー" %>
+    <p>
+      <%= link_to reviews_path, class: "bottom_link" do %>
+        <%= notification.review.name %>さんが
+        <%= notification.action %>を投稿しました
         <small>( <%= notification.time %> )</small>
       <% end %>
     <p>

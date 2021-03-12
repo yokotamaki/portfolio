@@ -21,6 +21,9 @@ class Admin::NotificationsController < ApplicationController
     elsif action == "contact"
       @notifications = Notification.where(action: "お問い合わせ")
                                    .order(id: "DESC")
+    elsif action == "review"
+      @notifications = Notification.where(action: "レビュー")
+                                   .order(id: "DESC")
     end
   end
 

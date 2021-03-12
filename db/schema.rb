@@ -84,6 +84,7 @@ ActiveRecord::Schema.define(version: 2021_03_10_060601) do
   create_table "notifications", force: :cascade do |t|
     t.integer "reservation_id"
     t.integer "contact_id"
+    t.integer "review_id"
     t.string "action", null: false
     t.boolean "checked", default: false, null: false
     t.datetime "created_at", null: false

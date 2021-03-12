@@ -1,5 +1,6 @@
 class Review < ApplicationRecord
   belongs_to :room
+  has_one :notification
 
   validates :star, presence: { message: "星を選択してください" }
   validates :name, presence: { message: "名前入力してください" }
