@@ -28,7 +28,7 @@
 .review-right {
   width: 25vw;
   position: fixed;
-  top: 6rem;
+  top: 5rem;
   right :0;
 }
 .review-left {
@@ -68,7 +68,7 @@
 }
 .review-form-content {
   background-color: rgba(69,67,69,0.9);
-  padding: 1.5rem 1.5rem 0.5rem;
+  padding: 1rem 1.5rem 0.5rem;
   margin: 1rem;
   text-align: left;
 }
@@ -79,11 +79,31 @@
   border: 1px solid #333233;
 }
 .review-form-content label {
-  margin-right: 1.5rem;
+  margin-left: 0.3rem;
 }
 #review-submit {
   display: block;
-  margin: 1rem 1rem 1rem  auto;
+  margin: 0.5rem 0.5rem 0.5rem  auto;
+}
+
+/**レビュー検索 チェックボックス**/
+#check-all,
+.checkbox-item {
+  display: none;
+}
+#check-all + label,
+.checkbox-item + label {
+  border-radius: 1rem;
+  border: 1.5px solid rgba(51,50,51,0.6);
+  padding: 0 1rem;
+}
+#check-all:hover + label,
+.checkbox-item:hover + label {
+  background-color: rgba(231,231,231,0.1);
+}
+#check-all:checked + label,
+.checkbox-item:checked + label {
+  background-color: rgba(231,231,231,0.3);
 }
 
 /**新規投稿表示ボタン**/
