@@ -62,6 +62,51 @@ RSpec.describe "HP側（ユーザ側）のテスト", type: :system do
   end
 
 
+  describe "レビュー" do
+    context "表示の確認(indexアクション)" do
+      before do
+        visit reviews_path
+      end
+      it "URLが正しい" do
+        expect(current_path).to eq "/reviews"
+      end
+      it "レビュー一覧画面が表示される" do
+        expect(page).to have_content "レビュー"
+      end
+      it "すべて選択のチェックボックスが表示される" do
+        expect(page).to have_field("すべて選択")
+      end
+      it "部屋タイプのチェックボックスが表示される" do
+        expect(page).to have_field("type1")
+        expect(page).to have_field("type2")
+        expect(page).to have_field("type3")
+      end
+      it "評価（星）のチェックボックスが表示される" do
+        expect(page).to have_field("星１")
+        expect(page).to have_field("星２")
+        expect(page).to have_field("星３")
+        expect(page).to have_field("星４")
+        expect(page).to have_field("星５")
+      end
+      it "年代のチェックボックスが表示される" do
+        expect(page).to have_field("１０代")
+        expect(page).to have_field("２０代")
+        expect(page).to have_field("３０代")
+        expect(page).to have_field("４０代")
+        expect(page).to have_field("５０代")
+        # expect(page).to have_field("６０代〜")
+      end
+      it "性別のチェックボックスが表示される" do
+        expect(page).to have_field("男性")
+        expect(page).to have_field("女性")
+      end
+      it "検索ボタンが表示される" do
+        expect(page).to have_button "検索"
+      end
+    end
+  end
+
+
   describe "お問い合わせ" do
     context "表示の確認（newアクション）" do
       before do
@@ -134,41 +179,22 @@ RSpec.describe "HP側（ユーザ側）のテスト", type: :system do
       end
     end
 
-    context "お問い合わせ完了メール" do
-      subject(:mail) do
-        described_class.contact_success_mail.deliver_now
-        ActionMailer::Base.deliveries.last
+    context "表示の確認（confirmアクション）" do
+      before do
+        visit new_contact_path
+        fill_in "contact[title]", with: "テスト"
+        fill_in "contact[body]", with: "テスト"
+        fill_in "contact[name]", with: "テスト"
+        fill_in "contact[email]", with: "test@test"
+        click_button "送信"
       end
-      # it "メールが送信される" do
-      #   expect(mail.from.first).to eq('hoge.from@test.com')
+      # it "URLが正しい" do
+      #   expect(page).to eq "/contacts/confirm"
       # end
-      # it "メールが送信される" do
-      #   expect(mail.to.first).to eq("test@test")
-      # end
-      it "メールが送信される" do
-        expect(mail.subject).to eq("お問い合わせが完了しました!")
+      it "お問い合わせ確認画面が表示される" do
+        expect(page).to have_content "お問い合わせ確認"
       end
-      # it "メールが送信される" do
-      #   expect(mail.body).to match(/本メールはほげ商事の田中太郎からのテストメールです。/)
-      # end
     end
-
-    # context "表示の確認（confirmアクション）" do
-    #   before do
-    #     visit new_contacts_path
-    #     fill_in "contact[title]", with: "テスト"
-    #     fill_in "contact[body]", with: "テスト"
-    #     fill_in "contact[name]", with: "テスト"
-    #     fill_in "contact[email]", with: "test@test"
-    #     click_button "送信"
-    #   end
-    #   it "URLが正しい" do
-    #     expect(page).to eq "/contacts/confirm"
-    #   end
-    #   it "お問い合わせ確認画面が表示される" do
-    #     expect(page).to have_content "お問い合わせ確認"
-    #   end
-    # end
 
     context "表示の確認（successアクション）" do
       before do
@@ -198,4 +224,92 @@ RSpec.describe "HP側（ユーザ側）のテスト", type: :system do
     end
   end
 
+
+  describe "新規登録" do
+    before do
+      visit new_customer_session_path
+      click_on "新規登録はこちら"
+    end
+    it "URLが正しい" do
+      expect(current_path).to eq "/customers/sign_up"
+    end
+    it "新規登録画面が表示される" do
+      expect(page).to have_content "新規登録"
+    end
+    it "新規登録画面ができる" do
+      customer = build(:customer)
+      fill_in "customer[email]", with: customer.email
+      fill_in "customer[password]", with: customer.password
+      fill_in "customer[password_confirmation]", with: customer.password
+      expect{
+        find('input[name="commit"]').click
+        }.to change { Customer.count }.by(1)
+    end
+  end
+
+
+  describe "ログイン" do
+    before do
+      visit new_customer_session_path
+    end
+    it "URLが正しい" do
+      expect(current_path).to eq "/customers/sign_in"
+    end
+    it "ログイン画面が表示される" do
+      expect(page).to have_content "ログイン"
+    end
+    it "メールアドレスの入力フォームが表示される" do
+      expect(page).to have_field "customer[email]"
+    end
+    it "メールアドレスの入力フォームに値が入っていない" do
+      expect(find_field("customer[email]").text).to be_blank
+    end
+    it "パスワードの入力フォームが表示される" do
+      expect(page).to have_field "customer[password]"
+    end
+    it "パスワードの入力フォームに値が入っていない" do
+      expect(find_field("customer[password]").text).to be_blank
+    end
+    it "ログインボタンが表示される" do
+      expect(page).to have_button "ログイン"
+    end
+    it "ログイン後にマイページ(予約履歴)に遷移する" do
+      customer = create(:customer)
+      fill_in "customer[email]", with: "yamada@taro"
+      fill_in "customer[password]", with: "aaaaaa"
+      click_button "ログイン"
+      expect(current_path).to eq "/customers/#{customer.id}/mypage"
+    end
+    it "「新規登録はこちら」ボタンを押すと新規登録画面に遷移する" do
+      click_on "新規登録はこちら"
+      expect(current_path).to eq "/customers/sign_up"
+    end
+  end
+
+  describe "予約履歴" do
+    subject(:guest) { create(:guest) }
+    subject(:room) { create(:room) }
+    subject(:reservation) { create(:reservation, start_date: Date.today, end_date: Date.tomorrow) }
+    subject(:customer) { create(:customer) }
+    before do
+      visit mypage_customer_path(customer)
+    end
+    context "表示の確認（mypageアクション）" do
+      it "URLが正しい" do
+        expect(current_path).to eq "/customers/#{customer.id}/mypage"
+      end
+      it "予約履歴画面が表示される" do
+        expect(page).to have_content "予約履歴"
+      end
+      it "予約の件数が表示される" do
+        guest = Guest.where(email: customer.email)
+        expect(page).to have_content "全#{guest.count}件"
+      end
+      # it "予約名を押すと予約詳細へ遷移する" do
+      #   guest = Guest.find_by(email: "#{customer.email}")
+      #   click_on "#{guest.name}"
+      #   expect(current_path).to eq "/customers/#{guest.id}"
+      # end
+    end
+  end
 end
