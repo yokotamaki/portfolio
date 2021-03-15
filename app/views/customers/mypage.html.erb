@@ -11,21 +11,20 @@
       </tr>
       <% @guest.each do |guest| %>
         <tr>
-          <td><p>
-            <%= link_to customer_path(guest) do %>
-              <%= guest.name %>
-            <% end %>
-          </p></td>
-          <% @reservation.each do |reservation| %>
-            <td><p><%= guest.reservation.start_date.strftime("%Y年%-m月%-d日") %></p></td>
-            <td><p><%= guest.reservation.end_date.strftime("%Y年%-m月%-d日") %></p></td>
-            <td><p><%= guest.reservation.created_at.strftime("%Y年%-m月%-d日") %></p></td>
-            <% if guest.reservation.is_flag == true %>
-              <td><p>予約完了</p></td>
-            <% elsif guest.reservation.is_flag == false %>
-              <td><p style="color: #333233;">キャンセル</p></td>
-            <% end %>
-
+          <td>
+            <p>
+              <%= link_to customer_path(guest) do %>
+                <%= guest.name %>
+              <% end %>
+            </p>
+          </td>
+          <td><p><%= guest.reservation.start_date.strftime("%Y年%-m月%-d日") %></p></td>
+          <td><p><%= guest.reservation.end_date.strftime("%Y年%-m月%-d日") %></p></td>
+          <td><p><%= guest.reservation.created_at.strftime("%Y年%-m月%-d日") %></p></td>
+          <% if guest.reservation.is_flag == true %>
+            <td><p>予約完了</p></td>
+          <% elsif guest.reservation.is_flag == false %>
+            <td><p style="color: #333233;">キャンセル</p></td>
           <% end %>
         </tr>
       <% end %>
