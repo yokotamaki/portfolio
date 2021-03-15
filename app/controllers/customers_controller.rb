@@ -1,20 +1,35 @@
 class CustomersController < ApplicationController
+  before_action :authenticate_customer!
+
   def mypage
     customer = Customer.find(params[:id])
     @guest = Guest.where(email: customer.email)
-    @guest.each do |guest|
-      @reservation = Reservation.where(guest_id: guest.id)
+    if customer.id != current_customer.id
+      redirect_to new_customer_session_path
     end
+  rescue
+    redirect_to new_customer_session_path
   end
 
   def show
     @guest = Guest.find(params[:id])
-    @reservation = Reservation.find_by(id: @guest.id)
+    @reservation = Reservation.find_by(guest_id: @guest.id)
+    customer = Customer.find_by(email: @guest.email)
+    if customer.id != current_customer.id
+      redirect_to new_customer_session_path
+    end
+  rescue
+    redirect_to new_customer_session_path
   end
 
   def edit
     @guest = Guest.find(params[:id])
-
+    customer = Customer.find_by(email: @guest.email)
+    if customer.id != current_customer.id
+      redirect_to new_customer_session_path
+    end
+  rescue
+    redirect_to new_customer_session_path
   end
 
   def update
@@ -22,7 +37,6 @@ class CustomersController < ApplicationController
     if @guest.update(guest_params)
       redirect_to customer_path(@guest)
     else
-      @guest.errors.present?
       render :edit
     end
   end
