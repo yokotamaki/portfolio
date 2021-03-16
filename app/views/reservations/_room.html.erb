@@ -2,8 +2,8 @@
   <%= form_with model: Reservation.new, url: guest_reservations_path, local: true do |f| %>
     <div class="room">
       <% rooms.each do |room| %>
-        <%= f.radio_button :room, room.id, required: true %>
-        <label for="reservation_room_<%= room.id %>">
+        <%= f.radio_button :room_id, room.id, required: true %>
+        <label for="reservation_room_id_<%= room.id %>">
           <%= image_tag room.image, width: "90%" %>
           <p><%= room.name %></p>
           <p><%= room.price %>円</p>
