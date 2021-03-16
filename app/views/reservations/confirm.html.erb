@@ -9,35 +9,35 @@
       <table>
         <tr>
           <td><p>名前</p></td>
-          <td><p><%= @name %></p></td>
+          <td><p><%= @guest.name %></p></td>
         </tr>
         <tr>
           <td><p>フリガナ</p></td>
-          <td><p><%= @name_kana %></p></td>
+          <td><p><%= @guest.name_kana %></p></td>
         </tr>
         <tr>
           <td><p>生年月日</p></td>
-          <td><p><%= @birthday %></p></td>
+          <td><p><%= @guest.birthday %></p></td>
         </tr>
         <tr>
           <td><p>性別</p></td>
-          <td><p><%= @sex %></p></td>
+          <td><p><% if @guest.sex %>男<% else%>女<% end %></p></td>
         </tr>
         <tr>
           <td><p>郵便番号</p></td>
-          <td><p><%= @zipcode %></p></td>
+          <td><p><%= @guest.zipcode %></p></td>
         </tr>
         <tr>
           <td><p>住所</p></td>
-          <td><p><%= @address %></p></td>
+          <td><p><%= @guest.address %></p></td>
         </tr>
         <tr>
           <td><p>電話番号</p></td>
-          <td><p><%= @phone_number %></p></td>
+          <td><p><%= @guest.phone_number %></p></td>
         </tr>
         <tr>
           <td><p>メールアドレス</p></td>
-          <td><p><%= @email %></p></td>
+          <td><p><%= @guest.email %></p></td>
         <tr>
       </table>
     </div>
@@ -47,15 +47,15 @@
       <table>
         <tr>
           <td><p>チェックイン日</p></td>
-          <td><p><%= @start_date %></p></td>
+          <td><p><%= @reservation.start_date %></p></td>
         </tr>
         <tr>
           <td><p>チェックアウト日</p></td>
-          <td><p><%= @end_date %></p></td>
+          <td><p><%= @reservation.end_date %></p></td>
         </tr>
         <tr>
           <td><p>宿泊人数</p></td>
-          <td><p><%= @people %>名</p></td>
+          <td><p><%= @reservation.people %>名</p></td>
         </tr>
         <tr>
           <td><p>部屋タイプ</p></td>
@@ -68,18 +68,18 @@
 </div>
 
 <%= form_with model: @guest_confirm, url: reservations_path, local: true do |f| %>
-  <%= f.hidden_field :start_date, value: @start_date %>
-  <%= f.hidden_field :end_date, value: @end_date %>
-  <%= f.hidden_field :people, value: @people %>
-  <%= f.hidden_field :room, value: @room %>
-  <%= f.hidden_field :name, value: @name %>
-  <%= f.hidden_field :name_kana, value: @name_kana %>
-  <%= f.hidden_field :birthday, value: @birthday %>
-  <%= f.hidden_field :sex, value: @sex %>
-  <%= f.hidden_field :zipcode, value: @zipcode %>
-  <%= f.hidden_field :address, value: @address %>
-  <%= f.hidden_field :phone_number, value: @phone_number %>
-  <%= f.hidden_field :email, value: @email %>
+  <%= f.hidden_field :start_date, value: @reservation.start_date %>
+  <%= f.hidden_field :end_date, value: @reservation.end_date %>
+  <%= f.hidden_field :people, value: @reservation.people %>
+  <%= f.hidden_field :room_id, value: @reservation.room_id %>
+  <%= f.hidden_field :name, value: @guest.name %>
+  <%= f.hidden_field :name_kana, value: @guest.name_kana %>
+  <%= f.hidden_field :birthday, value: @guest.birthday %>
+  <%= f.hidden_field :sex, value: @guest.sex %>
+  <%= f.hidden_field :zipcode, value: @guest.zipcode %>
+  <%= f.hidden_field :address, value: @guest.address %>
+  <%= f.hidden_field :phone_number, value: @guest.phone_number %>
+  <%= f.hidden_field :email, value: @guest.email %>
   <%= f.submit "戻る", name: :back, class: "button" %>
   <%= f.submit "確定", class: "button" %>
 <% end %>

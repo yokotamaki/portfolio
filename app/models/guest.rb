@@ -18,5 +18,5 @@ class Guest < ApplicationRecord
   attribute :start_date
   attribute :end_date
   attribute :people
-  attribute :room
+  attribute :room_id
 end

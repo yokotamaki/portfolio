@@ -14,12 +14,12 @@ class ReservationsController < ApplicationController
       return render "date_errors"
     end
 
-    # 同じroom_idが複数あっても1つにまとめる（room_idごとに）
+    # 同じroom_idが複数あっても1つにまとまる
     reservations = Reservation.where(start_date: @start_date...@end_date).group(:room_id)
 
     not_available_room_ids = []
     reservations.each do |reservation|
-      # @reservationには1つのroom_idしかないため、room_idをもとにレコードを抽出
+      # @reservationにはroom_idしかないため、room_idをもとにレコードを抽出
       room_reservation = Reservation.where(start_date: @start_date...@end_date)
                                     .where(room_id: reservation.room.id)
       # 予約されてる部屋の件数 == 実際にある部屋数
@@ -35,7 +35,6 @@ class ReservationsController < ApplicationController
       # 選択された人数 > 部屋の定員数
       if @people > room.people
         not_available_room_ids << room.id
-        # room.reserved_flag = true
       end
     end
 
@@ -46,78 +45,42 @@ class ReservationsController < ApplicationController
   def guest
     render :guest and return if params[:back]
     @guest = Guest.new
-    @start_date = reservation_params[:start_date]
-    @end_date = reservation_params[:end_date]
-    @people = reservation_params[:people]
-    @room = reservation_params[:room]
+    @reservation = Reservation.new(reservation_params)
   end
 
   def confirm
-    # 情報入力 バリデーションの設定
-    @guest = Guest.new(guest_params)
-    @guest.valid?
-    if @guest.errors.present?
-      @start_date = guest_params[:start_date]
-      @end_date = guest_params[:end_date]
-      @people = guest_params[:people]
-      @room = guest_params[:room]
-      return render 'guest'
-    end
-
-    # @guestだと戻ったときに空になってしまうため別のインスタンスを用意
+    # @guestだと戻ったときに値が空になってしまうため別のインスタンスを用意
     @guest_confirm = Guest.new
 
-    # 日付・人数・部屋
-    @start_date = guest_params[:start_date]
-    @end_date = guest_params[:end_date]
-    @people = guest_params[:people]
-    @room = guest_params[:room].to_i
-    @room_name = Room.find(guest_params[:room]).name
+    @guest = Guest.new(guest_params)
+    # guest_paramsからreservationのデータだけ取り出す
+    @reservation = Reservation.new(extract_reservation_params(guest_params))
+    @room_name = Room.find(guest_params[:room_id]).name
 
-    # 宿泊者情報
-    @name = guest_params[:name]
-    @name_kana = guest_params[:name_kana]
-    @birthday = Date.new(guest_params["birthday(1i)"].to_i,guest_params["birthday(2i)"].to_i,guest_params["birthday(3i)"].to_i)
-    if guest_params[:sex] == "true"
-      @sex = "男"
-    elsif guest_params[:sex] == "false"
-      @sex = "女"
+    # 情報入力 バリデーションの設定
+    @guest.valid?
+    if @guest.errors.present?
+      return render "guest"
     end
-    @zipcode = guest_params[:zipcode]
-    @address = guest_params[:address]
-    @phone_number = guest_params[:phone_number]
-    @email = guest_params[:email]
   end
 
   def create
     # 戻るときに値を渡すため
-    @guest = Guest.new(params.require(:guest).permit(:name, :name_kana, :birthday, :sex,:zipcode, :address, :phone_number, :email))
-    @start_date = params[:guest][:start_date]
-    @end_date = params[:guest][:end_date]
-    @people = params[:guest][:people]
-    @room = params[:guest][:room]
+    @guest = Guest.new(extract_guest_params(guest_params))
+    @reservation = Reservation.new(extract_reservation_params(guest_params))
     render :guest and return if params[:back]
 
     # 各モデルに保存
-    guest = Guest.new({
-    name: guest_params[:name],
-    name_kana: guest_params[:name_kana],
-    birthday: guest_params[:birthday],
-    sex: guest_params[:sex],
-    zipcode: guest_params[:zipcode],
-    address: guest_params[:address],
-    phone_number: guest_params[:phone_number],
-    email: guest_params[:email]
-    })
+    guest = Guest.new(guest_params)
     guest.save
+    # 先にguest.saveしないとguest.idが決まらない
     reservation = Reservation.new({
       start_date: guest_params[:start_date],
       end_date: guest_params[:end_date],
       people: guest_params[:people],
-      room_id: guest_params[:room],
+      room_id: guest_params[:room_id],
       guest_id: guest.id
     })
-    # guest.saveしないとguest.idが決まらないため先に保存する
     if reservation.save!
       NotificationMailer.success_mail(guest).deliver_now
       redirect_to success_reservations_path
@@ -155,16 +118,19 @@ class ReservationsController < ApplicationController
 
   private
   def reservation_params
-    params.require(:reservation).permit(:start_date, :end_date, :people, :room)
-  end
-  def guest_confirm_params
-    params.permit(:name, :name_kana, :birthday, :sex,
-                                  :zipcode, :address, :phone_number, :email,
-                                  :start_date, :end_date, :people, :room, :back)
+    params.require(:reservation).permit(:start_date, :end_date, :people, :room_id)
   end
   def guest_params
     params.require(:guest).permit(:name, :name_kana, :birthday, :sex,
                                   :zipcode, :address, :phone_number, :email,
-                                  :start_date, :end_date, :people, :room, :back)
+                                  :start_date, :end_date, :people, :room_id, :back)
+  end
+
+  # paramsからguestとreservationを分けて出す
+  def extract_guest_params(strong_params)
+    return strong_params.permit(:name, :name_kana, :birthday, :sex,:zipcode, :address, :phone_number, :email)
+  end
+  def extract_reservation_params(strong_params)
+    return strong_params.permit(:start_date, :end_date, :people, :room_id)
   end
 end
