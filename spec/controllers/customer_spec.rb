@@ -121,7 +121,7 @@ RSpec.describe CustomersController, type: :controller do
       end
       it "正常に更新できる" do
         guest_params = { name: "山田　次郎" }
-        put :update, params: { id: @guest.id, guest: guest_params }
+        put :updatcone, params: { id: @guest.id, guest: guest_params }
         expect(@guest.reload.name).to eq "山田　次郎"
       end
       it "更新後詳細ページへ遷移する" do
