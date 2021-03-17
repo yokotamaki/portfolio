@@ -92,7 +92,7 @@ RSpec.describe ReservationsController, type: :controller do
         post :create, params: { guest: @guest_params }
       end.to change(Reservation, :count).by(1)
     end
-    it "ゲスト情報と予約情報を通知テーブルに保存できる" do
+    it "通知テーブルに保存できる" do
       expect do
         post :create, params: { guest: @guest_params }
       end.to change(Notification, :count).by(1)
