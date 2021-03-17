@@ -51,7 +51,7 @@ class ReservationsController < ApplicationController
   def confirm
     # @guestだと戻ったときに値が空になってしまうため別のインスタンスを用意
     @guest_confirm = Guest.new
-
+    # birthdayのparamsは年月日別れて飛んでくるが.newをすることによって自動的に変更してくれる
     @guest = Guest.new(guest_params)
     # guest_paramsからreservationのデータだけ取り出す
     @reservation = Reservation.new(extract_reservation_params(guest_params))
@@ -84,6 +84,7 @@ class ReservationsController < ApplicationController
     if reservation.save!
       NotificationMailer.success_mail(guest).deliver_now
       redirect_to success_reservations_path
+
       # 管理者へ通知
       notification = Notification.new(
         reservation_id: reservation.id,
@@ -126,7 +127,7 @@ class ReservationsController < ApplicationController
                                   :start_date, :end_date, :people, :room_id, :back)
   end
 
-  # paramsからguestとreservationを分けて出す
+  # paramsからguestとreservationの情報をを分けて取り出す
   def extract_guest_params(strong_params)
     return strong_params.permit(:name, :name_kana, :birthday, :sex,:zipcode, :address, :phone_number, :email)
   end
