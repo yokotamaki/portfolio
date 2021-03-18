@@ -1,19 +1,16 @@
 class Admin::ContactsController < ApplicationController
+  before_action :authenticate_admin!
   helper_method :sort_column, :sort_direction
 
   def index
-    unless admin_signed_in?
-      redirect_to new_admin_session_path
-    end
     @contacts = Contact.order("#{sort_column} #{sort_direction}")
                        .page(params[:page]).per(10)
   end
 
   def show
-    unless admin_signed_in?
-      redirect_to new_admin_session_path
-    end
     @contact = Contact.find(params[:id])
+  rescue
+    redirect_to admin_contacts_path
   end
 
   def update

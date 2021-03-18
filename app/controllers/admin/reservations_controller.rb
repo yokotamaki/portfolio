@@ -1,4 +1,5 @@
 class Admin::ReservationsController < ApplicationController
+  before_action :authenticate_admin!
   helper_method :sort_column, :sort_direction
 
   def index
@@ -9,6 +10,8 @@ class Admin::ReservationsController < ApplicationController
   def show
     @reservation = Reservation.find(params[:id])
     @guest = @reservation.guest
+  rescue
+    redirect_to admin_reservations_path
   end
 
   def update
