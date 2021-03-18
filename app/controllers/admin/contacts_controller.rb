@@ -1,4 +1,5 @@
 class Admin::ContactsController < ApplicationController
+  before_action :authenticate_admin!
   helper_method :sort_column, :sort_direction
 
   def index
@@ -8,6 +9,8 @@ class Admin::ContactsController < ApplicationController
 
   def show
     @contact = Contact.find(params[:id])
+  rescue
+    redirect_to admin_contacts_path
   end
 
   def update
