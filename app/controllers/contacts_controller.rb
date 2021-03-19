@@ -13,7 +13,7 @@ class ContactsController < ApplicationController
 
   def create
     @contact = Contact.new(contact_params)
-    render :new and return if params[:back]
+    render(:new) && return if params[:back]
     if @contact.save
       # 完了メールの送信
       NotificationMailer.contact_success_mail(@contact).deliver_now
@@ -31,6 +31,7 @@ class ContactsController < ApplicationController
   end
 
   private
+
   def contact_params
     params.require(:contact).permit(:title, :body, :name, :email)
   end

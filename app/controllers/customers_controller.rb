@@ -42,6 +42,7 @@ class CustomersController < ApplicationController
   end
 
   private
+
   def guest_params
     params.require(:guest).permit(:name, :name_kana, :birthday, :sex, :zipcode, :address, :phone_number)
   end

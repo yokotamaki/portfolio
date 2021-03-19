@@ -18,13 +18,15 @@ class ReviewsController < ApplicationController
   def index
     @review = Review.new
     @reviews = Review.review_search(review_search_params)
-                    .order(id: "DESC").page(params[:page]).per(8)
+                     .order(id: "DESC").page(params[:page]).per(8)
   end
 
   private
+
   def review_search_params
     params.fetch(:review_search, {}).permit(star: [], age: [], room: [], sex: [])
   end
+
   def review_params
     params.require(:review).permit(:star, :name, :age, :comment, :sex, :room_id, :score)
   end

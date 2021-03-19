@@ -24,9 +24,11 @@ class Admin::ReservationsController < ApplicationController
   end
 
   private
+
   def sort_direction
     %w[asc desc].include?(params[:direction]) ? params[:direction] : "asc"
   end
+
   def sort_column
     column = Reservation.joins(:room).joins(:guest)
                         .select("reservations.*, guests.name AS guest_name, rooms.name AS room_name").first

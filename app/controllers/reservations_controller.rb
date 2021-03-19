@@ -29,7 +29,7 @@ class ReservationsController < ApplicationController
       end
     end
 
-    @people = (reservation_params[:people]).to_i
+    @people = reservation_params[:people].to_i
     room_all = Room.all
     room_all.each do |room|
       # 選択された人数 > 部屋の定員数
@@ -43,7 +43,7 @@ class ReservationsController < ApplicationController
   end
 
   def guest
-    render :guest and return if params[:back]
+    render(:guest) && return if params[:back]
     @guest = Guest.new
     @reservation = Reservation.new(reservation_params)
   end
@@ -68,7 +68,7 @@ class ReservationsController < ApplicationController
     # 戻るときに値を渡すため
     @guest = Guest.new(extract_guest_params(guest_params))
     @reservation = Reservation.new(extract_reservation_params(guest_params))
-    render :guest and return if params[:back]
+    render(:guest) && return if params[:back]
 
     # 各モデルに保存
     guest = Guest.new(guest_params)
@@ -79,7 +79,7 @@ class ReservationsController < ApplicationController
       end_date: guest_params[:end_date],
       people: guest_params[:people],
       room_id: guest_params[:room_id],
-      guest_id: guest.id
+      guest_id: guest.id,
     })
     if reservation.save!
       NotificationMailer.success_mail(guest).deliver_now
@@ -118,9 +118,11 @@ class ReservationsController < ApplicationController
   end
 
   private
+
   def reservation_params
     params.require(:reservation).permit(:start_date, :end_date, :people, :room_id)
   end
+
   def guest_params
     params.require(:guest).permit(:name, :name_kana, :birthday, :sex,
                                   :zipcode, :address, :phone_number, :email,
@@ -129,9 +131,10 @@ class ReservationsController < ApplicationController
 
   # paramsからguestとreservationの情報をを分けて取り出す
   def extract_guest_params(strong_params)
-    return strong_params.permit(:name, :name_kana, :birthday, :sex,:zipcode, :address, :phone_number, :email)
+    strong_params.permit(:name, :name_kana, :birthday, :sex, :zipcode, :address, :phone_number, :email)
   end
+
   def extract_reservation_params(strong_params)
-    return strong_params.permit(:start_date, :end_date, :people, :room_id)
+    strong_params.permit(:start_date, :end_date, :people, :room_id)
   end
 end

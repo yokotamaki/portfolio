@@ -10,8 +10,8 @@ class Admin::SearchsController < ApplicationController
   end
 
   private
-    def search_params
+
+  def search_params
     params.fetch(:search, {}).permit(:keyword, :model)
   end
-
 end

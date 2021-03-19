@@ -22,6 +22,7 @@ class Admin::ContactsController < ApplicationController
   end
 
   private
+
   def contact_params
     params.require(:contact).permit(:status)
   end
@@ -29,6 +30,7 @@ class Admin::ContactsController < ApplicationController
   def sort_direction
     %w[asc desc].include?(params[:direction]) ? params[:direction] : "asc"
   end
+
   def sort_column
     Contact.column_names.include?(params[:sort]) ? params[:sort] : "id"
   end
