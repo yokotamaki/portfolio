@@ -1,0 +1,14 @@
+<h4>投稿記事一覧</h4>
+<% @notices.each do |notice| %>
+  <% if notice.images.attached? %>
+    <% notice.images.each do |image| %>
+      <%= image_tag image.variant(resize: '800x800').processed %> <br>
+    <% end %>
+  <% end %>
+<p>タイトル</p>
+  <%= notice.title %>
+  <p>内容</p>
+  <%= notice.body %>
+  <p>種類</p>
+  <%= notice.tag %>
+<% end %>

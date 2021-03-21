@@ -72,6 +72,7 @@ gem 'kaminari','~> 1.2.1'
 gem 'dotenv-rails'
 gem 'pry-byebug'
 gem 'gimei'
+gem 'mini_magick'
 
 group :production do
   gem 'mysql2'
