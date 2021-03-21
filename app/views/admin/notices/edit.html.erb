@@ -1,0 +1,20 @@
+<h4>投稿記事編集</h4>
+<%= form_with model: [:admin, @notice], local: true do |f| %>
+  <%= f.label "タイトル" %>
+  <%= f.text_field :title %><br>
+  <%= f.label "内容" %>
+  <%= f.text_area :body %><br>
+  <%= f.label "種類" %>
+  <%= f.select :tag, {イベント・キャンペーン: "イベント・キャンペーン", ホテル: "ホテル", 重要なお知らせ: "重要なお知らせ",その他: "その他"} %><br>
+  <%= f.label :images, "画像" %>
+  <%= f.file_field :images, multiple: true %><br>
+
+  <p>現在登録されている画像（削除するものはチェックしてください）</p>
+    <% @notice.images.each do |image| %>
+      <%= f.check_box :image_ids, {:multiple => true}, image.id, false%>
+      <%= image_tag image, width: "20%" %> <br>
+    <% end %>
+
+  <%= f.submit "更新" , class: "button" %>
+  <%= link_to "戻る", admin_notices_path, class: "button" %>
+<% end %>
