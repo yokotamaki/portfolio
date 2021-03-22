@@ -42,6 +42,6 @@ class Admin::NoticesController < ApplicationController
   private
 
   def notice_params
-    params.require(:notice).permit(:title, :body, :tag, images: [])
+    params.require(:notice).permit(:title, :body, :tab, images: [])
   end
 end
