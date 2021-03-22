@@ -14,19 +14,20 @@
   <%= f.select :tag, {イベント・キャンペーン: "イベント・キャンペーン", ホテル: "ホテル", お知らせ: "お知らせ",その他: "その他"} %><br>
   </div>
   <div class="post-form-item">
-  <%#= f.label :images, "画像" %>
   <%= f.file_field :images, multiple: true %>
   </div>
 
-  <div class="post-image">
-    <p>現在登録されている画像<br>（削除するものはチェックしてください）</p>
-    <% @notice.images.each do |image| %>
-      <%= f.check_box :image_ids, {:multiple => true}, image.id, false%>
-      <%= image_tag image, width: "20%" %> <br>
+    <% if @notice.images.attached? %>
+      <div class="post-image">
+        <p>現在登録されている画像<br>（削除するものはチェックしてください）</p>
+        <% @notice.images.each do |image| %>
+          <%= f.check_box :image_ids, {:multiple => true}, image.id, false%>
+          <%= image_tag image, width: "20%" %> <br>
+        <% end %>
+      </div>
     <% end %>
-  </div>
-  
   <%= f.submit "更新" , class: "button" %>
-  <%= link_to "戻る", admin_notices_path, class: "button" %>
+  <%= link_to "戻る", admin_notices_path, class: "button" %><br>
+  <%= link_to "投稿を削除する", admin_notice_path(@notice), method: :delete, data: {confirm: "本当に削除しますか？"}, class: "btn btn-outline-light btn-sm mb-5" %>
 </div>
 <% end %>

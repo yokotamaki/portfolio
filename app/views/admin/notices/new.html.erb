@@ -14,7 +14,6 @@
     <%= f.select :tag, {イベント・キャンペーン: "イベント・キャンペーン", ホテル: "ホテル", お知らせ: "お知らせ",その他: "その他"}, { include_blank: "選択してください", selected: "" } %><br>
     </div>
     <div class="post-form-item">
-    <%#= f.label :images, "画像" %>
     <%= f.file_field :images, multiple: true %>
     </div>
     <%= f.submit "投稿" , class: "button" %>

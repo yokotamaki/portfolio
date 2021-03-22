@@ -33,6 +33,12 @@ class Admin::NoticesController < ApplicationController
     end
   end
 
+  def destroy
+    notice = Notice.find(params[:id])
+    notice.destroy
+    redirect_to admin_notices_path
+  end
+
   private
 
   def notice_params
