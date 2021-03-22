@@ -1,3 +1,48 @@
 // Place all the styles related to the notices controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+/**管理者側　投稿記事一覧**/
+.notices {
+  border-bottom: 1px solid #e7e7e7;
+  border-top: 1px solid #e7e7e7;
+  padding: 2rem;
+  margin: 0.5rem auto;
+  width: 60%;
+}
+.notices .tag {
+  background-color: #333233;
+  display: inline-block;
+  padding: 0.5rem 1rem;
+}
+.notices-content {
+  margin: 1rem 15%;
+  text-align: left;
+}
+.notices-content p {
+  margin: 0.5rem 0 0 0;
+}
+
+/**管理者側　記事新規投稿**/
+.post-form label {
+  width: 5rem;
+  vertical-align: top;
+}
+.post-form input[type=text],
+.post-form textarea {
+  padding: 0.2rem 0.5rem;
+}
+.post-form-item {
+  margin: 1rem;
+}
+.post-form select {
+  width: 32rem;
+}
+
+/**管理者側　編集画面**/
+.post-image {
+  border-top: 1px solid #e7e7e7;
+  width: 60%;
+  margin: 2rem auto;
+  padding: 2rem 0 0;
+}

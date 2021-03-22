@@ -1,20 +1,32 @@
 <h4>投稿記事編集</h4>
 <%= form_with model: [:admin, @notice], local: true do |f| %>
+<div class="post-form">
+  <div class="post-form-item">
   <%= f.label "タイトル" %>
-  <%= f.text_field :title %><br>
+  <%= f.text_field :title, size: "60" %>
+  </div>
+  <div class="post-form-item">
   <%= f.label "内容" %>
-  <%= f.text_area :body %><br>
+  <%= f.text_area :body, size: "60" %>
+  </div>
+  <div class="post-form-item">
   <%= f.label "種類" %>
-  <%= f.select :tag, {イベント・キャンペーン: "イベント・キャンペーン", ホテル: "ホテル", 重要なお知らせ: "重要なお知らせ",その他: "その他"} %><br>
-  <%= f.label :images, "画像" %>
-  <%= f.file_field :images, multiple: true %><br>
+  <%= f.select :tag, {イベント・キャンペーン: "イベント・キャンペーン", ホテル: "ホテル", お知らせ: "お知らせ",その他: "その他"} %><br>
+  </div>
+  <div class="post-form-item">
+  <%#= f.label :images, "画像" %>
+  <%= f.file_field :images, multiple: true %>
+  </div>
 
-  <p>現在登録されている画像（削除するものはチェックしてください）</p>
+  <div class="post-image">
+    <p>現在登録されている画像<br>（削除するものはチェックしてください）</p>
     <% @notice.images.each do |image| %>
       <%= f.check_box :image_ids, {:multiple => true}, image.id, false%>
       <%= image_tag image, width: "20%" %> <br>
     <% end %>
-
+  </div>
+  
   <%= f.submit "更新" , class: "button" %>
   <%= link_to "戻る", admin_notices_path, class: "button" %>
+</div>
 <% end %>

@@ -1,12 +1,22 @@
 <h4>記事投稿</h4>
 <%= form_with model: [:admin, @notice], local: true do |f| %>
-  <%= f.label "タイトル" %>
-  <%= f.text_field :title %><br>
-  <%= f.label "内容" %>
-  <%= f.text_area :body %><br>
-  <%= f.label "種類" %>
-  <%= f.select :tag, {重要なお知らせ: "重要なお知らせ",その他: "その他"}, { include_blank: "選択してください", selected: "" } %><br>
-  <%= f.label :images, "画像" %>
-  <%= f.file_field :images, multiple: true %><br>
-  <%= f.submit "投稿" , class: "button" %>
+  <div class="post-form">
+    <div class="post-form-item">
+    <%= f.label "タイトル" %>
+    <%= f.text_field :title, size: "60" %>
+    </div>
+    <div class="post-form-item">
+    <%= f.label "内容" %>
+    <%= f.text_area :body, size: "60" %>
+    </div>
+    <div class="post-form-item select">
+    <%= f.label "種類" %>
+    <%= f.select :tag, {イベント・キャンペーン: "イベント・キャンペーン", ホテル: "ホテル", お知らせ: "お知らせ",その他: "その他"}, { include_blank: "選択してください", selected: "" } %><br>
+    </div>
+    <div class="post-form-item">
+    <%#= f.label :images, "画像" %>
+    <%= f.file_field :images, multiple: true %>
+    </div>
+    <%= f.submit "投稿" , class: "button" %>
+  </div>
 <% end %>
