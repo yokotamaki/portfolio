@@ -1,14 +1,9 @@
 class NoticesController < ApplicationController
-  def new
-    
-  end
-
-  def create
-  end
-
   def index
+    @notices = Notice.all
   end
 
   def show
+    @notice = Notice.find(params[:id])
   end
 end
