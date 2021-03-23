@@ -24,25 +24,72 @@
 }
 
 /**管理者側　記事新規投稿**/
-.post-form label {
+.notice-form label {
   width: 5rem;
   vertical-align: top;
 }
-.post-form input[type=text],
-.post-form textarea {
+.notice-form input[type=text],
+.notice-form textarea {
   padding: 0.2rem 0.5rem;
 }
-.post-form-item {
+.notice-form-item {
   margin: 1rem;
 }
-.post-form select {
+.notice-form select {
   width: 32rem;
 }
 
 /**管理者側　編集画面**/
-.post-image {
+.notice-image {
   border-top: 1px solid #e7e7e7;
   width: 60%;
   margin: 2rem auto;
   padding: 2rem 0 0;
+}
+
+/**タブ切り替え**/
+.tab-area {
+  display: flex;
+  justify-content: center;
+}
+.tab-item {
+  width: 20%;
+  background-color: #333233;
+  border-right: 1px solid  #474747;
+  border-left: 1px solid #2C2925;
+}
+.tab-item a {
+  display: inline-block;
+  width: 100%;
+  height: 100%;
+  padding: 1rem;
+}
+.tab-item p,
+.notice-content h5 {
+  margin: 0;
+  display: inline-block;
+}
+.tab-item.active {
+  opacity: 0.8;
+}
+.tab-item:hover {
+  opacity: 0.9;
+}
+.content-area {
+  text-align: center;
+}
+#notice {
+  width: 100%;
+}
+.notice-content {
+  margin: 0 auto;
+  padding: 1rem;
+  border-bottom: 1.5px solid #333233;
+  width: 80%;
+}
+.notice-content:last-child {
+  border-bottom: none;
+}
+.notice-content img {
+  margin: 0.5rem;
 }

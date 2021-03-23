@@ -19,7 +19,13 @@ Rails.application.routes.draw do
     sessions:      'customers/sessions',
     registrations: 'customers/registrations'
   }
-  resources :notices, only: [:index, :show]
+  resources :notices, only: [:index, :show] do
+    collection do
+      get :notice
+      get :event
+      get :other
+    end
+  end
   resources :customers, only:[:show, :edit, :update] do
     member do
       get :mypage

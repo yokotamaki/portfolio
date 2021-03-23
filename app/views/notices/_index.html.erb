@@ -1,0 +1,18 @@
+<!--ユーザ側　お知らせ一覧-->
+<div class="content-area">
+    <% if notices %>
+      <% notices.each do |notice| %>
+      <div class="notice-content">
+        <%= link_to notice_path(notice) do %>
+          <% if notice.images.attached? %>
+            <% notice.images.each do |image| %>
+              <%= image_tag image.variant(resize: '500x500').processed %> <br>
+            <% end %>
+          <% end %>
+          <p class="tab"><%= notice.tab %></p>
+          <%= notice.title %><br>
+        <% end %>
+      </div>
+      <% end %>
+    <% end %>
+</div>

@@ -1,20 +1,27 @@
 <h4>お知らせ一覧</h4>
-<% @notices.each do |notice| %>
-<div class="notices">
-<%= link_to notice_path(notice) do %>
-  <% if notice.images.attached? %>
-    <% notice.images.each do |image| %>
-      <%= image_tag image.variant(resize: '500x500').processed %> <br>
-    <% end %>
-  <% end %>
-  <div class="notices-content">
-    <p class="tab"><%= notice.tab %></p>
-    <p>タイトル</p>
-    <p><%= notice.title %></p>
-    <p>内容</p>
-    <p><%= notice.body %></p>
-    <p>投稿日　<%= notice.updated_at.strftime("%Y年%-m月%-d日 %-H時%-M分") %></p>
+<div class="tab-area">
+  <div class="tab-item active">
+    <%= link_to "全て", notices_path, remote: true %>
   </div>
-<% end %>
+  <div class="tab-item">
+    <%= link_to "イベント・キャンペーン", event_notices_path, remote: true %>
+  </div>
+  <div class="tab-item">
+    <%= link_to "お知らせ", notice_notices_path, remote: true %>
+  </div>
+  <div class="tab-item">
+    <%= link_to "その他", other_notices_path, remote: true %>
+  </div>
 </div>
-<% end %>
+
+<div id="notice"><%= render "notices/index", notices: @notices %></div>
+
+<script>
+$(function() {
+  let tabs = $(".tab-item"); // tab-itemのクラスを全て取得し、変数tabsに配列で定義
+  $(".tab-item").on("click", function() { // tab-itemをクリックしたらイベント発火
+    $(".active").removeClass("active"); // activeクラスを消す
+    $(this).addClass("active"); // クリックした箇所にactiveクラスを追加
+  })
+})
+</script>
