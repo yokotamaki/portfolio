@@ -1,17 +1,13 @@
 <!--ユーザ側　お知らせ（タブ部分）-->
-<div class="notice-content">
-  <% if notice %>
-    <% notice.each do |notice| %>
+<% if notice %>
+  <% notice.each do |notice| %>
+    <div class="notice-content">
       <%= link_to notice_path(notice) do %>
-        <% if notice.images.attached? %>
-          <% notice.images.each do |image| %>
-            <%= image_tag image.variant(resize: '500x500').processed %> <br>
-          <% end %>
-        <% end %>
         <p class="tab"><%= notice.tab %></p>
-        <h5>　<%= notice.title %></h5><br>
+        <h5><%= notice.created_at.strftime("%Y年%-m月%-d日") %>　<%= notice.title %></h5><br>
       <% end %>
-    <% end %>
+    </div>
   <% end %>
-</div>
+<% end %>
+
 

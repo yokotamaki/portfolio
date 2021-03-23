@@ -51,6 +51,7 @@
 .tab-area {
   display: flex;
   justify-content: center;
+  margin: 1rem;
 }
 .tab-item {
   width: 20%;
@@ -65,7 +66,7 @@
   padding: 1rem;
 }
 .tab-item p,
-.notice-content h5 {
+.notice-content p {
   margin: 0;
   display: inline-block;
 }
@@ -75,21 +76,52 @@
 .tab-item:hover {
   opacity: 0.9;
 }
-.content-area {
-  text-align: center;
-}
 #notice {
   width: 100%;
 }
 .notice-content {
+  text-align: left;
   margin: 0 auto;
-  padding: 1rem;
+  padding: 0.5rem;
   border-bottom: 1.5px solid #333233;
-  width: 80%;
-}
-.notice-content:last-child {
-  border-bottom: none;
+  width: 70%;
 }
 .notice-content img {
   margin: 0.5rem;
+}
+.notice-content h5 {
+  padding: 0.2rem;
+  display: inline-block;
+  border-bottom: 1px solid #e7e7e7;
+}
+.notice-content h5:hover {
+  opacity: 0.8;
+}
+
+.notice-body {
+  text-align: left;
+  padding: 1rem 30%;
+}
+
+/******************************************************************/
+/***********レスポンシブ対応***********/
+@media (max-width: 767px) {
+  .tab-area {
+    display: block;
+  }
+  .tab-item {
+    margin: 0 auto;
+    width: 95%;
+  }
+  .notice-content {
+    width: 100%;
+  }
+  .notice-img img {
+    margin: 0.5rem;
+    width: 95%;
+  }
+  .notice-body {
+    text-align: left;
+    padding: 2rem 2rem 0;
+  }
 }

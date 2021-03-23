@@ -1,18 +1,12 @@
-<h4></h4>
-<div class="notices">
+  <h4><%= @notice.title %></h4>
   <% if @notice.images.attached? %>
     <% @notice.images.each do |image| %>
-      <%= image_tag image.variant(resize: '500x500').processed %> <br>
+      <div class="notice-img"><%= image_tag image.variant(resize: '500x500').processed %></div><br>
     <% end %>
   <% end %>
-
-  <div class="notices-content">
-    <p class="tab"><%= @notice.tab %></p>
-    <p>タイトル</p>
-    <p><%= @notice.title %></p>
-    <p>内容</p>
-    <p><%= @notice.body %></p>
-    <p>投稿日　<%= @notice.updated_at.strftime("%Y年%-m月%-d日 %-H時%-M分") %></p>
+  <div class="notice-content">
+    <p class="tab"><%= @notice.tab %></p><br>
+    <p><%= @notice.body %></p><br>
+    <p>投稿日　<%= @notice.updated_at.strftime("%Y年%-m月%-d日") %></p>
   </div>
-</div>
 <%= link_to "戻る", notices_path, class: "button" %><br>
