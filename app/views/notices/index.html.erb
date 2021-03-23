@@ -1,0 +1,27 @@
+<h4>お知らせ一覧</h4>
+<div class="tab-area">
+  <div class="tab-item active">
+    <%= link_to "全て", notices_path, remote: true %>
+  </div>
+  <div class="tab-item">
+    <%= link_to "イベント・キャンペーン", event_notices_path, remote: true %>
+  </div>
+  <div class="tab-item">
+    <%= link_to "お知らせ", notice_notices_path, remote: true %>
+  </div>
+  <div class="tab-item">
+    <%= link_to "その他", other_notices_path, remote: true %>
+  </div>
+</div>
+
+<div id="notice"><%= render "notices/index", notices: @notices %></div>
+
+<script>
+$(function() {
+  let tabs = $(".tab-item"); // tab-itemのクラスを全て取得し、変数tabsに配列で定義
+  $(".tab-item").on("click", function() { // tab-itemをクリックしたらイベント発火
+    $(".active").removeClass("active"); // activeクラスを消す
+    $(this).addClass("active"); // クリックした箇所にactiveクラスを追加
+  })
+})
+</script>

@@ -9,6 +9,7 @@ Rails.application.routes.draw do
   }
   namespace :admin do
     resources :notifications, only: [:index]
+    resources :notices, only: [:new, :create, :index, :edit, :update, :destroy]
     resources :reservations, only:[:index, :show, :update]
     resources :contacts, only:[:index, :show, :update]
     get 'searchs/search' => 'searchs#search', as: 'search'
@@ -18,6 +19,13 @@ Rails.application.routes.draw do
     sessions:      'customers/sessions',
     registrations: 'customers/registrations'
   }
+  resources :notices, only: [:index, :show] do
+    collection do
+      get :notice
+      get :event
+      get :other
+    end
+  end
   resources :customers, only:[:show, :edit, :update] do
     member do
       get :mypage

@@ -1,0 +1,21 @@
+<h4>記事投稿</h4>
+<%= form_with model: [:admin, @notice], local: true do |f| %>
+  <div class="notice-form">
+    <div class="notice-form-item">
+    <%= f.label "タイトル" %>
+    <%= f.text_field :title, size: "60" %>
+    </div>
+    <div class="notice-form-item">
+    <%= f.label "内容" %>
+    <%= f.text_area :body, size: "60" %>
+    </div>
+    <div class="notice-form-item select">
+    <%= f.label "種類" %>
+    <%= f.select :tab, {イベント・キャンペーン: "イベント・キャンペーン", ホテル: "ホテル", お知らせ: "お知らせ",その他: "その他"}, { include_blank: "選択してください", selected: "" } %><br>
+    </div>
+    <div class="notice-form-item">
+    <%= f.file_field :images, multiple: true %>
+    </div>
+    <%= f.submit "投稿" , class: "button" %>
+  </div>
+<% end %>
