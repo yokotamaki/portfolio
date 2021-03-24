@@ -9,11 +9,13 @@
         <% if not_checked_notifications.any? %>
           <span><i class="fas fa-circle" style="font-size: 10px;"></i></span>
         <% end %>
-      <%= link_to "予約一覧", admin_reservations_path, class: "link header-reservation", id: "link" %>
-      <%= link_to "お問い合わせ一覧", admin_contacts_path, class: "link header-contact", id: "link" %>
+      <%= link_to "お知らせ", admin_notices_path, class: "link header-notice", id: "link" %>
+      <%= link_to "予約", admin_reservations_path, class: "link header-reservation", id: "link" %>
+      <%= link_to "お問い合わせ", admin_contacts_path, class: "link header-contact", id: "link" %>
       <%= link_to "ログアウト", destroy_admin_session_path, method: :delete, class: "link", id: "link" %>
     <% elsif customer_signed_in? %>
       <%= link_to "room", rooms_path, class: "link header-room", id: "link" %>
+      <%= link_to "news", notices_path, class: "link header-notice", id: "link" %>
       <%= link_to "reservation", search_reservations_path, class: "link header-reservation", id: "link" %>
       <%= link_to "review", reviews_path, class: "link header-review" %>
       <%= link_to "access", access_path, class: "link header-access", id: "link" %>
@@ -22,6 +24,7 @@
       <%= link_to "logout", destroy_customer_session_path, method: :delete, class: "link header-logout", id: "link" %>
     <% else %>
       <%= link_to "room", rooms_path, class: "link header-room", id: "link" %>
+      <%= link_to "news", notices_path, class: "link header-news", id: "link" %>
       <%= link_to "reservation", search_reservations_path, class: "link header-reservation", id: "link" %>
       <%= link_to "review", reviews_path, class: "link header-review" %>
       <%= link_to "access", access_path, class: "link header-access", id: "link" %>
@@ -46,6 +49,9 @@
     if(path.match("/rooms")){
     $(".header-room").addClass("current");
     }
+    if(path.match("/notices")){
+    $(".header-notice").addClass("current");
+    }
     if(path.match("/reservations")){
     $(".header-reservation").addClass("current");
     }
@@ -69,6 +75,9 @@
     }
     if(path.match("/admin/notifications")){
     $(".header-notification").addClass("current");
+    }
+    if(path.match("/admin/notices")){
+    $(".header-notice").addClass("current");
     }
     if(path.match("/admin/reservations")){
     $(".header-reservation").addClass("current");

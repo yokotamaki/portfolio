@@ -21,19 +21,21 @@
   <div class="top-nav" id="top-nav">
     <% if admin_signed_in? %>
       <%= link_to "通知", admin_notifications_path, class: "link" %>
-      <%= link_to "予約一覧", admin_reservations_path, class: "link" %>
-      <%= link_to "お問い合わせ一覧", admin_contacts_path, class: "link" %>
+      <%= link_to "お知らせ", admin_notices_path, class: "link" %>
+      <%= link_to "予約", admin_reservations_path, class: "link" %>
+      <%= link_to "お問い合わせ", admin_contacts_path, class: "link" %>
       <%= link_to "ログアウト", destroy_admin_session_path, method: :delete, class: "link"  %>
     <% elsif customer_signed_in? %>
       <%= link_to "room", rooms_path, class: "top-link nav-room" %>
+      <%= link_to "news", notices_path, class: "top-link nav-notice" %>
       <%= link_to "reservation", search_reservations_path, class: "top-link nav-reservation" %>
       <%= link_to "review", reviews_path, class: "top-link nav-review" %>
       <%= link_to "access", access_path, class: "top-link nav-access" %>
       <%= link_to "contact", new_contact_path, class: "top-link nav-contact" %>
       <%= link_to "mypage", mypage_customer_path(current_customer), class: "top-link nav-mypage" %>
-      <%= link_to "logout", destroy_customer_session_path, method: :delete, class: "top-link nav-logout" %>
     <% else %>
       <%= link_to "room", rooms_path, class: "top-link nav-room" %>
+      <%= link_to "news", notices_path, class: "top-link nav-notice" %>
       <%= link_to "reservation", search_reservations_path, class: "top-link nav-reservation" %>
       <%= link_to "review", reviews_path, class: "top-link nav-review" %>
       <%= link_to "access", access_path, class: "top-link nav-access" %>

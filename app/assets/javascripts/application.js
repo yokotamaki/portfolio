@@ -29,6 +29,12 @@ $(document).on('turbolinks:load', function() {
       $(this).text("room");
     });
 
+    $(".top-nav .nav-notice").hover(function(){
+      $(this).text("お知らせ");
+    },function(){
+      $(this).text("notice");
+    });
+
     $(".top-nav .nav-reservation").hover(function(){
       $(this).text("予約");
     },function(){
