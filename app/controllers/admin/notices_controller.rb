@@ -13,6 +13,24 @@ class Admin::NoticesController < ApplicationController
 
   def index
     @notices = Notice.all.order(id: "DESC")
+
+    # 絞り込み
+    tab = notice_search_params[:tab]
+    if tab == "全て"
+      @notices = Notice.all.order(id: "DESC")
+    elsif tab == "お知らせ"
+      @notices = Notice.where(tab: "お知らせ")
+                                   .order(id: "DESC")
+    elsif tab == "ホテル"
+      @notices = Notice.where(tab: "ホテル")
+                                   .order(id: "DESC")
+    elsif tab == "イベント・キャンペーン"
+      @notices = Notice.where(tab: "イベント・キャンペーン")
+                                   .order(id: "DESC")
+    elsif tab == "その他"
+      @notices = Notice.where(tab: "その他")
+                                   .order(id: "DESC")
+    end
   end
 
   def edit
@@ -29,7 +47,7 @@ class Admin::NoticesController < ApplicationController
       end
     end
     if notice.update(notice_params)
-      redirect_to edit_admin_notice_path(notice)
+      redirect_to edit_admin_notice_path(notice), notice: "　更新に成功しました！　"
     end
   end
 
@@ -43,5 +61,9 @@ class Admin::NoticesController < ApplicationController
 
   def notice_params
     params.require(:notice).permit(:title, :body, :tab, images: [])
+  end
+
+  def notice_search_params
+    params.fetch(:notice_search, {}).permit(:tab)
   end
 end

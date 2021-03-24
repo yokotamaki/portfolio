@@ -1,4 +1,16 @@
 <h4>投稿記事編集</h4>
+<!--サクセスメッセージ-->
+<div class="wrapper">
+  <% flash.each do |key, value| %>
+    <%= content_tag(:div, value, class: "#{key}")%>
+  <% end %>
+</div>
+<script>
+  $(function(){
+    $(".notice").fadeOut(5000);
+  });
+</script>
+
 <%= form_with model: [:admin, @notice], local: true do |f| %>
 <div class="notice-form">
   <div class="notice-form-item">
