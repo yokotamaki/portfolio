@@ -24,7 +24,7 @@
       <%= link_to "logout", destroy_customer_session_path, method: :delete, class: "link header-logout", id: "link" %>
     <% else %>
       <%= link_to "room", rooms_path, class: "link header-room", id: "link" %>
-      <%= link_to "news", notices_path, class: "link header-news", id: "link" %>
+      <%= link_to "news", notices_path, class: "link header-notice", id: "link" %>
       <%= link_to "reservation", search_reservations_path, class: "link header-reservation", id: "link" %>
       <%= link_to "review", reviews_path, class: "link header-review" %>
       <%= link_to "access", access_path, class: "link header-access", id: "link" %>

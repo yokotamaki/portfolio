@@ -1,5 +1,5 @@
 <!--お知らせ一覧 絞り込み検索-->
 <%= form_with scope: :notice_search, url: admin_notices_path, method: :get do |f| %>
-  <%= f.select :tab, {全て: "全て", お知らせ: "お知らせ", ホテル: "ホテル", イベント・キャンペーン: "イベント・キャンペーン", その他: "その他"} %>
+  <%= f.select :tab, {全て: "全て", お知らせ: "お知らせ", イベント・キャンペーン: "イベント・キャンペーン", その他: "その他"} %>
   <%= f.submit "絞り込み", class: "button-mini" %>
 <% end %>

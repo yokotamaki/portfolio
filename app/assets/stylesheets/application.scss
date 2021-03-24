@@ -43,6 +43,9 @@ body::before {
   display: inline-block;
   margin: 0 auto;
 }
+.bottom {
+  height: 2rem;
+}
 h4 {
   padding: 7.5rem 0 2rem;
 }
@@ -58,7 +61,7 @@ a:hover {
 /**ボタン**/
 .button {
   display: inline-block;
-  margin: 2rem 2rem 5rem 2rem;
+  margin: 2rem;
   padding: 1rem 2rem;
   color: #393c41;
   border-radius: 2rem;
@@ -344,6 +347,9 @@ a:hover {
 /***********レスポンシブ対応***********/
 @media (max-width: 767px) {
   /**全体**/
+  .bottom {
+    height: 5rem;
+  }
   h4 {
     padding-top: 10rem;
   }
@@ -383,10 +389,6 @@ a:hover {
   	margin-left: 4rem;
   }
 
-  /**ページング機能**/
-  .pagination {
-    margin: 2rem 0 7rem;
-  }
   /**バリデーション**/
   .error {
     font-size: 13px;
