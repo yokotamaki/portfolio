@@ -1,21 +1,7 @@
 <h4>投稿記事一覧</h4>
-<% @notices.each do |notice| %>
-<div class="notices">
-<%= link_to edit_admin_notice_path(notice) do %>
-  <% if notice.images.attached? %>
-    <% notice.images.each do |image| %>
-      <%= image_tag image.variant(resize: '500x500').processed %> <br>
-    <% end %>
-  <% end %>
-  <div class="notices-content">
-    <p class="tab"><%= notice.tab %></p>
-    <p>タイトル</p>
-    <p><%= notice.title %></p>
-    <p>内容</p>
-    <p><%= notice.body %></p>
-    <p>登録日時　<%= notice.created_at.strftime("%Y年%-m月%-d日 %-H時%-M分") %></p>
-    <p>更新日時　<%= notice.updated_at.strftime("%Y年%-m月%-d日 %-H時%-M分") %></p>
-  </div>
-<% end %>
+<div id="notice-index">
+  <%= render "admin/notices/index", notices: @notices %>
 </div>
-<% end %>
+<div class="search-form">
+  <%= render "admin/notices/search" %>
+</div>
