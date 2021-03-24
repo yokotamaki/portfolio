@@ -340,60 +340,12 @@ a:hover {
   opacity: 0.8;
 }
 
+/******************************************************************/
 /***********レスポンシブ対応***********/
 @media (max-width: 767px) {
   /**全体**/
   h4 {
     padding-top: 10rem;
-  }
-  /**ハンバーガーメニュー（各ページ・トップ）**/
-  .logo {
-    width: 110px;
-    height: 100px;
-  }
-
-  #hamberger {
-    position: absolute;
-    top: 0;
-    right: 0;
-    z-index: 9;
-    padding: 1rem;
-    display: inline-block;
-  }
-  .header,
-  .top-nav {
-    width: 70%;
-    height: 100vh;
-    position: fixed;
-    right: -70%;
-    z-index: 8;
-    display: flex;
-    flex-direction: column;
-    padding: 2rem;
-    transition: 0.5s;
-    background-color: #454345;
-    text-align: right;
-    opacity: 0.9;
-  }
-  .link,
-  .top-link {
-    font-size: 35px;
-    margin: 0 0 1.5rem;
-    padding: 0;
-  }
-  .current {
-    font-size: 40px;
-    opacity: 1;
-    border-bottom: none;
-  }
-  .link:nth-child(1) {
-    padding-top: 3rem;
-  }
-  .nav-room {
-    padding-top: 3.5rem;
-  }
-  .open {
-    right: 0;
   }
 
   /**予約詳細（ユーザ・管理者）**/
@@ -438,5 +390,57 @@ a:hover {
   /**バリデーション**/
   .error {
     font-size: 13px;
+  }
+}
+
+@media (max-width: 1020px) {
+  /**ハンバーガーメニュー（各ページ・トップ）**/
+  .logo {
+    width: 110px;
+    height: 100px;
+  }
+
+  #hamberger {
+    position: absolute;
+    top: 0;
+    right: 0;
+    z-index: 9;
+    padding: 1rem;
+    display: inline-block;
+  }
+  .header,
+  .top-nav {
+    width: 70%;
+    height: 100vh;
+    position: fixed;
+    right: -70%;
+    z-index: 8;
+    display: flex;
+    flex-direction: column;
+    padding: 1.5rem;
+    transition: 0.5s;
+    background-color: #454345;
+    text-align: right;
+    opacity: 0.9;
+  }
+  .link,
+  .top-link {
+    font-size: 35px;
+    margin: 0 0 1rem;
+    padding: 0;
+  }
+  .current {
+    font-size: 40px;
+    opacity: 1;
+    border-bottom: none;
+  }
+  .link:nth-child(1) {
+    padding-top: 3rem;
+  }
+  .nav-room {
+    padding-top: 3.5rem;
+  }
+  .open {
+    right: 0;
   }
 }
